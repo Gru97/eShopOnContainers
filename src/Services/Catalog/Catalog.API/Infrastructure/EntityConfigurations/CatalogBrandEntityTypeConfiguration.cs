@@ -19,6 +19,12 @@ namespace Catalog.API.Infrastructure.EntityConfigurations
             builder.Property(x => x.Brand)
                 .HasMaxLength(100)
                 .IsRequired();
+
+            builder.HasData(new List<CatalogBrand>()
+            {
+                new CatalogBrand(){Id = 1,Brand = "Lenovo"},
+                new CatalogBrand(){Id=2,Brand = "LG"}
+            });
         }
     }
 }

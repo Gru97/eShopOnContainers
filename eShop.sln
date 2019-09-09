@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{01A352A4-B7F4-4DAE-BC34-07A21A645A05}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus1", "EventBus1", "{50C06E8D-B558-47C9-94CB-621862846A54}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{50C06E8D-B558-47C9-94CB-621862846A54}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\BuildingBlocks\EventBus\EventBus\EventBus.csproj", "{F64C82A3-4FB7-44FA-A8E4-7DA011F817B3}"
 EndProject
@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "src\Services\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationEventLogEF", "src\BuildingBlocks\IntegrationEventLogEF\IntegrationEventLogEF.csproj", "{F808674F-CE02-4117-A04F-9C57527C64D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "src\services\catalog\Catalog.API\Catalog.API.csproj", "{16B1F330-A159-4033-AF18-80D4D0DC114D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "src\services\catalog\Catalog.API\Catalog.API.csproj", "{16B1F330-A159-4033-AF18-80D4D0DC114D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

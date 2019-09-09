@@ -20,7 +20,11 @@ namespace Catalog.API.Infrastructure.EntityConfigurations
             builder.Property(x => x.Type)
                 .IsRequired()
                 .HasMaxLength(100);
-
+            builder.HasData(new List<CatalogType>()
+            {
+                new CatalogType() {Id = 1,Type = "Laptop"},
+                new CatalogType() { Id = 2,Type = "Phone"}
+            });
         }
     }
 }

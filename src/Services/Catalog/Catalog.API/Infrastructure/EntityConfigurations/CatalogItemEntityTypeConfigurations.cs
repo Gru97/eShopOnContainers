@@ -30,6 +30,12 @@ namespace Catalog.API.Infrastructure.EntityConfigurations
             builder.HasOne(x => x.CatalogBrand)
                 .WithMany()
                 .HasForeignKey(x => x.CatalogBrandId);
+
+            builder.HasData(new List<CatalogItem>()
+            {
+                new CatalogItem() {Id = 1,Price = 5000000,AvailableStock = 100,CatalogBrandId = 1,CatalogTypeId = 1,Name = "Lenovo Thinkpad E560"},
+                new CatalogItem() {Id = 2,Price = 1500000,AvailableStock = 115,CatalogBrandId = 2,CatalogTypeId = 2,Name = "LG K9" }
+            });
         }
     }
 }

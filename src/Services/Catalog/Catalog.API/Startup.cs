@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using BuildingBlocks.EventBusRabbitMQ;
 using Catalog.API.Infrastructure;
+using Catalog.API.IntegrationEvents;
+using EventBus.Abstractions;
+using IntegrationEventLogEF;
+using IntegrationEventLogEF.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +38,30 @@ namespace Catalog.API
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("CatalogContext"));
                 },ServiceLifetime.Scoped);
+            services.AddDbContext<IntegrationEventLogContext>(options =>
+            {
+                
+                options.UseSqlServer(Configuration.GetConnectionString("CatalogContext"),
+                    sqlServerOptionsAction:sqlOptions=>sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name));
+            } ,ServiceLifetime.Scoped);
+
+            RegisterEventBus(services);
+            services.AddTransient<ICatalogIntegrationEventService, CatalogIntegrationEventService>();
+            services.AddTransient<IIntegrationEventLogService, IntegrationEventLogService>(sp =>
+            {
+                return new IntegrationEventLogService(Configuration.GetConnectionString("CatalogContext"));
+            });
+        }
+        private void RegisterEventBus(IServiceCollection services)
+        {
+            var subscriptionClientName = Configuration["SubscriptionClientName"];
+
+
+            services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
+            {
+                return new EventBusRabbitMQ(subscriptionClientName);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
