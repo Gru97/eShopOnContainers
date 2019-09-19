@@ -10,6 +10,7 @@ using EventBus.Abstractions;
 using IntegrationEventLogEF.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.API.Controllers
 {
@@ -40,7 +41,7 @@ namespace Catalog.API.Controllers
             //eventBus.Publish(new ProductPriceChangedIntegrationEvent(1, 10, 15) { });
             //var items = new List<CatalogItem> { }
             var items=_catalogContext.CatalogItems.ToList();
-            ;
+            
             return items;
         }
 
@@ -57,7 +58,7 @@ namespace Catalog.API.Controllers
             //IN THE SAME TRANSACTION
             //then we will publish the event
             //and if everything goes as expected, we change the state of event to published in db
-            var oldPrice = _catalogContext.CatalogItems.Single(e => e.Id == productToUpdate.Id).Price;
+            var oldPrice = _catalogContext.CatalogItems.AsNoTracking().Single(e => e.Id == productToUpdate.Id).Price;
             ProductPriceChangedIntegrationEvent evt=new ProductPriceChangedIntegrationEvent(productToUpdate.Id, productToUpdate.Price, oldPrice);
             using (var transaction = _catalogContext.Database.BeginTransaction())
             {

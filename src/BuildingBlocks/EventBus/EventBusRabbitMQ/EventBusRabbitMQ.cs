@@ -45,36 +45,43 @@ namespace BuildingBlocks.EventBusRabbitMQ
             where TEvent : IntegrationEvent
             where THandler : IIntegrationEventHandler<TEvent>
         {
-            
 
-            var factory = new ConnectionFactory() { HostName = "localhost", DispatchConsumersAsync=true };
-            var connection = factory.CreateConnection();
-            var channel = connection.CreateModel();
-            
+            try
+            {
+                var factory = new ConnectionFactory() { HostName = "localhost", DispatchConsumersAsync = true };
+                var connection = factory.CreateConnection();
+                var channel = connection.CreateModel();
+
                 channel.ExchangeDeclare(exchange: _brokerName, type: "direct");
 
                 string eventName = typeof(TEvent).Name;
                 var queueName = channel.QueueDeclare().QueueName;
                 channel.QueueBind(queue: queueName,
-                                  exchange: _brokerName,
-                                  routingKey: eventName);
+                    exchange: _brokerName,
+                    routingKey: eventName);
 
 
 
 
-               
+
 
                 var consumer = new AsyncEventingBasicConsumer(channel);
                 consumer.Received += Consumer_Received;
-               
+
                 channel.BasicConsume(queue: queueName,
-                                     autoAck: true,
-                                     consumer: consumer);
+                    autoAck: true,
+                    consumer: consumer);
 
                 if (!eventTypes.Contains(typeof(TEvent)))
                     eventTypes.Add(typeof(TEvent));
                 if (!handlers.ContainsKey(eventName))
                     handlers.Add(eventName, typeof(THandler));
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Subscribing to events failed."+e.Message);
+            }
+            
 
             
         }
