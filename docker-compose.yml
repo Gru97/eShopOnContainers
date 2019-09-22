@@ -1,15 +1,26 @@
-version: '3.4'
+version: '3.7'
 
 services:
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
-      context: .
-      dockerfile: src/services/catalog/Catalog.API/Dockerfile
+      context: ./src/services/catalog/Catalog.API
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+  rabbitmq:
+    image: rabbitmq
 
-  basket.api:
-    image: ${DOCKER_REGISTRY-}basketapi
+
+  ocelotapigw:
+    image: ${DOCKER_REGISTRY-}ocelotapigw
     build:
-      context: .
-      dockerfile: src/Services/Basket/Basket.API/Dockerfile
+      context: ./src/ApiGateways/ApiGw-Base/OcelotApiGw
+      dockerfile: Dockerfile
+    volumes: 
+      - ./src/services/ApiGateways/ApiGw-Base/Config:/app/configuration
+     
+      
+   
 
+ 

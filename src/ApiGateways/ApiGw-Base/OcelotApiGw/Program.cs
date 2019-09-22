@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace OcelotApiGw
@@ -14,11 +15,20 @@ namespace OcelotApiGw
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args).Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHost CreateWebHostBuilder(string[] args)
+        {
+
+            var builder = WebHost.CreateDefaultBuilder(args);
+            builder.ConfigureServices(s => s.AddSingleton(builder))
+                .ConfigureAppConfiguration(ic => ic.AddJsonFile(Path.Combine("Config", "Configuration.json")))
                 .UseStartup<Startup>();
+            return builder.Build();
+
+        }
+
+
     }
 }
