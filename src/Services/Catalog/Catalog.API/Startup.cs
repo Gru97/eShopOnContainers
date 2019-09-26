@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -87,6 +89,15 @@ namespace Catalog.API
             }
 
             //app.UseHttpsRedirection();
+            
+            //nessesary to be able to access this static folder and it's pictures on server 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "Pics")),
+                RequestPath = "/Pics" //the path would be: http://<server_address>/Pics/...
+            });
+
             app.UseCors("myPolicy");
             app.UseMvc();
          

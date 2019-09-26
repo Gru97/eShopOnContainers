@@ -44,7 +44,7 @@ namespace Catalog.API.Controllers
             //eventBus.Publish(new ProductPriceChangedIntegrationEvent(1, 10, 15) { });
             //var items = new List<CatalogItem> { }
             var items = _catalogContext.CatalogItems.ToList();
-
+            items.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
             return items;
         }
 

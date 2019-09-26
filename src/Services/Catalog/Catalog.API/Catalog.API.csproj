@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="IntegrationEvents\EventHandling\" />
+    <Folder Include="Pics\" />
   </ItemGroup>
 
 </Project>
