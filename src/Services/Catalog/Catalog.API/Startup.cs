@@ -61,6 +61,15 @@ namespace Catalog.API
             {
                 return new EventBusRabbitMQ(subscriptionClientName);
             });
+            services.AddCors(Options => { Options.AddPolicy("myPolicy",
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod().AllowCredentials();
+
+                });
+            });
 
         }
 
@@ -77,8 +86,10 @@ namespace Catalog.API
                 app.UseHsts();
             }
 
-  
+            //app.UseHttpsRedirection();
+            app.UseCors("myPolicy");
             app.UseMvc();
+         
         }
     }
 }
