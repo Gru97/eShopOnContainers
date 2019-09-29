@@ -89,7 +89,8 @@ namespace Catalog.API
             }
 
             //app.UseHttpsRedirection();
-            
+
+            app.UseCors("myPolicy");
             //nessesary to be able to access this static folder and it's pictures on server 
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -98,7 +99,7 @@ namespace Catalog.API
                 RequestPath = "/Pics" //the path would be: http://<server_address>/Pics/...
             });
 
-            app.UseCors("myPolicy");
+          
             app.UseMvc();
          
         }

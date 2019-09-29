@@ -48,6 +48,16 @@ namespace Catalog.API.Controllers
             return items;
         }
 
+        [Route("items/{id}")]
+        [HttpGet]
+        public ActionResult<CatalogItem> GetById(int Id)
+        {
+            var item= _catalogContext.CatalogItems.SingleOrDefault(e => e.Id == Id);
+            item.PictureUri = "https://localhost:44321/Pics/" + item.PictureName;
+            return item;
+
+        }
+
         [HttpPut]
         [Route("items")]
         public async Task UpdateProductAsync(CatalogItem productToUpdate)
@@ -97,6 +107,8 @@ namespace Catalog.API.Controllers
         public async Task<IEnumerable<CatalogItem>> GetProductByTypeId(int? id)
         {
             var catalogs = _catalogContext.CatalogItems.Where(e => e.CatalogType.Id == id);
+            catalogs.ToList().ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
+
             return catalogs;
 
         }
@@ -106,6 +118,9 @@ namespace Catalog.API.Controllers
             var catalogs = _catalogContext.CatalogItems.Where(e => e.CatalogType.Id == typeId);
             if (brandId != null && brandId>0)
                 catalogs=catalogs.Where(e => e.CatalogBrand.Id == brandId);
+
+            catalogs.ToList().ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
+
             return catalogs;
 
         }
