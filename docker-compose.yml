@@ -1,6 +1,13 @@
 version: '3.7'
 
 services:
+
+  rabbitmq:
+    image: rabbitmq
+
+  redis:
+    image: redis
+
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
@@ -8,8 +15,17 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - rabbitmq
-  rabbitmq:
-    image: rabbitmq
+  
+    
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: ./src/Services/Basket/Basket.API
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+      - redis
+  
 
 
   ocelotapigw:
@@ -24,3 +40,4 @@ services:
    
 
  
+

@@ -1,6 +1,16 @@
 version: '3.7'
 
 services:
+  redis:
+    ports:
+      - "6379:6379"    # Important: In a production environment your should remove the external port
+
+  rabbitmq:
+    hostname: "rabbit"
+    ports:
+      - "15672:15672"  # Important: In a production environment your should remove the external port
+      - "5672:5672"    # Important: In a production environment your should remove the external port
+
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -25,3 +35,14 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
    
+  basket.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=44349
+    ports:
+      - "10616:80"
+      - "44349:443"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro

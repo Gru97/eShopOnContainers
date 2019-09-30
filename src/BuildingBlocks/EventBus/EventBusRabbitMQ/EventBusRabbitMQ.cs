@@ -48,7 +48,7 @@ namespace BuildingBlocks.EventBusRabbitMQ
 
             try
             {
-                var factory = new ConnectionFactory() { HostName = "localhost", DispatchConsumersAsync = true };
+                var factory = new ConnectionFactory() { HostName = "rabbitmq", Port = 5672,DispatchConsumersAsync = true };
                 var connection = factory.CreateConnection();
                 var channel = connection.CreateModel();
 

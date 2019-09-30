@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Basket.API.IntegrationEvents.EventHandling;
 using Basket.API.IntegrationEvents.Events;
+using Basket.API.Model;
 using BuildingBlocks.EventBusRabbitMQ;
 using EventBus.Abstractions;
 using Microsoft.AspNetCore.Builder;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using StackExchange.Redis;
 
 namespace Basket.API
 {
@@ -30,8 +32,12 @@ namespace Basket.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            //services.AddSingleton<IEventBus, EventBusRabbitMQ>();
+            services.AddSingleton<IEventBus, EventBusRabbitMQ>();
+            //TODO get connection string from cofiguration file
+            services.AddSingleton<ConnectionMultiplexer>(sp => { return ConnectionMultiplexer.Connect("redis"); });
+            services.AddTransient<IBasketRepository, RedisBasketRepository>();
             RegisterEventBus(services);
+
 
         }
 
