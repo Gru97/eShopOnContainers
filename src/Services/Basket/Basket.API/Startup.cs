@@ -31,6 +31,14 @@ namespace Basket.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => { options.AddPolicy("myPolicy", builder =>
+                {
+                    builder.AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin()
+                        .AllowCredentials();
+                });
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IEventBus, EventBusRabbitMQ>();
             //TODO get connection string from cofiguration file
@@ -55,13 +63,14 @@ namespace Basket.API
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("myPolicy");
             app.UseMvc();
             ConfigureEventBus(app);
         }
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService< IEventBus>();
-            eventBus.Subscribe<ProductPriceChangedIntegrationEvent, ProductPriceChangedIntegrationEventHandler>();
+            //eventBus.Subscribe<ProductPriceChangedIntegrationEvent, ProductPriceChangedIntegrationEventHandler>();
 
         }
         private void RegisterEventBus(IServiceCollection services)

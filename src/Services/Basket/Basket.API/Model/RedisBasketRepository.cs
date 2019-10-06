@@ -16,6 +16,7 @@ namespace Basket.API.Model
         {
             this.redis = redis;
             this.database = redis.GetDatabase();
+            
         }
 
         public async Task<CustomerBasket> GetBasketAsync(string customerId)
@@ -35,6 +36,16 @@ namespace Basket.API.Model
             bool result = await database.KeyDeleteAsync(id);
             return result;
             ;
+        }
+
+        public async Task<List<string>> GetAllUsersAsync()
+        {
+            //TODO:what is endpoint?
+            var endpoint = redis.GetEndPoints();
+            var server =redis.GetServer(endpoint.First());
+            var data= server.Keys();
+            return data.Select(k => k.ToString()).ToList();
+
         }
     }
 }

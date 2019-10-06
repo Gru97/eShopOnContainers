@@ -10,6 +10,7 @@ namespace Basket.API.Model
         Task<CustomerBasket> GetBasketAsync(string customerId);
         Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket);
         Task<bool> DeleteBasketAsync(string id);
+        Task<List<string>> GetAllUsersAsync();
 
 
     }
