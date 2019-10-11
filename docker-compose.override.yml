@@ -11,6 +11,11 @@ services:
       - "15672:15672"  # Important: In a production environment your should remove the external port
       - "5672:5672"    # Important: In a production environment your should remove the external port
 
+  elasticsearch:
+    ports:
+      - "9200:9200"
+      - "9300:9300"     
+  
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
