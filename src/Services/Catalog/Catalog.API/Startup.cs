@@ -53,12 +53,14 @@ namespace Catalog.API
             {
                 return new IntegrationEventLogService(Configuration.GetConnectionString("CatalogContext"));
             });
+            services.AddElasticSearch(Configuration);
+            
         }
         private void RegisterEventBus(IServiceCollection services)
         {
             var subscriptionClientName = Configuration["SubscriptionClientName"];
 
-
+            services.ElasticSearchExtentions(Configuration);
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
             {
                 return new EventBusRabbitMQ(subscriptionClientName);
