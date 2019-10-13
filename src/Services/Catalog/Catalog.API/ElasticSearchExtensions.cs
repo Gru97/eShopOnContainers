@@ -20,9 +20,7 @@ namespace Catalog.API
             var settings = new ConnectionSettings(new Uri(url))
                 .DefaultIndex(defaultIndex)
                 .DefaultMappingFor<CatalogItem>(m => m
-                    .Ignore(c=>c.PictureName)
-                    .Ignore(c=>c.AvailableStock)
-                    .Ignore(c=>c.PictureUri)
+                
                  
                     .PropertyName(c=>c.Id, "id")
                     .PropertyName(c=>c.Name,"name")

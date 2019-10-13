@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using BuildingBlocks.EventBusRabbitMQ;
 using Catalog.API.Infrastructure;
 using Catalog.API.IntegrationEvents;
+using Catalog.API.Models;
 using EventBus.Abstractions;
 using IntegrationEventLogEF;
 using IntegrationEventLogEF.Services;
@@ -59,8 +60,9 @@ namespace Catalog.API
         private void RegisterEventBus(IServiceCollection services)
         {
             var subscriptionClientName = Configuration["SubscriptionClientName"];
+            services.AddTransient<Models.ISearchRepository<CatalogItem>, Models.ElasticSearchRepository>();
 
-            services.ElasticSearchExtentions(Configuration);
+            services.AddElasticSearch(Configuration);
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
             {
                 return new EventBusRabbitMQ(subscriptionClientName);

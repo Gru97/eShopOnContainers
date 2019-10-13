@@ -12,7 +12,8 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.3.2
     environment:
           - discovery.type=single-node
-  
+    volumes: 
+      - esdata:/usr/share/elasticsearch/data
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -42,7 +43,10 @@ services:
     volumes: 
       - ./src/services/ApiGateways/ApiGw-Base/Config:/app/configuration
      
-      
+volumes:
+  esdata:
+    driver:
+      local
    
 
  

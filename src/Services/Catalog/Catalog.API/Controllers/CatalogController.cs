@@ -23,15 +23,17 @@ namespace Catalog.API.Controllers
         private IEventBus _eventBus;
         private ICatalogIntegrationEventService _catalogIntegrationEventService;
         private IIntegrationEventLogService _integrationEventLogService;
-
+        private ISearchRepository<CatalogItem> searchRepository;
         public CatalogController(CatalogContext catalogContext, IEventBus eventBus,
             ICatalogIntegrationEventService catalogIntegrationEventService,
-            IIntegrationEventLogService integrationEventLogService)
+            IIntegrationEventLogService integrationEventLogService,
+            ISearchRepository<CatalogItem> searchRepository)
         {
             this._catalogContext = catalogContext;
             this._eventBus = eventBus;
             _catalogIntegrationEventService = catalogIntegrationEventService;
             _integrationEventLogService = integrationEventLogService;
+            this.searchRepository = searchRepository; ;
         }
 
 
@@ -126,6 +128,16 @@ namespace Catalog.API.Controllers
 
         }
 
+        [HttpGet]
+        [Route("items/search/{phrase}")]
+        public async Task<IEnumerable<CatalogItem>> Search(string phrase)
+        {
+            var data = _catalogContext.CatalogItems.Include(p => p.CatalogBrand).Include(p => p.CatalogType).ToList();
+            data.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
+            await searchRepository.SaveManyAsync(data);
 
+            var lst=await searchRepository.SearchAsync(phrase);
+            return lst;
+        }
     }
 }
