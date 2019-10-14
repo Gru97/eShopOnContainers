@@ -11,6 +11,8 @@ namespace Catalog.API.Models
         Task<bool> SaveManyAsync(IEnumerable<TEntity> Entites);
         Task<bool> DeleteAsync(int Id);
         Task<IEnumerable<TEntity>> SearchAsync(string Phrase);
+        Task<IEnumerable<TEntity>> SearchAsync(SearchModel model);
+
         Task<IEnumerable<TEntity>> SearchByCatalogNameAsync(string Phrase);
 
     }

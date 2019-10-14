@@ -139,5 +139,14 @@ namespace Catalog.API.Controllers
             var lst=await searchRepository.SearchAsync(phrase);
             return lst;
         }
+
+        [HttpGet]
+        [Route("items/search")]
+        public async Task<IEnumerable<CatalogItem>> Search([FromQuery]SearchModel model)
+        {
+            var lst=await searchRepository.SearchAsync(model);
+            return lst.ToList();
+        }
+
     }
 }

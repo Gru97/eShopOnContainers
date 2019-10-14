@@ -52,8 +52,40 @@ namespace Catalog.API.Models
 
         public async Task<IEnumerable<CatalogItem>> SearchAsync(string Phrase)
         {
-            var response=await elasticClient.SearchAsync<CatalogItem>(s => s.Query(q => q.MultiMatch(c => c.Fields(t => t.Field(m => m.Name).Field(m => m.CatalogBrand.Brand).Field(m => m.CatalogType.Type)).Query(Phrase))));
+            var response=await elasticClient.SearchAsync<CatalogItem>(s => s
+            .Query(q => q
+            .MultiMatch(c => c
+            .Fields(t => t.Field(m => m.Name)
+            .Field(m => m.CatalogBrand.Brand)
+            .Field(m => m.CatalogType.Type))
+            .Query(Phrase)
+            .Fuzziness(Fuzziness.AutoLength(1,5))) || 
+            q.Term(x => x.Description,Phrase)));
+
             return response.Documents;
+        }
+
+        public async Task<IEnumerable<CatalogItem>> SearchAsync(SearchModel model)
+        {
+
+            //var response = await elasticClient.SearchAsync<CatalogItem>(s => s
+            //            .Query(q => q
+            //                .Term(x => x.CatalogBrandId, model.BrandId.ToString()) && q
+            //                .Term(x => x.CatalogTypeId, model.TypeId.ToString())));
+
+
+            
+            var response = await elasticClient.SearchAsync<CatalogItem>(s => s
+                        .Query(q => q
+                        .Terms(x=>x
+                        .Field(m=>m.CatalogBrandId)
+                        .Terms(model.BrandId)) && q                        
+                        .Terms(m=>m
+                        .Field(d=>d.CatalogTypeId)
+                        .Terms(model.TypeId))));
+
+            return response.Documents;
+            
         }
 
         public async Task<IEnumerable<CatalogItem>> SearchByCatalogNameAsync(string Phrase)
