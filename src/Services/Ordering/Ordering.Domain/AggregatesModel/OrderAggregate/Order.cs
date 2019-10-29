@@ -55,13 +55,14 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             //so we need to raise an event to say an order is started, and create a buyer out of the current user info
             //Although we do not "raise" the event here. We add it to a list of events to be raised/dispatched later
             AddOrderStartedDomainEvent(userId, userName);
+
         }
 
         private void AddOrderStartedDomainEvent(string userId, string userName)
         {
             var orderStartedDomainEvent = new OrderStartedDomainEvent(this, userId, userName);
 
-            //this.AddOrderStartedDomainEvent(orderStartedDomainEvent);
+            this.AddDomainEvent(orderStartedDomainEvent);
         }
     }
 }

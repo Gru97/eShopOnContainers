@@ -20,8 +20,8 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
 
         }
 
-        private int unitPrice;
-        public int UnitPrice
+        private decimal unitPrice;
+        public decimal UnitPrice
         {
             get { return unitPrice; }
             private set { }
@@ -72,7 +72,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
 
         }
 
-        public OrderItem(int quantity, int unitPrice, int productId, string productName, decimal discount):this()
+        public OrderItem(int quantity, decimal unitPrice, int productId, string productName, decimal discount):this()
         {
 
             //These are validations. We don't let an object enter an invalid state so we would check if it's valid or not later.
@@ -87,6 +87,12 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             this.productId = productId;
             this.productName = productName;
             this.discount = discount;
+        }
+        public void AddToQuantity(int units)
+        {
+            if (units < 0)
+                throw new OrderingDomainException("Invalid units");
+            this.quantity += units;
         }
     }
 }

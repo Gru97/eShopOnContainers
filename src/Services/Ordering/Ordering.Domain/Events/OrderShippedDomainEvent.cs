@@ -6,16 +6,13 @@ using System.Text;
 
 namespace Ordering.Domain.Events
 {
-    public class OrderStartedDomainEvent:INotification
+    public class OrderShippedDomainEvent:INotification
     {
-        public string UserId { get;  }
-        public string UserName { get;  }
         public Order Order { get; }
 
-        public OrderStartedDomainEvent( Order order,string userId, string userName)
+
+        public OrderShippedDomainEvent(Order order)
         {
-            UserId = userId;
-            UserName = userName;
             Order = order;
         }
     }
