@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Ordering.Domain.SeedWork
 {
-    interface IAggregateRoot
+    //Currently,just a marker for aggregate roots
+    public interface IAggregateRoot
     {
     }
 }

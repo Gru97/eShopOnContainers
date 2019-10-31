@@ -2,6 +2,7 @@
 using Ordering.Domain.SeedWork;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Ordering.Domain.AggregatesModel.OrderAggregate
@@ -64,5 +65,64 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
 
             this.AddDomainEvent(orderStartedDomainEvent);
         }
+
+        public void AddOrderItem(int productId,string productName,decimal unitPrice,decimal discount,string pictureUri, int quantity=1)
+        {
+            var existingProduct = orderItems.SingleOrDefault(e => e.Id == productId);
+            if(existingProduct!=null)
+            {
+                if (existingProduct.Discount < discount)
+                    existingProduct.Discount = discount;
+
+                existingProduct.AddToQuantity(quantity);
+
+            }
+            else
+            {
+                var orderItem = new OrderItem(quantity, unitPrice, productId, productName, discount);
+                orderItems.Add(orderItem);
+            }
+        }
+
+        public void SetAwaitingValidationStatus()
+        {
+            //after order submited
+            if(OrderState==OrderState.Submitted)
+            {
+                AddDomainEvent(new OrderStatusChangedToAwaitingValidationDomainEvent(Id,orderItems));
+                OrderState = OrderState.AwaitingValidation;
+                
+            }
+        }
+        public void SetStockConfirmedStatus()
+        {
+            if(OrderState==OrderState.AwaitingValidation)
+            {
+                AddDomainEvent(new OrderStateChangedToStockConfirmedDomainEvent(id));
+                OrderState = OrderState.StockConfirmed;
+                description = "All items were available in stock";
+            }
+        }
+        public void SetPaidStatus()
+        {
+            if(OrderState==OrderState.StockConfirmed)
+            {
+                AddDomainEvent(new OrderStateChangedToPaidDomainEvent(Id, orderItems));
+                OrderState = OrderState.Paid;
+                description = "Payment is done successfully";
+            }
+        }
+        public void SetShippedStatus()
+        {
+            if(OrderState==OrderState.Paid)
+            {
+                OrderState = OrderState.Shipped;
+                description = "The order was shipped";
+                AddDomainEvent(new OrderShippedDomainEvent(this));
+            }
+        }
+        public void SetCancelledStatus() { }
+        public void SetCancelledStatusWhenStockIsRejected() { }
+        
     }
 }

@@ -5,11 +5,9 @@ using System.Text;
 
 namespace Ordering.Domain.AggregatesModel.BuyerAggregate
 {
-    public class Buyer:Entity,IAggregateRoot
+    // Only the repository contract is defined in Domain layer
+    // The implementaion is the Infrastructure layer consern
+    public interface IBuyerRepository:IRepository<Buyer>
     {
-        public string Name { get; private set; }
-
-
-
     }
 }
