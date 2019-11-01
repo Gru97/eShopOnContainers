@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Ordering.Domain.AggregatesModel.BuyerAggregate
 {
@@ -9,5 +10,9 @@ namespace Ordering.Domain.AggregatesModel.BuyerAggregate
     // The implementaion is the Infrastructure layer consern
     public interface IBuyerRepository:IRepository<Buyer>
     {
+        Buyer Add(Buyer buyer);
+        void Update(Buyer buyer);
+        Task<Buyer> FindAsync(string buyerIdentityGuid);
+        Task<Buyer> FindByIdAsync(int id);
     }
 }

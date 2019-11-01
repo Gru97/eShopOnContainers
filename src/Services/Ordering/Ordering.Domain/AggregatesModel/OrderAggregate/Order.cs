@@ -14,42 +14,43 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
     // So we must make them Readonly and define custom methods for adding items to them etc.
     public class Order:Entity, IAggregateRoot
     {
-        private DateTime orderDate;
+        private DateTime _orderDate;
         public Address Address { get; private set; }
-        private int? buyerId;
+        private int? _buyerId;
 
         public int? BuyerId
         {
-            get { return buyerId; }
-            set { buyerId = value; }
+            get { return _buyerId; }
+            set { _buyerId = value; }
         }
+
 
         public OrderState OrderState { get;  private set; }
 
-        private string description;
+        private string _description;
 
-        private readonly List<OrderItem> orderItems;
-        public IReadOnlyCollection<OrderItem> OrderItems { get { return orderItems; } }
+        private readonly List<OrderItem> _orderItems;
+        public IReadOnlyCollection<OrderItem> OrderItems { get { return _orderItems; } }
 
-        private int paymentMethodId;
+        //private int paymentMethodId;
 
-        public int PaymentMethodId
-        {
-            get { return paymentMethodId; }
-            set { paymentMethodId = value; }
-        }
+        //public int PaymentMethodId
+        //{
+        //    get { return paymentMethodId; }
+        //    set { paymentMethodId = value; }
+        //}
 
         public Order()
         {
-            orderItems = new List<OrderItem>();
+            _orderItems = new List<OrderItem>();
         }
 
-        public Order(string userId, string userName,Address address, int? buyerId, int paymentMethodId)
+        public Order(string userId, string userName,Address address, int? _buyerId, int paymentMethodId)
         {
             Address = address;
-            this.buyerId = buyerId;
-            this.paymentMethodId = paymentMethodId;
-            orderDate = DateTime.UtcNow;
+            this._buyerId = _buyerId;
+            //this.paymentMethodId = paymentMethodId;
+            _orderDate = DateTime.UtcNow;
             OrderState = OrderState.Submitted;
 
             //When an order is created, it means the user becomes a buyer. 
@@ -68,7 +69,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
 
         public void AddOrderItem(int productId,string productName,decimal unitPrice,decimal discount,string pictureUri, int quantity=1)
         {
-            var existingProduct = orderItems.SingleOrDefault(e => e.Id == productId);
+            var existingProduct = _orderItems.SingleOrDefault(e => e.Id == productId);
             if(existingProduct!=null)
             {
                 if (existingProduct.Discount < discount)
@@ -80,7 +81,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             else
             {
                 var orderItem = new OrderItem(quantity, unitPrice, productId, productName, discount);
-                orderItems.Add(orderItem);
+                _orderItems.Add(orderItem);
             }
         }
 
@@ -89,7 +90,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             //after order submited
             if(OrderState==OrderState.Submitted)
             {
-                AddDomainEvent(new OrderStatusChangedToAwaitingValidationDomainEvent(Id,orderItems));
+                AddDomainEvent(new OrderStatusChangedToAwaitingValidationDomainEvent(Id,_orderItems));
                 OrderState = OrderState.AwaitingValidation;
                 
             }
@@ -100,16 +101,16 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             {
                 AddDomainEvent(new OrderStateChangedToStockConfirmedDomainEvent(id));
                 OrderState = OrderState.StockConfirmed;
-                description = "All items were available in stock";
+                _description = "All items were available in stock";
             }
         }
         public void SetPaidStatus()
         {
             if(OrderState==OrderState.StockConfirmed)
             {
-                AddDomainEvent(new OrderStateChangedToPaidDomainEvent(Id, orderItems));
+                AddDomainEvent(new OrderStateChangedToPaidDomainEvent(Id, _orderItems));
                 OrderState = OrderState.Paid;
-                description = "Payment is done successfully";
+                _description = "Payment is done successfully";
             }
         }
         public void SetShippedStatus()
@@ -117,7 +118,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             if(OrderState==OrderState.Paid)
             {
                 OrderState = OrderState.Shipped;
-                description = "The order was shipped";
+                _description = "The order was shipped";
                 AddDomainEvent(new OrderShippedDomainEvent(this));
             }
         }

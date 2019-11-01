@@ -10,5 +10,7 @@ namespace Ordering.Domain.SeedWork
     // So it's good to enforce those who implement this interface to be aggregate roots, hence the "where" part
     public interface IRepository<T> where T:IAggregateRoot
     {
+        //A wrapper for DbContext in EF
+         IUnitOfWork UnitOfWork { get; }
     }
 }
