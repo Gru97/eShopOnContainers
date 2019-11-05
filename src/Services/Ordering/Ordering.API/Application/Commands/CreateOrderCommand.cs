@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MediatR;
+using Ordering.API.Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +11,7 @@ namespace Ordering.API.Application.Commands
     //They must be immutable since we don't need to change them after being created
     //Since we are going to need to seriallize and deserialize them, we should make them "private set" and use attributes
     //
-    public class CreateOrderCommand
+    public class CreateOrderCommand:IRequest<bool>
     {
         private readonly List<OrderItemDto> orderItems;
         public IEnumerable<OrderItemDto> OrderItems { get { return orderItems; } }
@@ -24,11 +26,11 @@ namespace Ordering.API.Application.Commands
         {
             orderItems = new List<OrderItemDto>();
         }
-        public CreateOrderCommand(List<OrderItemDto> basketItems, string userId,
+        public CreateOrderCommand(List<BasketItem> basketItems, string userId,
             string userName, string city, string state, string country,
             string street, string zipCode)
         {
-            orderItems = basketItems.ToList();
+            orderItems = basketItems.ToOrderItemDto().ToList();
             UserId = userId;
             UserName = userName;
             City = city;
@@ -42,10 +44,10 @@ namespace Ordering.API.Application.Commands
 
     public class OrderItemDto
     {
-        public int ProductId { get; private set; }
-        public string ProductName { get; private set; }
-        public int Quantity { get; private set; }
-        public decimal UnitPrice { get; private set; }
+        public string ProductId { get;  set; }
+        public string ProductName { get;  set; }
+        public int Quantity { get;  set; }
+        public decimal UnitPrice { get;  set; }
         public decimal Discount { get; set; }
     }
 }

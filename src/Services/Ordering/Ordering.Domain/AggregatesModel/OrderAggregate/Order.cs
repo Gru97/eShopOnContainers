@@ -67,7 +67,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             this.AddDomainEvent(orderStartedDomainEvent);
         }
 
-        public void AddOrderItem(int productId,string productName,decimal unitPrice,decimal discount, int quantity=1)
+        public void AddOrderItem(string productId,string productName,decimal unitPrice,decimal discount, int quantity=1)
         {
             var existingProduct = _orderItems.SingleOrDefault(e => e.Id == productId);
             if(existingProduct!=null)

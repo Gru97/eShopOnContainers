@@ -8,11 +8,11 @@ namespace Basket.API.Model
     public class CustomerBasket
     {
         public List<BasketItem> Items { get; set; }
-        public string CustomerId  { get; set; }
+        public string BuyerId  { get; set; }
 
         public CustomerBasket(string Id)
         {
-            CustomerId = Id;
+            BuyerId = Id;
             Items=new List<BasketItem>();
         }
     }
