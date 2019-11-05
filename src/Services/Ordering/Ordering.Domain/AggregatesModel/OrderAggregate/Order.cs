@@ -45,7 +45,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             _orderItems = new List<OrderItem>();
         }
 
-        public Order(string userId, string userName,Address address, int? _buyerId, int paymentMethodId)
+        public Order(string userId, string userName,Address address, int? _buyerId=null, int? paymentMethodId=null)
         {
             Address = address;
             this._buyerId = _buyerId;
@@ -67,7 +67,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             this.AddDomainEvent(orderStartedDomainEvent);
         }
 
-        public void AddOrderItem(int productId,string productName,decimal unitPrice,decimal discount,string pictureUri, int quantity=1)
+        public void AddOrderItem(int productId,string productName,decimal unitPrice,decimal discount, int quantity=1)
         {
             var existingProduct = _orderItems.SingleOrDefault(e => e.Id == productId);
             if(existingProduct!=null)

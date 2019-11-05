@@ -12,4 +12,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Ordering.Infrastructure\Ordering.Infrastructure.csproj" />
+    <ProjectReference Include="..\Ordering.Domain\Ordering.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\DomainEventHandler\" />
+    <Folder Include="Application\IntegrationEvents\" />
+    <Folder Include="Application\Models\" />
+    <Folder Include="Application\Queries\" />
+  </ItemGroup>
+
 </Project>

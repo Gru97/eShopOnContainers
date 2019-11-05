@@ -12,5 +12,6 @@ namespace Ordering.Domain.SeedWork
     {
         //A wrapper for DbContext in EF
          IUnitOfWork UnitOfWork { get; }
+
     }
 }
