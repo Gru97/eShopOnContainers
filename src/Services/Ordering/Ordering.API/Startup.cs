@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using BuildingBlocks.EventBusRabbitMQ;
+using EventBus.Abstractions;
+using IntegrationEventLogEF;
+using IntegrationEventLogEF.Services;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +17,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Ordering.API.Application.IntegrationEvents;
+using Ordering.API.Application.IntegrationEvents.EventHandling;
+using Ordering.API.Application.IntegrationEvents.Events;
 using Ordering.Domain.AggregatesModel.BuyerAggregate;
 using Ordering.Domain.AggregatesModel.OrderAggregate;
 using Ordering.Infrastructure;
@@ -35,13 +43,43 @@ namespace Ordering.API
 
             services.AddTransient<IOrderRepository,OrderRepository>();
             services.AddTransient<IBuyerRepository, BuyerRepository>();
+            services.AddTransient<IOrderingIntegrationEventService, OrderingIntegrationEventService>();
 
-            services.AddMediatR(System.Reflection.Assembly.GetExecutingAssembly());
+            
 
             services.AddDbContext<OrderingContext>(options => 
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("OrderingContext"));
                 },ServiceLifetime.Scoped);
+
+
+            services.AddDbContext<IntegrationEventLogContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("OrderingContext"),
+                sqlOptions => sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name));
+                }, ServiceLifetime.Scoped);
+
+
+            RegisterEventBus(services);
+            services.AddTransient<IIntegrationEventLogService, IntegrationEventLogService>(sp =>
+            {
+                return new IntegrationEventLogService(Configuration.GetConnectionString("OrderingContext"));
+            });
+
+            
+            services.AddMediatR(System.Reflection.Assembly.GetExecutingAssembly());
+
+        }
+        private void RegisterEventBus(IServiceCollection services)
+        {
+            var subscriptionClientName = Configuration["SubscriptionClientName"];
+            
+
+            services.AddSingleton<IEventBus, EventBusRabbitMQ>( sp =>
+            {
+                
+                return new EventBusRabbitMQ(sp,subscriptionClientName);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +97,15 @@ namespace Ordering.API
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            ConfigureEventBus(app);
+
+        }
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<UserCheckoutIntegrationEvent, UserCheckoutIntegrationEventHandler>();
+            //eventBus.Subscribe<UserCheckoutIntegrationEvent, IIntegrationEventHandler<UserCheckoutIntegrationEvent>>();
+
         }
     }
 }

@@ -67,9 +67,9 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             this.AddDomainEvent(orderStartedDomainEvent);
         }
 
-        public void AddOrderItem(string productId,string productName,decimal unitPrice,decimal discount, int quantity=1)
+        public void AddOrderItem(int productId,string productName,decimal unitPrice,decimal discount, int quantity=1)
         {
-            var existingProduct = _orderItems.SingleOrDefault(e => e.Id == productId);
+            var existingProduct = _orderItems.SingleOrDefault(e => e.ProductId == productId);
             if(existingProduct!=null)
             {
                 if (existingProduct.Discount < discount)
@@ -99,7 +99,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         {
             if(OrderState==OrderState.AwaitingValidation)
             {
-                AddDomainEvent(new OrderStateChangedToStockConfirmedDomainEvent(id));
+                AddDomainEvent(new OrderStateChangedToStockConfirmedDomainEvent(Id));
                 OrderState = OrderState.StockConfirmed;
                 _description = "All items were available in stock";
             }

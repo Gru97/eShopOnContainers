@@ -6,6 +6,7 @@ using Basket.API.Model;
 using EventBus.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Ordering.API.Application.IntegrationEvents.Events;
 
 namespace Basket.API.Controllers
 {
@@ -59,6 +60,25 @@ namespace Basket.API.Controllers
 
             return await repository.UpdateBasketAsync(basket);
 
+        }
+
+        [Route("checkout")]
+        [HttpPost]
+        public async Task<ActionResult> CheckoutAsync([FromBody] BasketCheckout basketCheckout)
+        {
+            //Publish UserCheckoutIntegrationEvent and dispatch it throught eventbus
+
+            CustomerBasket basket = await repository.GetBasketAsync(basketCheckout.UserId);
+            if (basket == null) return BadRequest();
+            string buyer = "X";
+            var message = new UserCheckoutIntegrationEvent(basketCheckout.UserId,
+                basketCheckout.UserName,
+                basketCheckout.Street, basketCheckout.Country,
+                basketCheckout.City, basketCheckout.State, basketCheckout.ZipCode,
+                basket,buyer);
+            message.Id = new Guid();
+            eventBus.Publish(message);
+            return Accepted();
         }
 
     }

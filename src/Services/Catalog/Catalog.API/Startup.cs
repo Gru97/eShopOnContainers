@@ -55,18 +55,8 @@ namespace Catalog.API
                 return new IntegrationEventLogService(Configuration.GetConnectionString("CatalogContext"));
             });
             services.AddElasticSearch(Configuration);
-            
-        }
-        private void RegisterEventBus(IServiceCollection services)
-        {
-            var subscriptionClientName = Configuration["SubscriptionClientName"];
             services.AddTransient<Models.ISearchRepository<CatalogItem>, Models.ElasticSearchRepository>();
 
-            services.AddElasticSearch(Configuration);
-            services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
-            {
-                return new EventBusRabbitMQ(subscriptionClientName);
-            });
             services.AddCors(Options => { Options.AddPolicy("myPolicy",
                 builder =>
                 {
@@ -76,6 +66,17 @@ namespace Catalog.API
 
                 });
             });
+            
+        }
+        private void RegisterEventBus(IServiceCollection services)
+        {
+            var subscriptionClientName = Configuration["SubscriptionClientName"];
+
+            services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
+            {
+                return new EventBusRabbitMQ(sp,subscriptionClientName);
+            });
+           
 
         }
 

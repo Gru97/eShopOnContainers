@@ -12,6 +12,12 @@ namespace Ordering.API.Application.IntegrationEvents.EventHandling
     public class UserCheckoutIntegrationEventHandler : IIntegrationEventHandler<UserCheckoutIntegrationEvent>
     {
         private readonly IMediator mediator;
+        
+        public UserCheckoutIntegrationEventHandler(IMediator mediator)
+        {
+            this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        }
+
         public async Task Handle(UserCheckoutIntegrationEvent @event)
         {
             //Create an OrderCreatedCommand from @event and send through mediatR to it's Command handler
@@ -22,7 +28,16 @@ namespace Ordering.API.Application.IntegrationEvents.EventHandling
                 @event.State, @event.Country,
                 @event.Street, @event.ZipCode);
             //dispatch it
-            await mediator.Send(command);
+            try
+            {
+                bool result= await mediator.Send(command);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

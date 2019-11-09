@@ -7,6 +7,9 @@ using System.Text;
 using Newtonsoft.Json;
 using RabbitMQ.Client.Events;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BuildingBlocks.EventBusRabbitMQ
 {
@@ -17,16 +20,18 @@ namespace BuildingBlocks.EventBusRabbitMQ
         private readonly List<Type> eventTypes;
         Dictionary<string, Type> handlers;
         string queueName;
-        public EventBusRabbitMQ(string queueName=null)
+        IServiceProvider serviceProvider;
+        public EventBusRabbitMQ(IServiceProvider serviceProvider, string queueName=null)
         {
                 eventTypes=new List<Type>();
                 handlers=new Dictionary<string, Type>();
+                this.serviceProvider = serviceProvider;
                 this.queueName = queueName;
         }
         public void Publish(IntegrationEvent @event)
         {
             var eventName = @event.GetType().Name;
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = "rabbitmq"};
             
             using (var connection = factory.CreateConnection())
             {
@@ -35,7 +40,16 @@ namespace BuildingBlocks.EventBusRabbitMQ
                     channel.ExchangeDeclare(exchange: _brokerName, type: "direct");
                     string message = JsonConvert.SerializeObject(@event);
                     var body = Encoding.UTF8.GetBytes(message);
-                    channel.BasicPublish(exchange: _brokerName, routingKey: eventName, basicProperties: null, body: body);
+                    try
+                    {
+                        channel.BasicPublish(exchange: _brokerName, routingKey: eventName, basicProperties: null, body: body);
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw new Exception (ex.Message);
+                    }
                 }
             }
             
@@ -88,6 +102,7 @@ namespace BuildingBlocks.EventBusRabbitMQ
 
         private async Task Consumer_Received(object sender, BasicDeliverEventArgs eventArgs)
         {
+
             var eventName = eventArgs.RoutingKey;
             Type eventType = eventTypes.Find(t => t.Name == eventName);
             var message = Encoding.UTF8.GetString(eventArgs.Body);
@@ -97,10 +112,41 @@ namespace BuildingBlocks.EventBusRabbitMQ
 
             //var concreteType = typeof(IIntegrationEventHandler<>).MakeGenericType(eventType);
             //await (Task)concreteType.GetMethod("Handle").Invoke(handler, new object[] { integrationEvent });
-            var handler = Activator.CreateInstance(handlerType);
-            var x = typeof(IIntegrationEventHandler<>);
-            var y=x.MakeGenericType(eventType);
-            await (Task)y.GetMethod("Handle").Invoke(handler, new object[] { integrationEvent });
+
+
+            object handler=null;
+
+            //It was before using ActivatorUtilities, we had to find ctor and their params and use serviceProvider to instantiate them
+            //ConstructorInfo constructor = handlerType.GetConstructors()[0];
+
+            //if (constructor != null)
+            //{
+            //    object[] args = constructor
+            //        .GetParameters()
+            //        .Select(o => o.ParameterType)
+            //        .Select(o => serviceProvider.GetService(o))
+            //        .ToArray();
+
+            //    handler=Activator.CreateInstance(handlerType, args);
+            //}
+            //else
+            //    handler = Activator.CreateInstance(handlerType);
+
+            //var handler = serviceProvider.GetService(handlerType);
+
+            //*Scope Problem
+            using (var scope = serviceProvider.CreateScope())
+            {
+                //using ActivatorUtilities is possible in dotnet core. Just does the same foreach above
+                handler = ActivatorUtilities.CreateInstance(scope.ServiceProvider, handlerType);
+                var x = typeof(IIntegrationEventHandler<>);
+                var y = x.MakeGenericType(eventType);
+                await (Task)y.GetMethod("Handle").Invoke(handler, new object[] { integrationEvent });
+
+            }
+
+
+            
 
         }
 

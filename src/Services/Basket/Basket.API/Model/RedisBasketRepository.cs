@@ -22,7 +22,9 @@ namespace Basket.API.Model
         public async Task<CustomerBasket> GetBasketAsync(string customerId)
         {
             var data= await database.StringGetAsync(customerId);
-            return JsonConvert.DeserializeObject<CustomerBasket>(data);
+            if (!data.IsNullOrEmpty)
+                return JsonConvert.DeserializeObject<CustomerBasket>(data);
+            else return null;
         }
 
         public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket)

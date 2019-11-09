@@ -43,6 +43,15 @@ services:
     volumes: 
       - ./src/services/ApiGateways/ApiGw-Base/Config:/app/configuration
      
+  ordering.api:
+    image: ${DOCKER_REGISTRY-}orderingapi
+    build:
+      context: src/Services/Ordering/Ordering.API
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+     
+
 volumes:
   esdata:
     driver:
@@ -50,4 +59,5 @@ volumes:
    
 
  
+
 

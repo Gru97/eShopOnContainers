@@ -61,16 +61,17 @@ namespace Basket.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            ConfigureEventBus(app);
 
             app.UseHttpsRedirection();
             app.UseCors("myPolicy");
             app.UseMvc();
-            ConfigureEventBus(app);
         }
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService< IEventBus>();
             //eventBus.Subscribe<ProductPriceChangedIntegrationEvent, ProductPriceChangedIntegrationEventHandler>();
+            eventBus.Subscribe<OrderStartedIntegrationEvent, OrderStartedIntegrationEventHandler>();
 
         }
         private void RegisterEventBus(IServiceCollection services)
@@ -80,7 +81,7 @@ namespace Basket.API
 
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
             {
-                return new EventBusRabbitMQ(subscriptionClientName);
+                return new EventBusRabbitMQ(sp,subscriptionClientName);
             });
 
         }
