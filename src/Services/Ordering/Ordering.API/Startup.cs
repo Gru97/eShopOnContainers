@@ -55,7 +55,7 @@ namespace Ordering.API
 
             services.AddDbContext<IntegrationEventLogContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("OrderingContext"),
-                sqlOptions => sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name));
+                sqlOptions => sqlOptions.MigrationsAssembly("Ordering.Infrastructure"));
                 }, ServiceLifetime.Scoped);
 
 
@@ -97,7 +97,7 @@ namespace Ordering.API
 
             app.UseHttpsRedirection();
             app.UseMvc();
-            ConfigureEventBus(app);
+            //ConfigureEventBus(app);
 
         }
         private void ConfigureEventBus(IApplicationBuilder app)

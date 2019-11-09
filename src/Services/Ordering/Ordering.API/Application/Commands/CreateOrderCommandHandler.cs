@@ -28,7 +28,7 @@ namespace Ordering.API.Application.Commands
             // Create and raise an Integration event: OrderStartedIntegrationEvent
             var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(request.UserId);
             await OrderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
-            OrderingIntegrationEventService.PublishEvent(orderStartedIntegrationEvent);
+            ////OrderingIntegrationEventService.PublishEvent(orderStartedIntegrationEvent);
 
             //Instantiate root aggregate and do necessary things
             var address = new Address(request.Street, request.City, request.State, request.Country, request.ZipCode);

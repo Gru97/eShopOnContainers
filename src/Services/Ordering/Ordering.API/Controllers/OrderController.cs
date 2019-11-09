@@ -1,22 +1,37 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Ordering.API.Application.Commands;
 
 namespace Ordering.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class OrderController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private IMediator mediator;
+
+        public OrderController(IMediator mediator)
         {
-            return new string[] { "value1", "value2" };
+            this.mediator = mediator;
         }
 
+        [Route("order")]
+        [HttpPost]
+        public async Task<ActionResult> Order()
+        {
+            var cmd = new CreateOrderCommand(new List<Application.Models.BasketItem>(),
+                "1","name","city","state","country","street","zipcode");
+
+            var result=mediator.Send(cmd);
+            if (result.Result)
+                return Accepted();
+            else
+                return BadRequest();
+        }
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
@@ -41,5 +56,7 @@ namespace Ordering.API.Controllers
         public void Delete(int id)
         {
         }
+
+
     }
 }
