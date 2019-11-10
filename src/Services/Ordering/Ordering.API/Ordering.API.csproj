@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.5.1" />
     <PackageReference Include="MediatR" Version="7.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -26,6 +27,7 @@
   <ItemGroup>
     <Folder Include="Application\DomainEventHandler\" />
     <Folder Include="Application\Queries\" />
+    <Folder Include="Application\Validation\" />
   </ItemGroup>
 
 </Project>
