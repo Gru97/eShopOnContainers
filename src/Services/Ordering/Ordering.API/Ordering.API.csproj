@@ -27,7 +27,6 @@
   <ItemGroup>
     <Folder Include="Application\DomainEventHandler\" />
     <Folder Include="Application\Queries\" />
-    <Folder Include="Application\Validation\" />
   </ItemGroup>
 
 </Project>

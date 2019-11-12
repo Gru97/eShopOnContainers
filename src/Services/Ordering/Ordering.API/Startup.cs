@@ -34,12 +34,25 @@ namespace Ordering.API
             Configuration = configuration;
         }
 
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+
+            //Identity
+            services.AddAuthorization();
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options => 
+                {
+                    options.Authority = "http://localhost:5000";
+                    options.RequireHttpsMetadata = false;
+                    options.Audience = "orders";
+                });
+
 
             services.AddTransient<IOrderRepository,OrderRepository>();
             services.AddTransient<IBuyerRepository, BuyerRepository>();
@@ -97,6 +110,8 @@ namespace Ordering.API
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
+
             app.UseMvc();
             
             //ConfigureEventBus(app);
