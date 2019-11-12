@@ -15,6 +15,12 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
     public class Order:Entity, IAggregateRoot
     {
         private DateTime _orderDate;
+
+        public DateTime OrderDate
+        {
+            get; private set;
+        }
+
         public Address Address { get; private set; }
         private int? _buyerId;
 

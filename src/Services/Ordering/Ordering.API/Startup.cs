@@ -67,7 +67,8 @@ namespace Ordering.API
 
             
             services.AddMediatR(System.Reflection.Assembly.GetExecutingAssembly());
-
+            //services.AddScoped(typeof(IFoo<,>), typeof(Foo<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(Application.Validation.ValidationBehavior<,>));
         }
         private void RegisterEventBus(IServiceCollection services)
         {
@@ -97,6 +98,7 @@ namespace Ordering.API
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            
             //ConfigureEventBus(app);
 
         }

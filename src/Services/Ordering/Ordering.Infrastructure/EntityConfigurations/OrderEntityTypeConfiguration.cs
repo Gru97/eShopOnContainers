@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Ordering.Domain.AggregatesModel.OrderAggregate;
 
 namespace Ordering.Infrastructure.EntityConfigurations
@@ -17,7 +18,7 @@ namespace Ordering.Infrastructure.EntityConfigurations
             builder.OwnsOne(e => e.Address);
 
             //configuring private fields
-            builder.Property<System.DateTime>("orderDate").HasColumnName("OrderDate").IsRequired();
+            //builder.Property<System.DateTime>("orderDate").HasColumnName("OrderDate").IsRequired();
             builder.Property<string>("description").HasColumnName("Description").IsRequired(false);
 
             //configuring navigation properties (that does not exist!)
@@ -29,7 +30,13 @@ namespace Ordering.Infrastructure.EntityConfigurations
                 .IsRequired(false)
                 .HasForeignKey(e=>e.BuyerId);
 
-            //backing fields need no extra configuration since they are following conventions
+            //backing fields need no extra configuration since they are following conventions (_fieldName)
+
+            //Enums can be configured in a specific way:
+            var converter = new EnumToNumberConverter<OrderState,short>();
+            builder
+                .Property(e => e.OrderState)
+                .HasConversion(converter);
         }
     }
 }
