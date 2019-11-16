@@ -1,66 +1,63 @@
 ﻿@model LoginViewModel
 
-<div class="login-page">
-    <div class="page-header">
-        <h1>Login</h1>
+<div class="login-page rtl-direction">
+    <div class="page-header text-center">
+        <h2>ورود به حساب کاربری</h2>
     </div>
 
     <partial name="_ValidationSummary" />
 
     <div class="row">
-
         @if (Model.EnableLocalLogin)
         {
-            <div class="col-sm-6">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Local Login</h3>
-                    </div>
+                    @*<div class="panel-heading">
+                        <h3 class="panel-title">ورود</h3>
+                    </div>*@
                     <div class="panel-body">
-
                         <form asp-route="Login">
                             <input type="hidden" asp-for="ReturnUrl" />
-
                             <fieldset>
                                 <div class="form-group">
-                                    <label asp-for="Username"></label>
-                                    <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
+                                    <label asp-for="Username" class="float-lg-right font-weight-bold">نام کاربری</label>
+                                    <input class="form-control" placeholder="نام کاربری" asp-for="Username" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Password"></label>
-                                    <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off">
+                                    <label asp-for="Password" class="float-lg-right font-weight-bold">رمز عبور</label>
+                                    <input type="password" class="form-control" placeholder="رمز عبور " asp-for="Password" autocomplete="off">
                                 </div>
                                 @if (Model.AllowRememberLogin)
                                 {
                                     <div class="form-group login-remember">
-                                        <label asp-for="RememberLogin">
+                                        <label asp-for="RememberLogin" class="float-lg-right font-weight-bold">
                                             <input asp-for="RememberLogin">
-                                            <strong>Remember My Login</strong>
+                                            <strong>مرا به خاطر بسپار</strong>
                                         </label>
                                     </div>
                                 }
-
                                 <div>
                                     <p>The default users are alice/bob, password: Pass123$</p>
                                 </div>
-
                                 <div class="form-group">
-                                    <button class="btn btn-primary" name="button" value="login">Login</button>
-                                    <button class="btn btn-default" name="button" value="cancel">Cancel</button>
+                                    <button class="btn btn-primary float-lg-right" name="button" value="login">ورود</button>
+                                    <button class="btn btn-default float-lg-right" name="button" value="cancel">بازگشت</button>
                                 </div>
                             </fieldset>
                         </form>
                     </div>
                 </div>
             </div>
-        }
+            <div class="col-sm-4"></div>
 
-        @if (Model.VisibleExternalProviders.Any())
+        }
+        @*@if (Model.VisibleExternalProviders.Any())
         {
             <div class="col-md-6 col-sm-6 external-providers">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">External Login</h3>
+                        <h3 class="panel-title">لاگین با اکانت ایمیل</h3>
                     </div>
                     <div class="panel-body">
                         <ul class="list-inline">
@@ -80,13 +77,12 @@
                     </div>
                 </div>
             </div>
-        }
-
+        }*@
         @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
         {
             <div class="alert alert-warning">
-                <strong>Invalid login request</strong>
-                There are no login schemes configured for this client.
+                <strong>نام کاربری یا رمز عبور صحیح نمی باشد.</strong>
+             
             </div>
         }
     </div>

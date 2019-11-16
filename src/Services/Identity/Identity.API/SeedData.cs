@@ -20,7 +20,7 @@ namespace Identity.API
         {
             var services = new ServiceCollection();
             services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseSqlite(connectionString));
+               options.UseSqlServer(connectionString));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -39,7 +39,16 @@ namespace Identity.API
                     {
                         alice = new ApplicationUser
                         {
-                            UserName = "alice"
+                            UserName = "alice",
+                            City="tehran",
+                            Country="iran",
+                            Email="alice@gmail.com",
+                            LastName="alice",
+                            Name="alice",
+                            ZipCode="123456",
+                            Street="Foroughi",
+                            State="tehran",
+                          
                         };
                         var result = userMgr.CreateAsync(alice, "Pass123$").Result;
                         if (!result.Succeeded)
@@ -72,7 +81,15 @@ namespace Identity.API
                     {
                         bob = new ApplicationUser
                         {
-                            UserName = "bob"
+                            UserName = "bob",
+                            City = "isfahan",
+                            Country = "iran",
+                            Email = "bob@gmail.com",
+                            LastName = "bob",
+                            Name = "bob",
+                            ZipCode = "123456",
+                            Street = "Foroughi",
+                            State = "isfahan",
                         };
                         var result = userMgr.CreateAsync(bob, "Pass123$").Result;
                         if (!result.Succeeded)

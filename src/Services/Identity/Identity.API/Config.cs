@@ -22,7 +22,7 @@ namespace Identity.API
         {
             return new ApiResource[]
             {
-                new ApiResource("api1", "My API #1")
+                new ApiResource("orders", "My API #1")
             };
         }
 
@@ -66,22 +66,24 @@ namespace Identity.API
                     ClientName = "SPA Client",
                     ClientUri = "http://identityserver.io",
 
-                    AllowedGrantTypes = GrantTypes.Code,
-                    RequirePkce = true,
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RequirePkce = false,
                     RequireClientSecret = false,
 
                     RedirectUris =
                     {
                         "http://localhost:4200/error.html",
-                        "http://localhost:4200/callback.html",
-                        "http://localhost:4200/silent.html",
-                        "http://localhost:4200/popup.html",
+                        "http://localhost:4200/error",
+                        "http://localhost:4200/",
+                        "http://localhost:4200/index.html",
+                        
                     },
 
                     PostLogoutRedirectUris = { "http://localhost:4200/index.html" },
                     AllowedCorsOrigins = { "http://localhost:4200" },
 
-                    AllowedScopes = { "openid", "profile", "orders" }
+                    AllowedScopes = { "openid", "profile", "orders" },
+                            AllowAccessTokensViaBrowser = true
                 }
             };
         }
