@@ -82,7 +82,9 @@ namespace Catalog.API.Models
                         .Terms(model.BrandId)) && q                        
                         .Terms(m=>m
                         .Field(d=>d.CatalogTypeId)
-                        .Terms(model.TypeId))));
+                        .Terms(model.TypeId)) && q
+                        .Match(c => c
+                        .Field(e => e.Name).Query(model.Name))));
 
             return response.Documents;
             
@@ -94,7 +96,10 @@ namespace Catalog.API.Models
             //    .Query(q => 
             //    q.QueryString(d => d.Query(phrase))).From(0).Size(5));
 
-            var response =await elasticClient.SearchAsync<CatalogItem>(s => s.Query(q => q.Match(c => c.Field(e => e.Name).Query(Phrase))));
+            var response =await elasticClient.SearchAsync<CatalogItem>(s => s
+            .Query(q => q
+                        .Match(c => c
+                                    .Field(e => e.Name).Query(Phrase))));
             return response.Documents; 
         }
     }

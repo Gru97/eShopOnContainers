@@ -9,7 +9,11 @@ namespace Catalog.API.Models
     {
         public List<int?> TypeId { get; set; }
         public List<int?> BrandId { get; set; }
-        
+
+        public string Name { get; set; }
+        public long? PriceFrom { get; set; }
+        public long? PriceTo { get; set; }
+
 
     }
 }

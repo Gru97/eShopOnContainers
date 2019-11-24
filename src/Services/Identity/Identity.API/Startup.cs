@@ -4,6 +4,8 @@
 
 using Identity.API.Data;
 using Identity.API.Models;
+using Identity.API.Services;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -35,7 +37,7 @@ namespace Identity.API
                 .AddDefaultTokenProviders();
 
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
-
+            services.AddTransient<IProfileService, ProfileService>();
             services.Configure<IISOptions>(iis =>
             {
                 iis.AuthenticationDisplayName = "Windows";

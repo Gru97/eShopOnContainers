@@ -52,6 +52,8 @@ services:
       - rabbitmq
      
 
+  
+
 volumes:
   esdata:
     driver:
@@ -59,5 +61,6 @@ volumes:
    
 
  
+
 
 

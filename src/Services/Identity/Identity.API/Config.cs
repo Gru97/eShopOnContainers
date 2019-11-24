@@ -74,6 +74,7 @@ namespace Identity.API
                     {
                         "http://localhost:4200/error.html",
                         "http://localhost:4200/error",
+                        "http://localhost:4200/basket",
                         "http://localhost:4200/",
                         "http://localhost:4200/index.html",
                         

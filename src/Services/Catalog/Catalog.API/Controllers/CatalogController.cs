@@ -45,9 +45,32 @@ namespace Catalog.API.Controllers
             //To test rabbitMQ
             //eventBus.Publish(new ProductPriceChangedIntegrationEvent(1, 10, 15) { });
             //var items = new List<CatalogItem> { }
+
+
+            //To populate data to redis at the begining
+            //var items = _catalogContext.CatalogItems.Include(e=>e.CatalogType).Include(e=>e.CatalogBrand).ToList();
+            //searchRepository.SaveManyAsync(items);
+
             var items = _catalogContext.CatalogItems.ToList();
             items.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
             return items;
+        }
+        [Route("items/filter")]
+        [HttpGet]
+        public ActionResult<CatalogItemViewModel> GetAllWithFilter([FromQuery] int pageSize,int pageIndex)
+        {
+            int count = 0;
+            var query = _catalogContext.CatalogItems.AsQueryable();
+            count = query.Count();
+            query = query.OrderBy(e => e.Id)
+                .Skip(pageSize * pageIndex)
+                .Take(pageSize);
+            query=query.Include(e => e.CatalogBrand)
+                .Include(e => e.CatalogType);
+            var items = query.ToList();
+            items.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
+
+            return new CatalogItemViewModel { CatalogItem = items, Count = count };
         }
 
         [Route("items/{id}")]
@@ -146,6 +169,19 @@ namespace Catalog.API.Controllers
         {
             var lst=await searchRepository.SearchAsync(model);
             return lst.ToList();
+        }
+
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var existing = _catalogContext.CatalogItems.SingleOrDefault(e => e.Id == id);
+            if (existing != null)
+                this._catalogContext.Remove(existing);
+
+            var result =await searchRepository.DeleteAsync(id);
+            //_catalogContext.SaveChanges();
+            return Ok();
         }
 
     }
