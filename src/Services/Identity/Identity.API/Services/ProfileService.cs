@@ -34,9 +34,33 @@ namespace Identity.API.Services
 
         }
 
-        public Task IsActiveAsync(IsActiveContext context)
+        public async Task IsActiveAsync(IsActiveContext context)
         {
-            throw new NotImplementedException();
+            var subject = context.Subject ?? throw new ArgumentNullException(nameof(context.Subject));
+
+            var subjectId = subject.Claims.Where(x => x.Type == "sub").FirstOrDefault().Value;
+            var user = await userManager.FindByIdAsync(subjectId);
+
+            context.IsActive = false;
+
+            if (user != null)
+            {
+                if (userManager.SupportsUserSecurityStamp)
+                {
+                    var security_stamp = subject.Claims.Where(c => c.Type == "security_stamp").Select(c => c.Value).SingleOrDefault();
+                    if (security_stamp != null)
+                    {
+                        var db_security_stamp = await userManager.GetSecurityStampAsync(user);
+                        if (db_security_stamp != security_stamp)
+                            return;
+                    }
+                }
+
+                context.IsActive =
+                    !user.LockoutEnabled ||
+                    !user.LockoutEnd.HasValue ||
+                    user.LockoutEnd <= DateTime.Now;
+            }
         }
 
         private IEnumerable<Claim> GetClaimsFromUser(ApplicationUser user)

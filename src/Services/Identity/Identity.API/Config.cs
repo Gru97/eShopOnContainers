@@ -2,8 +2,10 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityModel;
 using IdentityServer4.Models;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace Identity.API
 {
@@ -15,6 +17,9 @@ namespace Identity.API
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResources.Address(),
+                new IdentityResources.Email(),
+                new IdentityResources.Phone()
             };
         }
 
@@ -22,7 +27,7 @@ namespace Identity.API
         {
             return new ApiResource[]
             {
-                new ApiResource("orders", "My API #1")
+                new ApiResource("orders", "Orders API")
             };
         }
 
@@ -65,9 +70,14 @@ namespace Identity.API
                     ClientId = "angular",
                     ClientName = "SPA Client",
                     ClientUri = "http://identityserver.io",
-
+                    AlwaysIncludeUserClaimsInIdToken=true,  //if you want claims to be included in identitytoken
+                    AlwaysSendClientClaims=true,        //if you want claims to be included in access token
                     AllowedGrantTypes = GrantTypes.Implicit,
                     RequirePkce = false,
+                    IncludeJwtId=true,
+                    RequireConsent=false,
+                    
+                  
                     RequireClientSecret = false,
 
                     RedirectUris =
@@ -79,11 +89,11 @@ namespace Identity.API
                         "http://localhost:4200/index.html",
                         
                     },
-
+                    
                     PostLogoutRedirectUris = { "http://localhost:4200/index.html" },
                     AllowedCorsOrigins = { "http://localhost:4200" },
 
-                    AllowedScopes = { "openid", "profile", "orders" },
+                    AllowedScopes = { "openid", "profile", "orders", "email", "address", "phone" },
                             AllowAccessTokensViaBrowser = true
                 }
             };
