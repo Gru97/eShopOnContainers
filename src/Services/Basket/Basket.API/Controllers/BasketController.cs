@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Basket.API.Model;
 using EventBus.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Ordering.API.Application.IntegrationEvents.Events;
@@ -55,27 +57,28 @@ namespace Basket.API.Controllers
         [Route("Update")]
         public async Task<ActionResult<CustomerBasket>> UpdateBasketAsync([FromBody] CustomerBasket basket)
         {
-            //CustomerBasket c = new CustomerBasket("1");
-            //c.Items.Add(new BasketItem { Id = 1, ProductName = "p1" });
+            CustomerBasket c = new CustomerBasket(basket.CustomerId);
+            c.Items.Add(new BasketItem { Id = 1, ProductName = "p1" });
 
             return await repository.UpdateBasketAsync(basket);
 
         }
 
         [Route("checkout")]
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult> CheckoutAsync([FromBody] BasketCheckout basketCheckout)
         {
             //Publish UserCheckoutIntegrationEvent and dispatch it throught eventbus
 
+            var userIdentity = User.FindFirstValue(ClaimTypes.NameIdentifier); // will give the user's userId
             CustomerBasket basket = await repository.GetBasketAsync(basketCheckout.UserId);
             if (basket == null) return BadRequest();
-            string buyer = "X";
-            var message = new UserCheckoutIntegrationEvent(basketCheckout.UserId,
+            var message = new UserCheckoutIntegrationEvent(userIdentity,
                 basketCheckout.UserName,
                 basketCheckout.Street, basketCheckout.Country,
                 basketCheckout.City, basketCheckout.State, basketCheckout.ZipCode,
-                basket,buyer);
+                basket);
             message.Id = new Guid();
             eventBus.Publish(message);
             return Accepted();

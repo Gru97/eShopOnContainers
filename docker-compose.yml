@@ -52,7 +52,7 @@ services:
       - rabbitmq
      
 
-  
+
 
 volumes:
   esdata:
@@ -61,6 +61,8 @@ volumes:
    
 
  
+
+
 
 
 

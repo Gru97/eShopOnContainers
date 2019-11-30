@@ -83,9 +83,9 @@ namespace Identity.API.Services
             if (!string.IsNullOrWhiteSpace(user.Name))
                 claims.Add(new Claim("address_state", user.State));
             if (!string.IsNullOrWhiteSpace(user.Name))
-                claims.Add(new Claim("address_street", user.ZipCode));
+                claims.Add(new Claim("address_street", user.Street));
             if (!string.IsNullOrWhiteSpace(user.Name))
-                claims.Add(new Claim("address_zip_code", user.Name));
+                claims.Add(new Claim("address_zipcode", user.ZipCode));
 
             if(userManager.SupportsUserEmail)
             {

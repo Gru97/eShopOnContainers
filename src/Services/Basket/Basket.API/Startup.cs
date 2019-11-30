@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Basket.API.IntegrationEvents.EventHandling;
 using Basket.API.IntegrationEvents.Events;
 using Basket.API.Model;
 using BuildingBlocks.EventBusRabbitMQ;
 using EventBus.Abstractions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,6 +18,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Logging;
 using StackExchange.Redis;
 
 namespace Basket.API
@@ -45,6 +49,15 @@ namespace Basket.API
             services.AddSingleton<ConnectionMultiplexer>(sp => { return ConnectionMultiplexer.Connect("redis"); });
             services.AddTransient<IBasketRepository, RedisBasketRepository>();
             RegisterEventBus(services);
+            IdentityModelEventSource.ShowPII = true; //Add this line
+
+            //Identity
+            services.AddAuthorization();
+
+            ConfigureAuthService(services);
+
+
+
 
 
         }
@@ -52,6 +65,8 @@ namespace Basket.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -63,8 +78,12 @@ namespace Basket.API
             }
             ConfigureEventBus(app);
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseCors("myPolicy");
+
+            app.UseAuthentication();
+
+
             app.UseMvc();
         }
         private void ConfigureEventBus(IApplicationBuilder app)
@@ -85,5 +104,34 @@ namespace Basket.API
             });
 
         }
+        private void ConfigureAuthService(IServiceCollection services)
+        {
+            // prevent from mapping "sub" claim to nameidentifier.
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            var identityUrl = Configuration.GetValue<string>("IdentityUrl");
+
+            services.AddAuthentication(options =>
+            {
+                
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "http://172.17.171.1:5000";
+                options.RequireHttpsMetadata = false;
+                options.Audience = "basket";
+                options.MetadataAddress = "http://172.17.171.1:5000/.well-known/openid-configuration";
+                options.RequireHttpsMetadata = false;
+                
+
+
+            });
+        }
+
+       
+
     }
 }

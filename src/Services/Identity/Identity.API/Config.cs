@@ -19,15 +19,17 @@ namespace Identity.API
                 new IdentityResources.Profile(),
                 new IdentityResources.Address(),
                 new IdentityResources.Email(),
-                new IdentityResources.Phone()
+                new IdentityResources.Phone(),
+              
             };
         }
-
         public static IEnumerable<ApiResource> GetApis()
         {
             return new ApiResource[]
             {
-                new ApiResource("orders", "Orders API")
+                new ApiResource("orders", "Orders API"),
+                new ApiResource("basket", "Basket API"),
+                new ApiResource("catalog", "Product API"),
             };
         }
 
@@ -85,6 +87,8 @@ namespace Identity.API
                         "http://localhost:4200/error.html",
                         "http://localhost:4200/error",
                         "http://localhost:4200/basket",
+                         "http://localhost:4200/catalog",
+
                         "http://localhost:4200/",
                         "http://localhost:4200/index.html",
                         
@@ -93,7 +97,7 @@ namespace Identity.API
                     PostLogoutRedirectUris = { "http://localhost:4200/index.html" },
                     AllowedCorsOrigins = { "http://localhost:4200" },
 
-                    AllowedScopes = { "openid", "profile", "orders", "email", "address", "phone" },
+                    AllowedScopes = { "openid", "profile", "email", "address", "phone" , "orders" , "basket", "catalog"},
                             AllowAccessTokensViaBrowser = true
                 }
             };
