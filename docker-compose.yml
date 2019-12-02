@@ -50,9 +50,13 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - rabbitmq
-     
 
 
+  identity.api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: src/Services/Identity/Identity.API
+      dockerfile: Dockerfile
 
   identity.api:
     image: ${DOCKER_REGISTRY-}identityapi

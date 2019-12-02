@@ -19,6 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
 using StackExchange.Redis;
 
 namespace Basket.API
@@ -49,7 +50,7 @@ namespace Basket.API
             services.AddSingleton<ConnectionMultiplexer>(sp => { return ConnectionMultiplexer.Connect("redis"); });
             services.AddTransient<IBasketRepository, RedisBasketRepository>();
             RegisterEventBus(services);
-            IdentityModelEventSource.ShowPII = true; //Add this line
+            IdentityModelEventSource.ShowPII = true; //Add this line to see detail error for is4 failure
 
             //Identity
             services.AddAuthorization();
@@ -82,7 +83,7 @@ namespace Basket.API
             app.UseCors("myPolicy");
 
             app.UseAuthentication();
-
+            
 
             app.UseMvc();
         }
@@ -116,17 +117,25 @@ namespace Basket.API
                 
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+
 
 
             }).AddJwtBearer(options =>
             {
+
                 options.Authority = "http://localhost:5000";
                 options.RequireHttpsMetadata = false;
                 options.Audience = "basket";
                 options.MetadataAddress = "http://localhost:5000/.well-known/openid-configuration";
                 options.RequireHttpsMetadata = false;
-                
-
+                options.Configuration = new Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfiguration();  //For not finding discovery doc
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateAudience = false,
+                    ValidateIssuer = false,
+                    ValidateIssuerSigningKey = false
+                };
 
             });
         }

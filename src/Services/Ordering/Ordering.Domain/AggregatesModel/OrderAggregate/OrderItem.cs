@@ -18,7 +18,12 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         public int Quantity
         {
             get { return _quantity; }
-            private set { }
+            set
+            {
+                if (value < 0)
+                    throw new OrderingDomainException("Ivalid quantity");
+                _quantity = value;
+            }
 
         }
 
