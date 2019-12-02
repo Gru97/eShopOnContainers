@@ -120,10 +120,10 @@ namespace Basket.API
 
             }).AddJwtBearer(options =>
             {
-                options.Authority = "http://172.17.171.1:5000";
+                options.Authority = "http://localhost:5000";
                 options.RequireHttpsMetadata = false;
                 options.Audience = "basket";
-                options.MetadataAddress = "http://172.17.171.1:5000/.well-known/openid-configuration";
+                options.MetadataAddress = "http://localhost:5000/.well-known/openid-configuration";
                 options.RequireHttpsMetadata = false;
                 
 

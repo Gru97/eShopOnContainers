@@ -70,6 +70,7 @@ namespace Identity.API.Services
                 new Claim(JwtClaimTypes.Subject,user.Id),
                 new Claim(JwtClaimTypes.PreferredUserName,user.UserName),
                 new Claim(JwtRegisteredClaimNames.UniqueName,user.Name),
+                new Claim(JwtClaimTypes.Audience,"basket"),
 
             };
             if (!string.IsNullOrWhiteSpace(user.Name))

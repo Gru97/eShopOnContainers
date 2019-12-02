@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading;
 
 namespace BuildingBlocks.EventBusRabbitMQ
 {
@@ -62,6 +63,7 @@ namespace BuildingBlocks.EventBusRabbitMQ
 
             try
             {
+                Thread.Sleep(5000);
                 var factory = new ConnectionFactory() { HostName = "rabbitmq", Port = 5672,DispatchConsumersAsync = true };
                 var connection = factory.CreateConnection();
                 var channel = connection.CreateModel();
