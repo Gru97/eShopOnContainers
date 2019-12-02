@@ -65,9 +65,11 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
 
-
-
-
-
-
+  identity.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_HTTPS_PORT=5000
+    ports:
+      - "5000:80"
 
