@@ -89,7 +89,7 @@ namespace Identity.API
                         "http://localhost:4200/basket",
                          "http://localhost:4200/catalog",
 
-                        "http://localhost:4200/",
+                        "http://localhost:4200",
                         "http://localhost:4200/index.html",
                         
                     },

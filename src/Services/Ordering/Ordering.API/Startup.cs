@@ -114,7 +114,7 @@ namespace Ordering.API
 
             app.UseMvc();
             
-            //ConfigureEventBus(app);
+            ConfigureEventBus(app);
 
         }
         private void ConfigureEventBus(IApplicationBuilder app)

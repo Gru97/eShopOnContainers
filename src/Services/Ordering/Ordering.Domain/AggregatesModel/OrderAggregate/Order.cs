@@ -53,6 +53,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
 
         public Order(string userId, string userName,Address address, int? _buyerId=null, int? paymentMethodId=null)
         {
+            _orderItems = new List<OrderItem>();
             Address = address;
             this._buyerId = _buyerId;
             //this.paymentMethodId = paymentMethodId;

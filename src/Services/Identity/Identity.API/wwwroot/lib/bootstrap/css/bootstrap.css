@@ -2070,7 +2070,7 @@ textarea.form-control {
   display: block;
 }
 
-.was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {
+.was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-{
   color: #28a745;
 }
 
@@ -2173,7 +2173,7 @@ textarea.form-control {
   display: block;
 }
 
-.was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label {
+.was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-{
   color: #dc3545;
 }
 
@@ -2281,7 +2281,7 @@ textarea.form-control {
     -ms-flex-pack: center;
     justify-content: center;
   }
-  .form-inline .custom-control-label {
+  .form-inline .custom-{
     margin-bottom: 0;
   }
 }
@@ -3508,7 +3508,7 @@ input[type="button"].btn-block {
   background-color: #b3d7ff;
 }
 
-.custom-control-input:disabled ~ .custom-control-label {
+.custom-control-input:disabled ~ .custom-{
   color: #6c757d;
 }
 
@@ -3516,7 +3516,7 @@ input[type="button"].btn-block {
   background-color: #e9ecef;
 }
 
-.custom-control-label {
+.custom-{
   position: relative;
   margin-bottom: 0;
 }

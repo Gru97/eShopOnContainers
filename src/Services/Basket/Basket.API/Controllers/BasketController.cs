@@ -65,16 +65,16 @@ namespace Basket.API.Controllers
         }
 
         [Route("checkout")]
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult> CheckoutAsync([FromBody] BasketCheckout basketCheckout)
         {
             //Publish UserCheckoutIntegrationEvent and dispatch it throught eventbus
 
-            var userIdentity = User.FindFirstValue(ClaimTypes.NameIdentifier); // will give the user's userId
+            //var userIdentity = User.FindFirstValue(ClaimTypes.NameIdentifier); // will give the user's userId
             CustomerBasket basket = await repository.GetBasketAsync(basketCheckout.UserId);
             if (basket == null) return BadRequest();
-            var message = new UserCheckoutIntegrationEvent(userIdentity,
+            var message = new UserCheckoutIntegrationEvent(basketCheckout.UserIdentity,
                 basketCheckout.UserName,
                 basketCheckout.Street, basketCheckout.Country,
                 basketCheckout.City, basketCheckout.State, basketCheckout.ZipCode,

@@ -63,8 +63,10 @@ namespace BuildingBlocks.EventBusRabbitMQ
 
             try
             {
-                Thread.Sleep(5000);
+                Thread.Sleep(20000);
                 var factory = new ConnectionFactory() { HostName = "rabbitmq", Port = 5672,DispatchConsumersAsync = true };
+                Thread.Sleep(20000);
+
                 var connection = factory.CreateConnection();
                 var channel = connection.CreateModel();
 
