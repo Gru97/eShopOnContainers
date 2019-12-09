@@ -15,15 +15,15 @@ namespace Catalog.API.Infrastructure.EntityConfigurations
             builder.ToTable("CatalogType");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id)
-                .ForSqlServerUseSequenceHiLo("seq_name")
+                .ForSqlServerUseSequenceHiLo("catalog_type_hilo")
                 .IsRequired();
             builder.Property(x => x.Type)
                 .IsRequired()
                 .HasMaxLength(100);
             builder.HasData(new List<CatalogType>()
             {
-                new CatalogType() {Id = 1,Type = "Laptop"},
-                new CatalogType() { Id = 2,Type = "Phone"}
+                new CatalogType() {Id=1,Type = "Laptop"},
+                new CatalogType() {Id=2,Type = "Phone"}
             });
         }
     }

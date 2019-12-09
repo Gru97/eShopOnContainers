@@ -14,7 +14,7 @@ namespace Catalog.API.Infrastructure.EntityConfigurations
             builder.ToTable("CatalogBrand");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id)
-                .ForSqlServerUseSequenceHiLo()
+                .ForSqlServerUseSequenceHiLo("catalog_brand_hilo")
                 .IsRequired();
             builder.Property(x => x.Brand)
                 .HasMaxLength(100)
@@ -22,8 +22,10 @@ namespace Catalog.API.Infrastructure.EntityConfigurations
 
             builder.HasData(new List<CatalogBrand>()
             {
-                new CatalogBrand(){Id = 1,Brand = "Lenovo"},
-                new CatalogBrand(){Id=2,Brand = "LG"}
+                new CatalogBrand(){Id=1, Brand = "Lenovo"},
+                new CatalogBrand(){Id=2, Brand = "LG"},
+                new CatalogBrand(){Id=3, Brand = "Samsung"},
+                new CatalogBrand(){Id=4, Brand = "Huawei"},
             });
         }
     }

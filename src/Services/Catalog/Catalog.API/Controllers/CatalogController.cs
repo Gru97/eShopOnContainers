@@ -83,6 +83,17 @@ namespace Catalog.API.Controllers
 
         }
 
+        [HttpPost]
+        [Route("items")]
+        public async Task CreateProductAsync(CatalogItem newProduct)
+        {
+            CatalogItem catalog = new CatalogItem(newProduct.Name,
+                newProduct.Description, newProduct.Price, newProduct.CatalogType.Id, newProduct.CatalogBrand.Id,
+                newProduct.PictureName, newProduct.AvailableStock);
+            _catalogContext.Add(catalog);
+            await _catalogContext.SaveChangesAsync();
+        }
+
         [HttpPut]
         [Route("items")]
         public async Task UpdateProductAsync(CatalogItem productToUpdate)

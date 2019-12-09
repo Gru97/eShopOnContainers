@@ -20,5 +20,19 @@ namespace Catalog.API.Models
         public string PictureUri{ get; set; }
         public int AvailableStock { get; set; }
 
+        public CatalogItem( string name, string description, decimal price, int catalogTypeId, int catalogBrandId, string pictureName, int availableStock)
+        {
+            Name = name;
+            Description = description;
+            Price = price;
+            CatalogTypeId = catalogTypeId;
+            CatalogBrandId = catalogBrandId;
+            PictureName = pictureName;
+            AvailableStock = availableStock;
+        }
+
+        public CatalogItem()
+        {
+        }
     }
 }

@@ -17266,3 +17266,395 @@ Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The antiforgery
 2019-12-03 21:57:45.540 +00:00 [INF] Successful signout callback.
 2019-12-03 21:57:45.544 +00:00 [DBG] No client front-channel iframe urls
 2019-12-03 21:57:45.545 +00:00 [DBG] No client back-channel iframe urls
+2019-12-08 18:55:29.099 +00:00 [WRN] No XML encryptor configured. Key {a945e589-931b-4091-add9-a847c8047a95} may be persisted to storage in unencrypted form.
+2019-12-08 18:55:29.569 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-08 18:55:29.598 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-08 18:55:29.625 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-08 18:55:29.627 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-08 18:55:29.633 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-08 18:55:29.635 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-08 18:55:29.641 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-08 18:55:29.646 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-08 19:08:18.643 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-08 19:08:18.736 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-08 19:08:18.767 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-08 19:08:18.768 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-08 19:08:18.772 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-08 19:08:18.773 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-08 19:08:18.774 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-08 19:08:18.777 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-08 19:10:56.235 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-08 19:10:56.321 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-08 19:10:56.350 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-08 19:10:56.352 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-08 19:10:56.355 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-08 19:10:56.361 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-08 19:10:56.366 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-08 19:10:56.371 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-08 20:15:57.486 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-08 20:15:57.604 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-08 20:15:57.628 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-08 20:15:57.629 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-08 20:15:57.630 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-08 20:15:57.631 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-08 20:15:57.634 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-08 20:15:57.637 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-08 20:52:17.934 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 20:52:17.991 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 20:52:17.998 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 20:52:17.998 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 20:52:18.101 +00:00 [DBG] Login Url: /Account/Login
+2019-12-08 20:52:18.102 +00:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-12-08 20:52:18.103 +00:00 [DBG] Logout Url: /Account/Logout
+2019-12-08 20:52:18.104 +00:00 [DBG] ConsentUrl Url: /consent
+2019-12-08 20:52:18.107 +00:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-12-08 20:52:18.108 +00:00 [DBG] Error Url: /home/error
+2019-12-08 20:52:18.110 +00:00 [DBG] Error Id Parameter: errorId
+2019-12-08 20:52:18.173 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 20:52:18.427 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 20:52:18.429 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 20:52:18.442 +00:00 [DBG] Start discovery request
+2019-12-08 20:52:18.575 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 20:52:18.577 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 20:52:18.578 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 20:52:18.582 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 20:52:18.591 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 20:52:18.596 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 20:52:18.596 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 20:52:18.610 +00:00 [DBG] Start key discovery request
+2019-12-08 20:52:18.675 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 20:52:18.677 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 20:52:18.682 +00:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-12-08 20:52:18.699 +00:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-12-08 20:52:18.699 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-12-08 20:52:18.710 +00:00 [DBG] Start authorize request
+2019-12-08 20:52:18.726 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 20:52:18.735 +00:00 [DBG] No user present in authorize request
+2019-12-08 20:52:18.746 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 20:52:18.775 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 20:52:18.849 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 20:52:18.873 +00:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200/basket","AllowedRedirectUris":["http://localhost:4200/error.html","http://localhost:4200/error","http://localhost:4200/basket","http://localhost:4200/catalog","http://localhost:4200","http://localhost:4200/index.html"],"SubjectId":"anonymous","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile orders email address phone basket catalog","State":"RiUHqqGkOGW6EVCMfwq_etluu-XmtQjPuuoCiXPrS4pBE","UiLocales":null,"Nonce":"RiUHqqGkOGW6EVCMfwq_etluu-XmtQjPuuoCiXPrS4pBE","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"response_type":"id_token token","client_id":"angular","state":"RiUHqqGkOGW6EVCMfwq_etluu-XmtQjPuuoCiXPrS4pBE","redirect_uri":"http://localhost:4200/basket","scope":"openid profile orders email address phone basket catalog","nonce":"RiUHqqGkOGW6EVCMfwq_etluu-XmtQjPuuoCiXPrS4pBE"},"$type":"AuthorizeRequestValidationLog"}
+2019-12-08 20:52:18.942 +00:00 [INF] Showing login: User is not authenticated
+2019-12-08 20:52:19.042 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 20:52:19.043 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 20:52:19.356 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 20:52:19.356 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 20:52:19.357 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 20:52:19.359 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 20:52:19.367 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 20:52:19.568 +00:00 [ERR] An exception was thrown while deserializing the token.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The antiforgery token could not be decrypted. ---> System.Security.Cryptography.CryptographicException: The key {82b6ce49-0654-4074-883d-a89577970621} was not found in the key ring.
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.GetCookieTokenDoesNotThrow(HttpContext httpContext)
+2019-12-08 20:56:08.665 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-08 20:56:08.716 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-08 20:56:08.731 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-08 20:56:08.732 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-08 20:56:08.733 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-08 20:56:08.734 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-08 20:56:08.736 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-08 20:56:08.738 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-08 21:00:41.373 +00:00 [DBG] Login Url: /Account/Login
+2019-12-08 21:00:41.376 +00:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-12-08 21:00:41.376 +00:00 [DBG] Logout Url: /Account/Logout
+2019-12-08 21:00:41.378 +00:00 [DBG] ConsentUrl Url: /consent
+2019-12-08 21:00:41.379 +00:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-12-08 21:00:41.380 +00:00 [DBG] Error Url: /home/error
+2019-12-08 21:00:41.381 +00:00 [DBG] Error Id Parameter: errorId
+2019-12-08 21:00:41.414 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:00:41.459 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:09:12.302 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:09:12.323 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 21:09:12.331 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:09:12.331 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:09:12.338 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 21:09:12.613 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 21:09:12.614 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 21:09:12.622 +00:00 [DBG] Start discovery request
+2019-12-08 21:09:12.698 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:09:12.699 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 21:09:12.699 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:09:12.700 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:09:12.703 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 21:09:12.706 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 21:09:12.708 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 21:09:12.719 +00:00 [DBG] Start key discovery request
+2019-12-08 21:09:12.856 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:09:12.857 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:09:12.858 +00:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-12-08 21:09:12.885 +00:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-12-08 21:09:12.886 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-12-08 21:09:12.897 +00:00 [DBG] Start authorize request
+2019-12-08 21:09:12.916 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:09:12.924 +00:00 [DBG] No user present in authorize request
+2019-12-08 21:09:12.937 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:09:12.976 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:09:13.052 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:09:13.072 +00:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200/basket","AllowedRedirectUris":["http://localhost:4200/error.html","http://localhost:4200/error","http://localhost:4200/basket","http://localhost:4200/catalog","http://localhost:4200","http://localhost:4200/index.html"],"SubjectId":"anonymous","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile orders email address phone basket catalog","State":"nV7uYw_4iqCjoGpsa5lOQT2X4NohMqJrv7DQZph0vvGuy","UiLocales":null,"Nonce":"nV7uYw_4iqCjoGpsa5lOQT2X4NohMqJrv7DQZph0vvGuy","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"response_type":"id_token token","client_id":"angular","state":"nV7uYw_4iqCjoGpsa5lOQT2X4NohMqJrv7DQZph0vvGuy","redirect_uri":"http://localhost:4200/basket","scope":"openid profile orders email address phone basket catalog","nonce":"nV7uYw_4iqCjoGpsa5lOQT2X4NohMqJrv7DQZph0vvGuy"},"$type":"AuthorizeRequestValidationLog"}
+2019-12-08 21:09:13.121 +00:00 [INF] Showing login: User is not authenticated
+2019-12-08 21:09:13.278 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:09:13.278 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:09:13.421 +00:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-12-08 21:09:13.422 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:09:13.424 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:09:13.426 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:09:13.433 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:10:22.356 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:10:22.356 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 21:10:22.356 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:10:22.356 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:10:22.357 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 21:10:22.388 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 21:10:22.388 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 21:10:22.388 +00:00 [DBG] Start discovery request
+2019-12-08 21:10:22.433 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:10:22.433 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 21:10:22.434 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:10:22.435 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:10:22.435 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 21:10:22.436 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 21:10:22.437 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 21:10:22.438 +00:00 [DBG] Start key discovery request
+2019-12-08 21:10:22.544 +00:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-12-08 21:10:22.551 +00:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-12-08 21:10:22.556 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-12-08 21:10:22.556 +00:00 [DBG] Start authorize request
+2019-12-08 21:10:22.556 +00:00 [DBG] No user present in authorize request
+2019-12-08 21:10:22.556 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:10:22.556 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:10:22.604 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:10:22.605 +00:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200/basket","AllowedRedirectUris":["http://localhost:4200/error.html","http://localhost:4200/error","http://localhost:4200/basket","http://localhost:4200/catalog","http://localhost:4200","http://localhost:4200/index.html"],"SubjectId":"anonymous","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile orders email address phone basket catalog","State":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj","UiLocales":null,"Nonce":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"response_type":"id_token token","client_id":"angular","state":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj","redirect_uri":"http://localhost:4200/basket","scope":"openid profile orders email address phone basket catalog","nonce":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj"},"$type":"AuthorizeRequestValidationLog"}
+2019-12-08 21:10:22.605 +00:00 [INF] Showing login: User is not authenticated
+2019-12-08 21:10:22.629 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:10:22.629 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:10:22.632 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:10:22.639 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:10:29.687 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:10:29.688 +00:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-12-08 21:10:29.761 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:10:29.762 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:10:29.763 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:10:31.409 +00:00 [DBG] Augmenting SignInContext
+2019-12-08 21:10:31.413 +00:00 [DBG] Adding idp claim with value: local
+2019-12-08 21:10:31.414 +00:00 [DBG] Adding amr claim with value: pwd
+2019-12-08 21:10:31.414 +00:00 [DBG] Adding auth_time claim with value: 1575839431
+2019-12-08 21:10:31.440 +00:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-12-08 21:10:31.605 +00:00 [INF] {"Username":"alice","Provider":null,"ProviderUserId":null,"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","DisplayName":"alice","Endpoint":"UI","ClientId":"angular","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLRS46NG0DQ9:00000004","TimeStamp":"2019-12-08T21:10:31.0000000Z","ProcessId":1434,"LocalIpAddress":"::ffff:172.21.0.6:80","RemoteIpAddress":"::ffff:172.21.0.1","$type":"UserLoginSuccessEvent"}
+2019-12-08 21:10:31.610 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:10:31.651 +00:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2019-12-08 21:10:31.654 +00:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2019-12-08 21:10:31.654 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2019-12-08 21:10:31.671 +00:00 [DBG] Start authorize callback request
+2019-12-08 21:10:31.678 +00:00 [DBG] User in authorize request: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:10:31.679 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:10:31.679 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:10:31.679 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:10:31.680 +00:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200/basket","AllowedRedirectUris":["http://localhost:4200/error.html","http://localhost:4200/error","http://localhost:4200/basket","http://localhost:4200/catalog","http://localhost:4200","http://localhost:4200/index.html"],"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile orders email address phone basket catalog","State":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj","UiLocales":null,"Nonce":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"7e481c977a9b07f292440ca8829e748c","Raw":{"response_type":"id_token token","client_id":"angular","state":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj","redirect_uri":"http://localhost:4200/basket","scope":"openid profile orders email address phone basket catalog","nonce":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj"},"$type":"AuthorizeRequestValidationLog"}
+2019-12-08 21:10:31.783 +00:00 [DBG] Client is configured to not require consent, no consent is required
+2019-12-08 21:10:31.798 +00:00 [DBG] Creating Implicit Flow response.
+2019-12-08 21:10:31.819 +00:00 [DBG] Getting claims for access token for client: angular
+2019-12-08 21:10:31.820 +00:00 [DBG] Getting claims for access token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:10:31.832 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:10:32.095 +00:00 [DBG] Getting claims for identity token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246 and client: angular
+2019-12-08 21:10:32.097 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:10:32.111 +00:00 [INF] {"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200/basket","Endpoint":"Authorize","SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","Scopes":"openid profile email address phone orders basket catalog","GrantType":"implicit","Tokens":[{"TokenType":"id_token","TokenValue":"****jcoA","$type":"Token"},{"TokenType":"access_token","TokenValue":"****YvCQ","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLRS46NG0DQ9:00000005","TimeStamp":"2019-12-08T21:10:32.0000000Z","ProcessId":1434,"LocalIpAddress":"::ffff:172.21.0.6:80","RemoteIpAddress":"::ffff:172.21.0.1","$type":"TokenIssuedSuccessEvent"}
+2019-12-08 21:10:32.114 +00:00 [DBG] Authorize endpoint response
+{"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ClientId":"angular","RedirectUri":"http://localhost:4200/basket","State":"31vdMlIUnCKYeKjr3f2wceiDj3aX6mv0uFdftgu_KyUuj","Scope":"openid profile email address phone orders basket catalog","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2019-12-08 21:10:32.146 +00:00 [DBG] Augmenting SignInContext
+2019-12-08 21:10:32.147 +00:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-12-08 21:11:03.302 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:11:03.302 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 21:11:03.302 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:11:03.302 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:11:03.304 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 21:11:03.304 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 21:11:03.304 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 21:11:03.305 +00:00 [DBG] Start discovery request
+2019-12-08 21:11:03.345 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:11:03.345 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 21:11:03.346 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:11:03.348 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:11:03.350 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 21:11:03.352 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 21:11:03.353 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 21:11:03.357 +00:00 [DBG] Start key discovery request
+2019-12-08 21:22:52.644 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:22:52.644 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 21:22:52.644 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:22:52.644 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:22:52.645 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 21:22:52.645 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 21:22:52.645 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 21:22:52.646 +00:00 [DBG] Start discovery request
+2019-12-08 21:22:52.671 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:22:52.671 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 21:22:52.671 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:22:52.672 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:22:52.672 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 21:22:52.673 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 21:22:52.673 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 21:22:52.673 +00:00 [DBG] Start key discovery request
+2019-12-08 21:22:52.718 +00:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-12-08 21:22:52.719 +00:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-12-08 21:22:52.723 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-12-08 21:22:52.725 +00:00 [DBG] Start authorize request
+2019-12-08 21:22:52.725 +00:00 [DBG] User in authorize request: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:22:52.726 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:22:52.728 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:22:52.730 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:22:52.735 +00:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200","AllowedRedirectUris":["http://localhost:4200/error.html","http://localhost:4200/error","http://localhost:4200/basket","http://localhost:4200/catalog","http://localhost:4200","http://localhost:4200/index.html"],"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile orders email address phone basket catalog","State":"Z3gseESEOXMROin0iIUVOp573D6WhsDZgRtR5eaQ86scF","UiLocales":null,"Nonce":"Z3gseESEOXMROin0iIUVOp573D6WhsDZgRtR5eaQ86scF","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"7e481c977a9b07f292440ca8829e748c","Raw":{"response_type":"id_token token","client_id":"angular","state":"Z3gseESEOXMROin0iIUVOp573D6WhsDZgRtR5eaQ86scF","redirect_uri":"http://localhost:4200","scope":"openid profile orders email address phone basket catalog","nonce":"Z3gseESEOXMROin0iIUVOp573D6WhsDZgRtR5eaQ86scF"},"$type":"AuthorizeRequestValidationLog"}
+2019-12-08 21:22:52.948 +00:00 [DBG] Client is configured to not require consent, no consent is required
+2019-12-08 21:22:52.952 +00:00 [DBG] Creating Implicit Flow response.
+2019-12-08 21:22:52.953 +00:00 [DBG] Getting claims for access token for client: angular
+2019-12-08 21:22:52.956 +00:00 [DBG] Getting claims for access token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:22:52.960 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:22:52.964 +00:00 [DBG] Getting claims for identity token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246 and client: angular
+2019-12-08 21:22:52.965 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:22:52.970 +00:00 [INF] {"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200","Endpoint":"Authorize","SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","Scopes":"openid profile email address phone orders basket catalog","GrantType":"implicit","Tokens":[{"TokenType":"id_token","TokenValue":"****G8eg","$type":"Token"},{"TokenType":"access_token","TokenValue":"****-BqA","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLRS46NG0DQD:00000001","TimeStamp":"2019-12-08T21:22:52.0000000Z","ProcessId":1434,"LocalIpAddress":"::ffff:172.21.0.6:80","RemoteIpAddress":"::ffff:172.21.0.1","$type":"TokenIssuedSuccessEvent"}
+2019-12-08 21:22:52.971 +00:00 [DBG] Authorize endpoint response
+{"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ClientId":"angular","RedirectUri":"http://localhost:4200","State":"Z3gseESEOXMROin0iIUVOp573D6WhsDZgRtR5eaQ86scF","Scope":"openid profile email address phone orders basket catalog","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2019-12-08 21:22:58.926 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:22:58.926 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 21:22:58.926 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:22:58.926 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:22:58.927 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 21:22:58.928 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 21:22:58.928 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 21:22:58.928 +00:00 [DBG] Start discovery request
+2019-12-08 21:22:58.940 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:22:58.940 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 21:22:58.941 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:22:58.941 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:22:58.942 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 21:22:58.942 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 21:22:58.943 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 21:22:58.943 +00:00 [DBG] Start key discovery request
+2019-12-08 21:22:58.967 +00:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-12-08 21:22:58.969 +00:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-12-08 21:22:58.969 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-12-08 21:22:58.969 +00:00 [DBG] Start authorize request
+2019-12-08 21:22:58.970 +00:00 [DBG] User in authorize request: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:22:58.970 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:22:58.970 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:22:58.971 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:22:58.972 +00:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200","AllowedRedirectUris":["http://localhost:4200/error.html","http://localhost:4200/error","http://localhost:4200/basket","http://localhost:4200/catalog","http://localhost:4200","http://localhost:4200/index.html"],"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile orders email address phone basket catalog","State":"4Ozk4gcamH5u-Ns3m9ryERdljoiSzm-frtWcH-SP6r6ib","UiLocales":null,"Nonce":"4Ozk4gcamH5u-Ns3m9ryERdljoiSzm-frtWcH-SP6r6ib","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"7e481c977a9b07f292440ca8829e748c","Raw":{"response_type":"id_token token","client_id":"angular","state":"4Ozk4gcamH5u-Ns3m9ryERdljoiSzm-frtWcH-SP6r6ib","redirect_uri":"http://localhost:4200","scope":"openid profile orders email address phone basket catalog","nonce":"4Ozk4gcamH5u-Ns3m9ryERdljoiSzm-frtWcH-SP6r6ib"},"$type":"AuthorizeRequestValidationLog"}
+2019-12-08 21:22:59.013 +00:00 [DBG] Client is configured to not require consent, no consent is required
+2019-12-08 21:22:59.016 +00:00 [DBG] Creating Implicit Flow response.
+2019-12-08 21:22:59.016 +00:00 [DBG] Getting claims for access token for client: angular
+2019-12-08 21:22:59.016 +00:00 [DBG] Getting claims for access token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:22:59.018 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:22:59.023 +00:00 [DBG] Getting claims for identity token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246 and client: angular
+2019-12-08 21:22:59.046 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:22:59.050 +00:00 [INF] {"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200","Endpoint":"Authorize","SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","Scopes":"openid profile email address phone orders basket catalog","GrantType":"implicit","Tokens":[{"TokenType":"id_token","TokenValue":"****ApYw","$type":"Token"},{"TokenType":"access_token","TokenValue":"****G5YQ","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLRS46NG0DQD:00000002","TimeStamp":"2019-12-08T21:22:59.0000000Z","ProcessId":1434,"LocalIpAddress":"::ffff:172.21.0.6:80","RemoteIpAddress":"::ffff:172.21.0.1","$type":"TokenIssuedSuccessEvent"}
+2019-12-08 21:22:59.051 +00:00 [DBG] Authorize endpoint response
+{"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ClientId":"angular","RedirectUri":"http://localhost:4200","State":"4Ozk4gcamH5u-Ns3m9ryERdljoiSzm-frtWcH-SP6r6ib","Scope":"openid profile email address phone orders basket catalog","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2019-12-08 21:23:01.659 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:23:01.659 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 21:23:01.659 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:23:01.660 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:23:01.662 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 21:23:01.662 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 21:23:01.663 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 21:23:01.663 +00:00 [DBG] Start discovery request
+2019-12-08 21:23:01.689 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:23:01.689 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 21:23:01.689 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:23:01.689 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:23:01.690 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 21:23:01.690 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 21:23:01.691 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 21:23:01.691 +00:00 [DBG] Start key discovery request
+2019-12-08 21:23:01.723 +00:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-12-08 21:23:01.725 +00:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-12-08 21:23:01.725 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-12-08 21:23:01.725 +00:00 [DBG] Start authorize request
+2019-12-08 21:23:01.725 +00:00 [DBG] User in authorize request: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:23:01.726 +00:00 [DBG] Start authorize request protocol validation
+2019-12-08 21:23:01.726 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:23:01.727 +00:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2019-12-08 21:23:01.728 +00:00 [DBG] ValidatedAuthorizeRequest
+{"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200/basket","AllowedRedirectUris":["http://localhost:4200/error.html","http://localhost:4200/error","http://localhost:4200/basket","http://localhost:4200/catalog","http://localhost:4200","http://localhost:4200/index.html"],"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ResponseType":"id_token token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"openid profile orders email address phone basket catalog","State":"2gZnfHhXekHdVn2xobbUz4JVQ2AMfK3rnD9NSbrKtnYq-","UiLocales":null,"Nonce":"2gZnfHhXekHdVn2xobbUz4JVQ2AMfK3rnD9NSbrKtnYq-","AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":"7e481c977a9b07f292440ca8829e748c","Raw":{"response_type":"id_token token","client_id":"angular","state":"2gZnfHhXekHdVn2xobbUz4JVQ2AMfK3rnD9NSbrKtnYq-","redirect_uri":"http://localhost:4200/basket","scope":"openid profile orders email address phone basket catalog","nonce":"2gZnfHhXekHdVn2xobbUz4JVQ2AMfK3rnD9NSbrKtnYq-"},"$type":"AuthorizeRequestValidationLog"}
+2019-12-08 21:23:01.770 +00:00 [DBG] Client is configured to not require consent, no consent is required
+2019-12-08 21:23:01.792 +00:00 [DBG] Creating Implicit Flow response.
+2019-12-08 21:23:01.798 +00:00 [DBG] Getting claims for access token for client: angular
+2019-12-08 21:23:01.800 +00:00 [DBG] Getting claims for access token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246
+2019-12-08 21:23:01.805 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:23:01.814 +00:00 [DBG] Getting claims for identity token for subject: 5c353957-2e04-4814-820b-2bfdf5b6c246 and client: angular
+2019-12-08 21:23:01.814 +00:00 [DBG] Claim types from profile service that were filtered: ["sub","aud"]
+2019-12-08 21:23:01.859 +00:00 [INF] {"ClientId":"angular","ClientName":"SPA Client","RedirectUri":"http://localhost:4200/basket","Endpoint":"Authorize","SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","Scopes":"openid profile email address phone orders basket catalog","GrantType":"implicit","Tokens":[{"TokenType":"id_token","TokenValue":"****nPTA","$type":"Token"},{"TokenType":"access_token","TokenValue":"****8O5g","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLRS46NG0DQD:00000003","TimeStamp":"2019-12-08T21:23:01.0000000Z","ProcessId":1434,"LocalIpAddress":"::ffff:172.21.0.6:80","RemoteIpAddress":"::ffff:172.21.0.1","$type":"TokenIssuedSuccessEvent"}
+2019-12-08 21:23:01.860 +00:00 [DBG] Authorize endpoint response
+{"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","ClientId":"angular","RedirectUri":"http://localhost:4200/basket","State":"2gZnfHhXekHdVn2xobbUz4JVQ2AMfK3rnD9NSbrKtnYq-","Scope":"openid profile email address phone orders basket catalog","Error":null,"ErrorDescription":null,"$type":"AuthorizeResponseLog"}
+2019-12-08 21:23:03.628 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:23:03.628 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration from origin: http://localhost:4200
+2019-12-08 21:23:03.628 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:23:03.628 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:23:03.629 +00:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-12-08 21:23:03.629 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-12-08 21:23:03.629 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-12-08 21:23:03.629 +00:00 [DBG] Start discovery request
+2019-12-08 21:23:03.662 +00:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-12-08 21:23:03.663 +00:00 [DBG] CORS request made for path: /.well-known/openid-configuration/jwks from origin: http://localhost:4200
+2019-12-08 21:23:03.663 +00:00 [DBG] Client list checked and origin: http://localhost:4200 is allowed
+2019-12-08 21:23:03.664 +00:00 [DBG] CorsPolicyService allowed origin: http://localhost:4200
+2019-12-08 21:23:03.664 +00:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-12-08 21:23:03.665 +00:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-12-08 21:23:03.666 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-12-08 21:23:03.666 +00:00 [DBG] Start key discovery request
+2019-12-08 21:23:50.953 +00:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2019-12-08 21:23:50.957 +00:00 [INF] AuthenticationScheme: Identity.External signed out.
+2019-12-08 21:23:50.958 +00:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2019-12-08 21:23:50.963 +00:00 [INF] {"SubjectId":"5c353957-2e04-4814-820b-2bfdf5b6c246","DisplayName":"Alice Smith","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"0HLRS46NG0DQD:00000006","TimeStamp":"2019-12-08T21:23:50.0000000Z","ProcessId":1434,"LocalIpAddress":"::ffff:172.21.0.6:80","RemoteIpAddress":"::ffff:172.21.0.1","$type":"UserLogoutSuccessEvent"}
+2019-12-08 21:23:51.096 +00:00 [DBG] Request path /connect/endsession/callback matched to endpoint type Endsession
+2019-12-08 21:23:51.111 +00:00 [DBG] Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionCallbackEndpoint
+2019-12-08 21:23:51.113 +00:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionCallbackEndpoint for /connect/endsession/callback
+2019-12-08 21:23:51.137 +00:00 [DBG] Processing signout callback request
+2019-12-08 21:23:51.164 +00:00 [DBG] client configuration validation for client angular succeeded.
+2019-12-08 21:23:51.166 +00:00 [DBG] No client front-channel logout URLs
+2019-12-08 21:23:51.167 +00:00 [DBG] No client back-channel logout URLs
+2019-12-08 21:23:51.167 +00:00 [INF] Successful signout callback.
+2019-12-08 21:23:51.178 +00:00 [DBG] No client front-channel iframe urls
+2019-12-08 21:23:51.178 +00:00 [DBG] No client back-channel iframe urls
+2019-12-09 15:56:29.198 +00:00 [WRN] No XML encryptor configured. Key {0878c235-9110-4da5-b821-cc7aa0a8aa15} may be persisted to storage in unencrypted form.
+2019-12-09 15:56:29.736 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-09 15:56:29.764 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-09 15:56:29.830 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-09 15:56:29.834 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-09 15:56:29.838 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-09 15:56:29.842 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-09 15:56:29.845 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-09 15:56:29.846 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-09 18:30:50.974 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-09 18:30:51.107 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-09 18:30:51.142 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-09 18:30:51.160 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-09 18:30:51.171 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-09 18:30:51.182 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-09 18:30:51.213 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-09 18:30:51.230 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-09 18:35:42.910 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-09 18:35:43.076 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-09 18:35:43.150 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-09 18:35:43.183 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-09 18:35:43.198 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-09 18:35:43.203 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-09 18:35:43.206 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-09 18:35:43.217 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-12-09 18:59:24.193 +00:00 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-12-09 18:59:24.440 +00:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-12-09 18:59:24.543 +00:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-12-09 18:59:24.559 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-12-09 18:59:24.590 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-12-09 18:59:24.591 +00:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-12-09 18:59:24.591 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-12-09 18:59:24.591 +00:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
