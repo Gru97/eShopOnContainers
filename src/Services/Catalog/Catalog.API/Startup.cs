@@ -13,6 +13,7 @@ using IntegrationEventLogEF;
 using IntegrationEventLogEF.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -56,7 +57,6 @@ namespace Catalog.API
             });
             services.AddElasticSearch(Configuration);
             services.AddTransient<Models.ISearchRepository<CatalogItem>, Models.ElasticSearchRepository>();
-
             services.AddCors(Options => { Options.AddPolicy("myPolicy",
                 builder =>
                 {

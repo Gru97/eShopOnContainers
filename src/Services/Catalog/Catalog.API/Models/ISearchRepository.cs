@@ -15,5 +15,7 @@ namespace Catalog.API.Models
 
         Task<IEnumerable<TEntity>> SearchByCatalogNameAsync(string Phrase);
 
+        Task<bool> UpdateAsync(int id,dynamic obj);
+
     }
 }

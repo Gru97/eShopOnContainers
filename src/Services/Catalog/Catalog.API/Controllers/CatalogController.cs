@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Catalog.API.Infrastructure;
+﻿using Catalog.API.Infrastructure;
 using Catalog.API.IntegrationEvents;
 using Catalog.API.IntegrationEvents.Events;
 using Catalog.API.Models;
 using EventBus.Abstractions;
 using IntegrationEventLogEF.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Catalog.API.Controllers
 {
@@ -77,7 +74,10 @@ namespace Catalog.API.Controllers
         [HttpGet]
         public ActionResult<CatalogItem> GetById(int Id)
         {
-            var item= _catalogContext.CatalogItems.SingleOrDefault(e => e.Id == Id);
+            var item= _catalogContext.CatalogItems
+                .Include(e => e.CatalogType)
+                .Include(e => e.CatalogBrand)
+                .SingleOrDefault(e => e.Id == Id);
             item.PictureUri = "https://localhost:44321/Pics/" + item.PictureName;
             return item;
 
@@ -90,8 +90,20 @@ namespace Catalog.API.Controllers
             CatalogItem catalog = new CatalogItem(newProduct.Name,
                 newProduct.Description, newProduct.Price, newProduct.CatalogType.Id, newProduct.CatalogBrand.Id,
                 newProduct.PictureName, newProduct.AvailableStock);
-            _catalogContext.Add(catalog);
-            await _catalogContext.SaveChangesAsync();
+            using (var transaction = _catalogContext.Database.BeginTransaction())
+            {
+                var entity=_catalogContext.CatalogItems.Add(catalog).Entity;
+                await _catalogContext.SaveChangesAsync();
+
+                var product = _catalogContext.CatalogItems
+                    .Where(e => e.Id == entity.Id)
+                    .Include(e => e.CatalogBrand)
+                    .Include(e => e.CatalogType)
+                    .First();
+                await searchRepository.SaveAsync(product);
+                transaction.Commit();
+            }
+
         }
 
         [HttpPut]
@@ -191,9 +203,11 @@ namespace Catalog.API.Controllers
                 this._catalogContext.Remove(existing);
 
             var result =await searchRepository.DeleteAsync(id);
-            //_catalogContext.SaveChanges();
+            _catalogContext.SaveChanges();
             return Ok();
         }
+
+       
 
     }
 }

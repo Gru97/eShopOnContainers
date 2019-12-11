@@ -102,5 +102,14 @@ namespace Catalog.API.Models
                                     .Field(e => e.Name).Query(Phrase))));
             return response.Documents; 
         }
+
+        public async Task<bool> UpdateAsync(int id, dynamic updated)
+        {
+            var result = await elasticClient.UpdateAsync<CatalogItem,object>(id,
+                e=>e.Index("catalogitem")
+                .Doc(updated));
+
+           return result.IsValid;
+        }
     }
 }
