@@ -121,17 +121,20 @@ namespace Catalog.API.Controllers
             //and if everything goes as expected, we change the state of event to published in db
             //TODO don't send productToUpdate to repo. fetch the current object, change it's price then send it (if fetched in admin panel before update there is no problem
             var oldPrice = _catalogContext.CatalogItems.AsNoTracking().Single(e => e.Id == productToUpdate.Id).Price;
-            ProductPriceChangedIntegrationEvent evt =
-                new ProductPriceChangedIntegrationEvent(productToUpdate.Id, productToUpdate.Price, oldPrice);
-            using (var transaction = _catalogContext.Database.BeginTransaction())
+            if(oldPrice!=productToUpdate.Price)
             {
-                _catalogContext.CatalogItems.Update(productToUpdate);
-                await _catalogIntegrationEventService.SaveEventAndCatalogContextChangesAsync(evt);
-                transaction.Commit();
-            }
+                ProductPriceChangedIntegrationEvent evt =
+                new ProductPriceChangedIntegrationEvent(productToUpdate.Id, productToUpdate.Price, oldPrice);
+                using (var transaction = _catalogContext.Database.BeginTransaction())
+                {
+                    _catalogContext.CatalogItems.Update(productToUpdate);
+                    await _catalogIntegrationEventService.SaveEventAndCatalogContextChangesAsync(evt);
+                    transaction.Commit();
+                }
 
-            _eventBus.Publish(evt);
-            await _integrationEventLogService.MarkEventAsPublished(evt.Id);
+                _eventBus.Publish(evt);
+                await _integrationEventLogService.MarkEventAsPublished(evt.Id);
+            }
 
         }
 

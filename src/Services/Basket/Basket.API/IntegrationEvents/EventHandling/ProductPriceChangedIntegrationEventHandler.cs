@@ -24,13 +24,14 @@ namespace Basket.API.IntegrationEvents.EventHandling
             {
                 var basket=await repository.GetBasketAsync(Id);
                 //TODO SingleOrDefault or Where?
-                var item = basket.Items.SingleOrDefault(x => x.Id == @event.ProductId);
+                var item = basket.Items.SingleOrDefault(x => x.ProductId == @event.ProductId);
                 if (item != null)
                 {
                     item.UnitPrice = @event.NewPrice;
                     item.OldPrice = @event.OldPrice;
 
                 }
+                await repository.UpdateBasketAsync(basket);
 
 
             }
