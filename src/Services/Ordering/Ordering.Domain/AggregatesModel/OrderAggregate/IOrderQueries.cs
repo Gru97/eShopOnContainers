@@ -11,8 +11,9 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         //They take some params and return ViewModels
         //Implementation is in another layer which is using any kind of ORM or data access technology
 
-        IEnumerable<OrderSummeryViewModel> GetOrders(Guid buyerId);
-        OrderViewModel GetOrder(int Id);
+        Task<List<OrderSummeryViewModel>> GetOrdersForBuyer(string buyerId);
+        Task<List<OrderViewModel>> GetOrders();
+        Task<OrderViewModel> GetOrder(int Id);
 
 
     }

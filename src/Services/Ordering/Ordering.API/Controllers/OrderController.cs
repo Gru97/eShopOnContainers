@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Ordering.API.Application.Commands;
+using Ordering.API.Application.Queries;
 
 namespace Ordering.API.Controllers
 {
@@ -34,20 +35,7 @@ namespace Ordering.API.Controllers
             else
                 return BadRequest();
         }
-        [Route("order/{userId}")]
-        [HttpGet]
-        public async Task<ActionResult> GetOrderForUser(string userId)
-        {
-           
-        }
-
-        [Route("order")]
-        [HttpGet]
-        public async Task<ActionResult> GetAll()
-        {
-
-        }
-
+      
 
 
 
@@ -59,7 +47,28 @@ namespace Ordering.API.Controllers
            
         }
 
-       
+        [Route("order/{userId}")]
+        [HttpGet]
+        public async Task<IActionResult> GetOrderForUser(string userId)
+        {
+            var orders = await mediator.Send(new GetOrdersForBuyerQuery(userId));
+            if (orders == null || orders.Count < 1)
+                return NoContent();
+
+            return Ok(orders);
+        }
+
+        [Route("order")]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var orders =await mediator.Send(new GetAllOrdersQuery());
+            if (orders == null || orders.Count < 1)
+                return NoContent();
+
+            return Ok(orders);
+        }
+
 
 
     }
