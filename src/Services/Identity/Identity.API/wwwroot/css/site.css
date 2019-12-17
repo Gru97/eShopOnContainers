@@ -6,6 +6,11 @@ label{
     display:block !important;
    
 }
+h2{
+    color:darkred ;
+    padding-top:20px;
+
+}
 .page-header {
     margin-bottom: 50px;
 }
@@ -15,10 +20,19 @@ label{
 }
 body {
     margin-top: 65px;
+    background-image:url("/back.png");
+    
+}
+.main-component {
+    background-color: azure;
+    height: 600px;
+    width: 600px;
+    opacity:0.85;
+    border-radius:60px;
 }
 .navbar-header {
-  position: relative;
-  top: -4px;
+    position: relative;
+    top: -4px;
 }
 .navbar-brand > .icon-banner {
   position: relative;

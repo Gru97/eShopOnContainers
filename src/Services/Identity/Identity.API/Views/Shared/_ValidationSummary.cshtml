@@ -1,7 +1,6 @@
 ﻿@if (ViewContext.ModelState.IsValid == false)
 {
-    <div class="alert alert-danger text-center">
-        <strong>خطا</strong>
-        <div asp-validation-summary="All" class="danger"></div>
+    <div class="alert alert-success text-center">
+        <strong><div asp-validation-summary="All" class="danger"></div></strong>
     </div>
 }

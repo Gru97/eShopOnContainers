@@ -24,11 +24,7 @@ namespace Ordering.API.Application.Commands
         }
 
         public async Task<bool> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
-        {
-            // Create and raise an Integration event: OrderStartedIntegrationEvent
-            var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(request.UserId);
-            await OrderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
-            ////OrderingIntegrationEventService.PublishEvent(orderStartedIntegrationEvent);
+        {         
 
             //Instantiate root aggregate and do necessary things
             var address = new Address(request.Street, request.City, request.State, request.Country, request.ZipCode);
@@ -41,6 +37,7 @@ namespace Ordering.API.Application.Commands
             //Persist data
             orderRepository.Add(order);
             await orderRepository.UnitOfWork.SaveChangesAsync();
+            
             return true;
         }
 

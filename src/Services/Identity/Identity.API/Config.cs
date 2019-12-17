@@ -79,7 +79,7 @@ namespace Identity.API
                     IncludeJwtId=true,
                     RequireConsent=false,
                     
-                  
+
                     RequireClientSecret = false,
 
                     RedirectUris =
@@ -91,14 +91,16 @@ namespace Identity.API
 
                         "http://localhost:4200",
                         "http://localhost:4200/index.html",
-                        
+
                     },
+                                        
+                    PostLogoutRedirectUris = { "http://localhost:4200" },
                     
-                    PostLogoutRedirectUris = { "http://localhost:4200/index.html" },
                     AllowedCorsOrigins = { "http://localhost:4200" },
 
                     AllowedScopes = { "openid", "profile", "email", "address", "phone" , "orders" , "basket", "catalog"},
                             AllowAccessTokensViaBrowser = true
+                            
                 }
             };
         }

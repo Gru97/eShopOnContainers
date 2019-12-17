@@ -14,7 +14,7 @@ namespace Ordering.Domain.AggregatesModel.BuyerAggregate
 
         }
 
-        public Buyer(string name, string identityGuid)
+        public Buyer(string name, string identityGuid,int orderId)
         {
             if (string.IsNullOrWhiteSpace(Name))
                 throw new ArgumentNullException();
@@ -24,6 +24,7 @@ namespace Ordering.Domain.AggregatesModel.BuyerAggregate
                 throw new ArgumentNullException();
             else
                 IdentityGuid = identityGuid;
+
         }
     }
 }

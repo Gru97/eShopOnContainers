@@ -55,15 +55,12 @@ services:
   identity.api:
     image: ${DOCKER_REGISTRY-}identityapi
     build:
-      context: src/Services/Identity/Identity.API
+      context: ./src/Services/Identity/Identity.API
       dockerfile: Dockerfile
+    volumes:
+      - ./src/Services/Identity/Identity.API/wwwroot:/app/wwwroot
 
-  identity.api:
-    image: ${DOCKER_REGISTRY-}identityapi
-    build:
-      context: src/Services/Identity/Identity.API
-      dockerfile: Dockerfile
-
+ 
 volumes:
   esdata:
     driver:

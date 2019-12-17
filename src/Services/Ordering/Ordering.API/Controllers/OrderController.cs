@@ -34,6 +34,23 @@ namespace Ordering.API.Controllers
             else
                 return BadRequest();
         }
+        [Route("order/{userId}")]
+        [HttpGet]
+        public async Task<ActionResult> GetOrderForUser(string userId)
+        {
+           
+        }
+
+        [Route("order")]
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+
+        }
+
+
+
+
         // GET api/values
         [HttpGet]
         public ActionResult<string> Get(int id)
