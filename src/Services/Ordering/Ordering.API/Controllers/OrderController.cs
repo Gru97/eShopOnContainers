@@ -10,7 +10,6 @@ using Ordering.API.Application.Queries;
 
 namespace Ordering.API.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
@@ -35,21 +34,10 @@ namespace Ordering.API.Controllers
             else
                 return BadRequest();
         }
-      
-
-
-
-        // GET api/values
-        [HttpGet]
-        public ActionResult<string> Get(int id)
-        {
-            return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
-           
-        }
 
         [Route("order/{userId}")]
         [HttpGet]
-        public async Task<IActionResult> GetOrderForUser(string userId)
+        public async Task<ActionResult> GetOrderForUser(string userId)
         {
             var orders = await mediator.Send(new GetOrdersForBuyerQuery(userId));
             if (orders == null || orders.Count < 1)
@@ -60,7 +48,7 @@ namespace Ordering.API.Controllers
 
         [Route("order")]
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult> GetAll()
         {
             var orders =await mediator.Send(new GetAllOrdersQuery());
             if (orders == null || orders.Count < 1)

@@ -29,13 +29,15 @@ namespace Ordering.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration,IHostingEnvironment hostingEnvironment)
         {
             Configuration = configuration;
+            HostingEnvironment = hostingEnvironment;
         }
 
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment HostingEnvironment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -82,6 +84,15 @@ namespace Ordering.API
             services.AddMediatR(System.Reflection.Assembly.GetExecutingAssembly());
             //services.AddScoped(typeof(IFoo<,>), typeof(Foo<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(Application.Validation.ValidationBehavior<,>));
+
+            services.AddSwaggerGen(ac => {
+                ac.SwaggerDoc("ordering", new Swashbuckle.AspNetCore.Swagger.Info { Title="Ordering API",Version="v1"});
+                
+                var contentRoot = HostingEnvironment.ContentRootPath;
+                //var path = $"{contentRoot}\Ordering.API.xml";
+                //ac.IncludeXmlComments(path);
+            });
+            
         }
         private void RegisterEventBus(IServiceCollection services)
         {
@@ -108,10 +119,11 @@ namespace Ordering.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/swagger.json", "Ordering API"));
+            //app.UseHttpsRedirection();
             app.UseAuthentication();
-
+           
             app.UseMvc();
             
             ConfigureEventBus(app);
@@ -120,7 +132,7 @@ namespace Ordering.API
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-            eventBus.Subscribe<UserCheckoutIntegrationEvent, UserCheckoutIntegrationEventHandler>();
+            //eventBus.Subscribe<UserCheckoutIntegrationEvent, UserCheckoutIntegrationEventHandler>();
             //eventBus.Subscribe<UserCheckoutIntegrationEvent, IIntegrationEventHandler<UserCheckoutIntegrationEvent>>();
 
         }
