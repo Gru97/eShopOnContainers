@@ -41,6 +41,24 @@ namespace Ordering.Infrastructure.Repositories
             
         }
 
+        public async Task<Order> FindAsycn(int orderId)
+        {
+
+            var order = await context.Orders.FindAsync(orderId);
+            if (order != null)
+            {
+                await context.Entry(order)
+                    .Collection(i => i.OrderItems).LoadAsync();
+                
+                await context.Entry(order)
+                    .Reference(i => i.Address).LoadAsync();
+            }
+
+            return order;
+
+
+        }
+
         public void Update(Order order)
         {
             context.Entry(order).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

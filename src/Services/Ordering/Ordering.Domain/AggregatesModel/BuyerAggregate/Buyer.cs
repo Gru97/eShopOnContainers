@@ -14,16 +14,22 @@ namespace Ordering.Domain.AggregatesModel.BuyerAggregate
 
         }
 
-        public Buyer(string name, string identityGuid,int orderId)
+        public Buyer(string name, string identityGuid,int orderId,DoesBuyerExist doesBuyerExist)
         {
-            if (string.IsNullOrWhiteSpace(Name))
-                throw new ArgumentNullException();
-            else
-                Name = name;
-            if(string.IsNullOrWhiteSpace(identityGuid))
-                throw new ArgumentNullException();
-            else
-                IdentityGuid = identityGuid;
+            if (doesBuyerExist.False(identityGuid).Result)
+            {
+                if (string.IsNullOrWhiteSpace(Name))
+                    throw new ArgumentNullException();
+                else
+                    Name = name;
+                if (string.IsNullOrWhiteSpace(identityGuid))
+                    throw new ArgumentNullException();
+                else
+                    IdentityGuid = identityGuid;
+            }
+
+            AddDomainEvent(new BuyerCreatedDomainEvent(orderId,this.Id));
+          
 
         }
     }

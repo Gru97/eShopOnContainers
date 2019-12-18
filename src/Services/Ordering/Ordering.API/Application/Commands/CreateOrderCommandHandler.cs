@@ -34,7 +34,7 @@ namespace Ordering.API.Application.Commands
                 order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice, item.Discount, item.Quantity);
             }
 
-            //Persist data
+            //(dispatch events and) Persist data
             orderRepository.Add(order);
             await orderRepository.UnitOfWork.SaveChangesAsync();
             

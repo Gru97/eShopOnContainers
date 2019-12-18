@@ -16,5 +16,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
 
         //Simple queries only. Complex ones go to "query layer" of the cqrs pattern
         Order Get(int orderId);
+        Task<Order> FindAsycn(int orderId);
+            
     }
 }

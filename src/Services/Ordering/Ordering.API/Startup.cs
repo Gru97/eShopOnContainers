@@ -59,8 +59,12 @@ namespace Ordering.API
             services.AddTransient<IOrderRepository,OrderRepository>();
             services.AddTransient<IBuyerRepository, BuyerRepository>();
             services.AddTransient<IOrderingIntegrationEventService, OrderingIntegrationEventService>();
+            var subscriptionClientName = Configuration["SubscriptionClientName"];
 
-            
+            services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
+            {
+                return new EventBusRabbitMQ(sp, subscriptionClientName);
+            });
 
             services.AddDbContext<OrderingContext>(options => 
                 {

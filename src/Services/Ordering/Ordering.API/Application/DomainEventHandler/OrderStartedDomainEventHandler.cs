@@ -13,17 +13,21 @@ namespace Ordering.API.Application.DomainEventHandler
     {
 
         private readonly IBuyerRepository buyerRepository;
+        
 
         public async Task Handle(OrderStartedDomainEvent @event, CancellationToken cancellationToken)
         {
             //Side effects of creating an order is to create a buyer (if it does not exist)
+            DoesBuyerExist service = new DoesBuyerExist(buyerRepository);
+            var buyer = new Buyer(@event.UserName, @event.UserId, @event.Order.Id, service);
+            await buyerRepository.UnitOfWork.SaveChangesAsync();
 
-            var buyer = await buyerRepository.FindAsync(@event.UserId);
-            if (buyer == null)
-            {
-                buyer = new Buyer(@event.UserName, @event.UserId, @event.Order.Id);
-                await buyerRepository.UnitOfWork.SaveChangesAsync();
-            }
+            //var buyer = await buyerRepository.FindAsync(@event.UserId);
+            //if (buyer == null)
+            //{
+            //    buyer = new Buyer(@event.UserName, @event.UserId, @event.Order.Id, service);
+            //    await buyerRepository.UnitOfWork.SaveChangesAsync();
+            //}
 
             
         }
