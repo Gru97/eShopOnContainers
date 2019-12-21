@@ -13,7 +13,7 @@ namespace Catalog.API.IntegrationEvents.Events
         public int OrderId { get; private set; }
 
         public OrderStatusChangedToAwaitingValidationIntegrationEvent(List<StockItem> stockItems,
-            int orderId)
+            int orderId) : base(Guid.NewGuid(), DateTime.UtcNow)
         {
             StockItems = stockItems;
             OrderId = orderId;

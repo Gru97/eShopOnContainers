@@ -1,13 +1,13 @@
 ﻿using BuildingBlocks.EventBus.Events;
 using Catalog.API.IntegrationEvents.Events;
+using System;
 
 namespace Catalog.API.IntegrationEvents.Events
 {
-    internal class OrderStockConfirmedIntegrationEvent:IntegrationEvent
+    public class OrderStockConfirmedIntegrationEvent:IntegrationEvent
     {
-        private int orderId;
-
-        public OrderStockConfirmedIntegrationEvent(int orderId)
+        public int orderId { get; private set; }
+        public OrderStockConfirmedIntegrationEvent(int orderId) : base(Guid.NewGuid(), DateTime.UtcNow)
         {
             this.orderId = orderId;
         }

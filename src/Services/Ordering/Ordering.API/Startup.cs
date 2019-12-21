@@ -96,6 +96,8 @@ namespace Ordering.API
                 //var path = $"{contentRoot}\Ordering.API.xml";
                 //ac.IncludeXmlComments(path);
             });
+
+            services.AddScoped<DoesBuyerExist, DoesBuyerExist>();
             
         }
         private void RegisterEventBus(IServiceCollection services)
@@ -136,7 +138,9 @@ namespace Ordering.API
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-            //eventBus.Subscribe<UserCheckoutIntegrationEvent, UserCheckoutIntegrationEventHandler>();
+            eventBus.Subscribe<UserCheckoutIntegrationEvent, UserCheckoutIntegrationEventHandler>();
+            eventBus.Subscribe<OrderStockConfirmedIntegrationEvent, OrderStockConfirmedIntegrationEventHandler>();
+            eventBus.Subscribe<OrderStockRejectedIntegrationEvent, OrderStockRejectedIntegrationEventHandler>();
             //eventBus.Subscribe<UserCheckoutIntegrationEvent, IIntegrationEventHandler<UserCheckoutIntegrationEvent>>();
 
         }

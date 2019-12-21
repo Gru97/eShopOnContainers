@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using BuildingBlocks.EventBusRabbitMQ;
 using Catalog.API.Infrastructure;
 using Catalog.API.IntegrationEvents;
+using Catalog.API.IntegrationEvents.EventHandling;
+using Catalog.API.IntegrationEvents.Events;
 using Catalog.API.Models;
 using EventBus.Abstractions;
 using IntegrationEventLogEF;
@@ -106,7 +108,16 @@ namespace Catalog.API
 
           
             app.UseMvc();
+            ConfigureEventBus(app);
          
+        }
+
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<OrderStatusChangedToAwaitingValidationIntegrationEvent,
+                OrderStatusChangedToAwaitingValidationIntegrationEventHandler>();
+
         }
     }
 }
