@@ -17,17 +17,29 @@ namespace Ordering.API.Application.Queries
             this.context = context;
         }
 
-        public async Task<OrderViewModel> GetOrder(int Id)
+        public async Task<OrderSummeryViewModel> GetOrder(int Id)
+        {
+            var order = context.Orders
+                .SingleOrDefault(e => e.Id == Id);
+            if (order == null)
+                return null;
+            return ToOrderSummeryViewModel(order);
+                
+                
+                
+           
+        }
+        public async Task<OrderViewModel> GetOrderWithDetail(int Id)
         {
             var order = context.Orders.Where(e => e.Id == Id)
-                .Include(e=>e.Address)
-                .Include(e=>e.OrderItems).First();
+                .Include(e => e.Address)
+                .Include(e => e.OrderItems).First();
             return new OrderViewModel()
             {
                 city = order.Address.City,
                 country = order.Address.Country,
                 street = order.Address.Street,
-                orderitems = order.OrderItems.Select(e=>ToOrderItemViewModel(e)).ToList(),
+                orderitems = order.OrderItems.Select(e => ToOrderItemViewModel(e)).ToList(),
                 zipcode = order.Address.ZipCode,
                 ordernumber = order.Id,
                 //TODO: problem with returning order status, I must store them
@@ -36,14 +48,17 @@ namespace Ordering.API.Application.Queries
                 //TODO: we have problem filling date and description becasue they are private. I need to create them as backing fields later
             };
         }
-
-        public async Task<List<OrderViewModel>> GetOrders()
+        public async Task<PagedResult<OrderSummeryViewModel>> GetOrders(int pageSize,int pageIndex)
         {
-            var order = context.Orders
-                .Include(e => e.Address)
-                .Include(e => e.OrderItems).Skip(0).Take(10);
+            var order = context.Orders.AsQueryable();
+            int recordCount = order.Count();
 
-            return order.Select(ToOrderViewModel).ToList();
+            order = order
+                .Include(e => e.Address)
+                .Include(e => e.OrderItems)
+                .Skip(pageIndex * pageSize).Take(pageSize);
+            var list =order.Select(ToOrderSummeryViewModel).ToList();
+            return new PagedResult<OrderSummeryViewModel> { Count = recordCount, Items = list };
             
         }
      
@@ -55,7 +70,9 @@ namespace Ordering.API.Application.Queries
                   select new OrderSummeryViewModel
                   {
                       ordernumber=o.Id,
-                      total=o.OrderItems.Sum(e=>e.UnitPrice*e.Quantity)
+                      total=o.OrderItems.Sum(e=>e.UnitPrice*e.Quantity),
+                      date=o.OrderDate,
+                      status=o.OrderState.ToString()
                   };
 
             return q.ToList();
@@ -76,6 +93,16 @@ namespace Ordering.API.Application.Queries
                 total = order.OrderItems.Sum(e => e.Quantity * e.UnitPrice)
                 //TODO: we have problem filling date and description becasue they are private. I need to create them as backing fields later
             };
+        }
+        private OrderSummeryViewModel ToOrderSummeryViewModel(Order o)
+        {
+            return new OrderSummeryViewModel
+            {
+                ordernumber = o.Id,
+                total = o.OrderItems.Sum(e => e.UnitPrice * e.Quantity),
+                date=o.OrderDate,
+                status=o.OrderState.ToString()
+           };
         }
         private OrderItemViewModel ToOrderItemViewModel(OrderItem e)
         {

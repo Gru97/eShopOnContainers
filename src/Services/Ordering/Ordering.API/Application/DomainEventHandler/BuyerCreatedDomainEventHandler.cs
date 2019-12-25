@@ -23,7 +23,9 @@ namespace Ordering.API.Application.DomainEventHandler
             var order = await orderRepository.FindAsycn(notification.orderId);
             order.BuyerId = notification.buyerId;
             order.SetAwaitingValidationStatus();
-            await orderRepository.UnitOfWork.SaveChangesAsync();
+            //This transaction hasn't commited yet (We are before executing the previous SaveChanges())
+            //So no need to call SaveChanges again
+            //await orderRepository.UnitOfWork.SaveChangesAsync();
 
         }
     }

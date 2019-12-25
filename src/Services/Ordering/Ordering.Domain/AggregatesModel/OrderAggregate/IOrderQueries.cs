@@ -12,8 +12,8 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         //Implementation is in another layer which is using any kind of ORM or data access technology
 
         Task<List<OrderSummeryViewModel>> GetOrdersForBuyer(string buyerId);
-        Task<List<OrderViewModel>> GetOrders();
-        Task<OrderViewModel> GetOrder(int Id);
+        Task<PagedResult<OrderSummeryViewModel>> GetOrders(int pageSize, int pageIndex);
+        Task<OrderSummeryViewModel> GetOrder(int Id);
 
 
     }

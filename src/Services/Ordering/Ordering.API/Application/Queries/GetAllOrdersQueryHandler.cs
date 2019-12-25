@@ -8,12 +8,18 @@ using System.Threading.Tasks;
 
 namespace Ordering.API.Application.Queries
 {
-    public class GetAllOrdersQueryHandler : IRequestHandler<GetAllOrdersQuery, List<OrderViewModel>>
+    public class GetAllOrdersQueryHandler : IRequestHandler<GetAllOrdersQuery, PagedResult<OrderSummeryViewModel>>
     {
         private readonly IOrderQueries OrderQueries;
-        public async Task<List<OrderViewModel>> Handle(GetAllOrdersQuery request, CancellationToken cancellationToken)
+
+        public GetAllOrdersQueryHandler(IOrderQueries orderQueries)
         {
-            var List= await OrderQueries.GetOrders();
+            OrderQueries = orderQueries;
+        }
+
+        public async Task<PagedResult<OrderSummeryViewModel>> Handle(GetAllOrdersQuery request, CancellationToken cancellationToken)
+        {
+            PagedResult <OrderSummeryViewModel> List = await OrderQueries.GetOrders(request.pageSize,request.pageIndex);
             return List;
         }
     }

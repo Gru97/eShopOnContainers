@@ -19,7 +19,7 @@ namespace Ordering.API.Application.Queries
 
         public async Task<List<OrderSummeryViewModel>> Handle(GetOrdersForBuyerQuery request, CancellationToken cancellationToken)
         {
-            var List = await OrderQueries.GetOrdersForBuyer(request.BuyerId);
+            List<OrderSummeryViewModel> List = await OrderQueries.GetOrdersForBuyer(request.BuyerId);
             return List;
         }
     

@@ -21,7 +21,6 @@ namespace Ordering.API.Controllers
             this.mediator = mediator;
         }
 
-        [Route("order")]
         [HttpPost]
         public async Task<ActionResult> Order()
         {
@@ -35,28 +34,47 @@ namespace Ordering.API.Controllers
                 return BadRequest();
         }
 
-        [Route("order/{userId}")]
         [HttpGet]
-        public async Task<ActionResult> GetOrderForUser(string userId)
+        [Route("BuyerId/{buyerId}")]
+        public async Task<ActionResult> GetOrderForUser( string buyerId)
         {
-            var orders = await mediator.Send(new GetOrdersForBuyerQuery(userId));
+            var orders = await mediator.Send(new GetOrdersForBuyerQuery(buyerId));
             if (orders == null || orders.Count < 1)
                 return NoContent();
 
             return Ok(orders);
         }
 
-        [Route("order")]
         [HttpGet]
-        public async Task<ActionResult> GetAll()
+        [Route("all")]
+        public async Task<ActionResult> GetAll([FromQuery] int pageSize = 2, [FromQuery] int pageIndex = 0)
         {
-            var orders =await mediator.Send(new GetAllOrdersQuery());
+            var orders =await mediator.Send(new GetAllOrdersQuery(pageSize,pageIndex));
             if (orders == null || orders.Count < 1)
                 return NoContent();
 
             return Ok(orders);
         }
 
+        [HttpGet]
+        [Route("OrderId/{orderId}")]
+        public async Task<ActionResult> GetByOrderId( int orderId,[FromQuery] int pageSize=2, [FromQuery] int pageIndex=0)
+        {
+            var order = await mediator.Send(new GetOrderByIdQuery(orderId));
+          
+
+            return Ok(order);
+        }
+        //[Route("status/{status}")]
+        //[HttpGet]
+        //public async Task<ActionResult> GetAllByStatus( int status, [FromQuery] int pageSize = 2, [FromQuery] int pageIndex = 0)
+        //{
+        //    var orders = await mediator.Send(new GetOrdersByStatusQuery(pageSize, pageIndex));
+        //    if (orders == null || orders.Count < 1)
+        //        return NoContent();
+
+        //    return Ok(orders);
+        //}
 
 
     }

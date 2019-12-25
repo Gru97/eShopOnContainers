@@ -20,6 +20,7 @@ using Microsoft.Extensions.Options;
 using Ordering.API.Application.IntegrationEvents;
 using Ordering.API.Application.IntegrationEvents.EventHandling;
 using Ordering.API.Application.IntegrationEvents.Events;
+using Ordering.API.Application.Queries;
 using Ordering.Domain.AggregatesModel.BuyerAggregate;
 using Ordering.Domain.AggregatesModel.OrderAggregate;
 using Ordering.Infrastructure;
@@ -56,9 +57,10 @@ namespace Ordering.API
                 });
 
 
-            services.AddTransient<IOrderRepository,OrderRepository>();
-            services.AddTransient<IBuyerRepository, BuyerRepository>();
+            services.AddScoped<IOrderRepository,OrderRepository>();
+            services.AddScoped<IBuyerRepository, BuyerRepository>();
             services.AddTransient<IOrderingIntegrationEventService, OrderingIntegrationEventService>();
+            services.AddScoped<IOrderQueries, OrderQueries>();
             var subscriptionClientName = Configuration["SubscriptionClientName"];
 
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
@@ -98,7 +100,15 @@ namespace Ordering.API
             });
 
             services.AddScoped<DoesBuyerExist, DoesBuyerExist>();
-            
+             services.AddCors(Options => { Options.AddPolicy("myPolicy",
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod().AllowCredentials();
+
+                });
+            });
         }
         private void RegisterEventBus(IServiceCollection services)
         {
@@ -125,6 +135,7 @@ namespace Ordering.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseCors("myPolicy");
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/swagger.json", "Ordering API"));
             //app.UseHttpsRedirection();
@@ -138,10 +149,9 @@ namespace Ordering.API
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-            eventBus.Subscribe<UserCheckoutIntegrationEvent, UserCheckoutIntegrationEventHandler>();
-            eventBus.Subscribe<OrderStockConfirmedIntegrationEvent, OrderStockConfirmedIntegrationEventHandler>();
-            eventBus.Subscribe<OrderStockRejectedIntegrationEvent, OrderStockRejectedIntegrationEventHandler>();
-            //eventBus.Subscribe<UserCheckoutIntegrationEvent, IIntegrationEventHandler<UserCheckoutIntegrationEvent>>();
+            //eventBus.Subscribe<UserCheckoutIntegrationEvent, UserCheckoutIntegrationEventHandler>();
+            //eventBus.Subscribe<OrderStockConfirmedIntegrationEvent, OrderStockConfirmedIntegrationEventHandler>();
+            //eventBus.Subscribe<OrderStockRejectedIntegrationEvent, OrderStockRejectedIntegrationEventHandler>();
 
         }
     }

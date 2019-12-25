@@ -97,7 +97,7 @@ namespace BuildingBlocks.EventBusRabbitMQ
             }
             catch (Exception e)
             {
-                throw new Exception("Subscribing to events failed."+e.Message);
+                Console.WriteLine("Subscribing to events failed." + e.Message);
             }
             
 

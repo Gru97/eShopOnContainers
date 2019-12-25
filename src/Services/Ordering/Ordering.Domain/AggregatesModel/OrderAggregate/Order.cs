@@ -57,7 +57,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             Address = address;
             this._buyerId = _buyerId;
             //this.paymentMethodId = paymentMethodId;
-            _orderDate = DateTime.UtcNow;
+            _orderDate = DateTime.Now;
             OrderState = OrderState.Submitted;
 
             //When an order is created, it means the user becomes a buyer. 
