@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Ordering.API.Application.Commands;
 using Ordering.API.Application.Queries;
 
@@ -15,10 +16,11 @@ namespace Ordering.API.Controllers
     public class OrderController : ControllerBase
     {
         private IMediator mediator;
-
-        public OrderController(IMediator mediator)
+        private ILogger<OrderController> logger;
+        public OrderController(IMediator mediator, ILogger<OrderController> logger)
         {
             this.mediator = mediator;
+            this.logger = logger;
         }
 
         [HttpPost]
@@ -52,7 +54,7 @@ namespace Ordering.API.Controllers
             var orders =await mediator.Send(new GetAllOrdersQuery(pageSize,pageIndex));
             if (orders == null || orders.Count < 1)
                 return NoContent();
-
+            logger.LogInformation("GetAll action inside Order Controller");
             return Ok(orders);
         }
 

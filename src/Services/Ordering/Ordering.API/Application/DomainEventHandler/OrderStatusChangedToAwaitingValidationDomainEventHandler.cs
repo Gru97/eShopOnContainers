@@ -1,6 +1,7 @@
 ﻿using EventBus.Abstractions;
 using IntegrationEventLogEF.Services;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Ordering.API.Application.IntegrationEvents.Events;
 using Ordering.Domain.Events;
 using System;
@@ -17,16 +18,21 @@ namespace Ordering.API.Application.DomainEventHandler
 
         private IEventBus _eventBus;
         private IIntegrationEventLogService _integrationEventLogService;
+        private ILogger<OrderStatusChangedToAwaitingValidationDomainEventHandler> logger;
+
 
         public OrderStatusChangedToAwaitingValidationDomainEventHandler(IEventBus eventBus, 
-            IIntegrationEventLogService integrationEventLogService)
+            IIntegrationEventLogService integrationEventLogService,
+            ILogger<OrderStatusChangedToAwaitingValidationDomainEventHandler> logger)
         {
+            this.logger = logger;
             _eventBus = eventBus;
             _integrationEventLogService = integrationEventLogService;
         }
 
         public async Task Handle(OrderStatusChangedToAwaitingValidationDomainEvent notification, CancellationToken cancellationToken)
         {
+            logger.LogInformation("OrderStatusChangedToAwaitingValidationDomainEvent handler called");
             var list = new List<StockItem>();
             foreach (var item in notification.OrderItems)
             {
@@ -34,9 +40,12 @@ namespace Ordering.API.Application.DomainEventHandler
             }
             
             var evt = new OrderStatusChangedToAwaitingValidationIntegrationEvent(list,notification.OrderId);
+            logger.LogInformation("OrderStatusChangedToAwaitingValidationIntegrationEvent is created {@evt}",evt);
+
             //_integrationEventLogService.SaveEventAsync(evt);
             _eventBus.Publish(evt);
-            
+            logger.LogInformation("OrderStatusChangedToAwaitingValidationIntegrationEvent is published");
+
         }
     }
 }
