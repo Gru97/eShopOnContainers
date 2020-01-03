@@ -13,8 +13,8 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
 
         Task<List<OrderSummeryViewModel>> GetOrdersForBuyer(string buyerId);
         Task<PagedResult<OrderSummeryViewModel>> GetOrders(int pageSize, int pageIndex);
+        Task<PagedResult<OrderSummeryViewModel>> GetOrdersByStatus(int pageSize, int pageIndex,int status);
         Task<OrderSummeryViewModel> GetOrder(int Id);
-
-
+        Task<OrderViewModel> GetOrderDetails(int orderId);
     }
 }

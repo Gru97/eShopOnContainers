@@ -81,6 +81,9 @@ namespace Basket.API.Controllers
                 basket);
             message.Id = new Guid();
             eventBus.Publish(message);
+            //Here I am assuming everything goes fine and the order will be created inside Ordering service, so I empty the basket
+            //But it might not be true, so probably I should handle the real scenario later.
+            await repository.DeleteBasketAsync(basketCheckout.UserId);
             return Accepted();
         }
 

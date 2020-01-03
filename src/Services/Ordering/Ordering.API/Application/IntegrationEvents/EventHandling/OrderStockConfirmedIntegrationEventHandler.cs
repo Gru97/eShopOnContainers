@@ -22,6 +22,7 @@ namespace Ordering.API.Application.IntegrationEvents.EventHandling
         {
             var cmd = new SetOrderStatusToStockConfirmedCommand(@event.orderId);
             await mediator.Send(cmd);
+
         }
     }
 }

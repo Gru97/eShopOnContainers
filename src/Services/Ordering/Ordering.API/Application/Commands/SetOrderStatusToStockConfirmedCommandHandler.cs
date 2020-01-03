@@ -22,6 +22,7 @@ namespace Ordering.API.Application.Commands
             var orderToBeUpdated = repository.Get(request.orderId);
             orderToBeUpdated.SetStockConfirmedStatus();
             await repository.UnitOfWork.SaveChangesAsync();
+            
             return await Task.FromResult(Unit.Value);
         }
     }

@@ -54,7 +54,7 @@ namespace Catalog.API.Controllers
         }
         [Route("items/filter")]
         [HttpGet]
-        public ActionResult<CatalogItemViewModel> GetAllWithFilter([FromQuery] int pageSize,int pageIndex)
+        public ActionResult<CatalogItemViewModel> GetAllWithFilter([FromQuery] int pageSize, int pageIndex)
         {
             int count = 0;
             var query = _catalogContext.CatalogItems.AsQueryable();
@@ -62,7 +62,7 @@ namespace Catalog.API.Controllers
             query = query.OrderBy(e => e.Id)
                 .Skip(pageSize * pageIndex)
                 .Take(pageSize);
-            query=query.Include(e => e.CatalogBrand)
+            query = query.Include(e => e.CatalogBrand)
                 .Include(e => e.CatalogType);
             var items = query.ToList();
             items.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
@@ -74,7 +74,7 @@ namespace Catalog.API.Controllers
         [HttpGet]
         public ActionResult<CatalogItem> GetById(int Id)
         {
-            var item= _catalogContext.CatalogItems
+            var item = _catalogContext.CatalogItems
                 .Include(e => e.CatalogType)
                 .Include(e => e.CatalogBrand)
                 .SingleOrDefault(e => e.Id == Id);
@@ -92,7 +92,7 @@ namespace Catalog.API.Controllers
                 newProduct.PictureName, newProduct.AvailableStock);
             using (var transaction = _catalogContext.Database.BeginTransaction())
             {
-                var entity=_catalogContext.CatalogItems.Add(catalog).Entity;
+                var entity = _catalogContext.CatalogItems.Add(catalog).Entity;
                 await _catalogContext.SaveChangesAsync();
 
                 var product = _catalogContext.CatalogItems
@@ -121,7 +121,7 @@ namespace Catalog.API.Controllers
             //and if everything goes as expected, we change the state of event to published in db
             //TODO don't send productToUpdate to repo. fetch the current object, change it's price then send it (if fetched in admin panel before update there is no problem
             var oldPrice = _catalogContext.CatalogItems.AsNoTracking().Single(e => e.Id == productToUpdate.Id).Price;
-            if(oldPrice!=productToUpdate.Price)
+            if (oldPrice != productToUpdate.Price)
             {
                 ProductPriceChangedIntegrationEvent evt =
                 new ProductPriceChangedIntegrationEvent(productToUpdate.Id, productToUpdate.Price, oldPrice);
@@ -166,10 +166,11 @@ namespace Catalog.API.Controllers
         }
         [HttpGet]
         [Route("items/type/{typeId}/brand/{brandId?}")]
-        public async Task<IEnumerable<CatalogItem>> GetProductByTypeAndBrandId(int typeId,int? brandId) {
+        public async Task<IEnumerable<CatalogItem>> GetProductByTypeAndBrandId(int typeId, int? brandId)
+        {
             var catalogs = _catalogContext.CatalogItems.Where(e => e.CatalogType.Id == typeId);
-            if (brandId != null && brandId>0)
-                catalogs=catalogs.Where(e => e.CatalogBrand.Id == brandId);
+            if (brandId != null && brandId > 0)
+                catalogs = catalogs.Where(e => e.CatalogBrand.Id == brandId);
 
             catalogs.ToList().ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
 
@@ -185,7 +186,7 @@ namespace Catalog.API.Controllers
             data.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
             await searchRepository.SaveManyAsync(data);
 
-            var lst=await searchRepository.SearchAsync(phrase);
+            var lst = await searchRepository.SearchAsync(phrase);
             return lst;
         }
 
@@ -193,7 +194,7 @@ namespace Catalog.API.Controllers
         [Route("items/search")]
         public async Task<IEnumerable<CatalogItem>> Search([FromQuery]SearchModel model)
         {
-            var lst=await searchRepository.SearchAsync(model);
+            var lst = await searchRepository.SearchAsync(model);
             return lst.ToList();
         }
 
@@ -205,12 +206,23 @@ namespace Catalog.API.Controllers
             if (existing != null)
                 this._catalogContext.Remove(existing);
 
-            var result =await searchRepository.DeleteAsync(id);
+            var result = await searchRepository.DeleteAsync(id);
             _catalogContext.SaveChanges();
             return Ok();
         }
 
-       
+        [Route("Populate")]
+        [HttpGet]
+        public ActionResult PopulateDataToElastic()
+        {
+            //To populate data to redis at the begining
+            //No need to delete existing data
+            var items = _catalogContext.CatalogItems.Include(e => e.CatalogType).Include(e => e.CatalogBrand).ToList();
+            items.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
 
-    }
+            searchRepository.SaveManyAsync(items);
+            return Ok();
+        }
+
+    }  
 }

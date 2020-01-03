@@ -65,17 +65,25 @@ namespace Ordering.API.Controllers
 
             return Ok(order);
         }
-        //[Route("status/{status}")]
-        //[HttpGet]
-        //public async Task<ActionResult> GetAllByStatus( int status, [FromQuery] int pageSize = 2, [FromQuery] int pageIndex = 0)
-        //{
-        //    var orders = await mediator.Send(new GetOrdersByStatusQuery(pageSize, pageIndex));
-        //    if (orders == null || orders.Count < 1)
-        //        return NoContent();
 
-        //    return Ok(orders);
-        //}
+        [Route("status/{status}")]
+        [HttpGet]
+        public async Task<ActionResult> GetAllByStatus(int status, [FromQuery] int pageSize = 2, [FromQuery] int pageIndex = 0)
+        {
+            var orders = await mediator.Send(new GetOrdersByStatusQuery(pageSize, pageIndex, status));
+            if (orders == null || orders.Count < 1)
+                return NoContent();
 
+            return Ok(orders);
+        }
+
+        [HttpGet]
+        [Route("details/{orderId}")]
+        public async Task<ActionResult> GetOrderDetailsByOrderId(int orderId)
+        {
+            var order = await mediator.Send(new GetOrderDetailsQuery(orderId));
+                return Ok(order);
+        }
 
     }
 }
