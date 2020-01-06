@@ -25,7 +25,7 @@ using Ordering.Domain.AggregatesModel.BuyerAggregate;
 using Ordering.Domain.AggregatesModel.OrderAggregate;
 using Ordering.Infrastructure;
 using Ordering.Infrastructure.Repositories;
-
+using Microsoft.OpenApi.Models;
 namespace Ordering.API
 {
     public class Startup
@@ -91,12 +91,17 @@ namespace Ordering.API
             //services.AddScoped(typeof(IFoo<,>), typeof(Foo<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(Application.Validation.ValidationBehavior<,>));
 
-            services.AddSwaggerGen(ac => {
-                ac.SwaggerDoc("ordering", new Swashbuckle.AspNetCore.Swagger.Info { Title="Ordering API",Version="v1"});
-                
+
+            //Install - Package Swashbuckle.AspNetCore - Version 5.0.0 - rc4
+            //suppress warning 1591
+            //https://exceptionnotfound.net/adding-swagger-to-asp-net-core-web-api-using-xml-documentation/
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ordering API", Version = "v1" });
                 var contentRoot = HostingEnvironment.ContentRootPath;
-                //var path = $"{contentRoot}\Ordering.API.xml";
-                //ac.IncludeXmlComments(path);
+                var path = $"{contentRoot}\\Ordering.API.xml";
+                c.IncludeXmlComments(path);
             });
 
             services.AddScoped<DoesBuyerExist, DoesBuyerExist>();
@@ -124,7 +129,7 @@ namespace Ordering.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -136,20 +141,23 @@ namespace Ordering.API
                 app.UseHsts();
             }
 
-            loggerFactory.AddFile("Logs/orderingLogs.txt",LogLevel.Information, new Dictionary<string, LogLevel>()
+            loggerFactory.AddFile("Logs/orderingLogs.txt", LogLevel.Information, new Dictionary<string, LogLevel>()
             {
                 { "Microsoft", LogLevel.Error },
                 { "System", LogLevel.Error }
             });
             app.UseCors("myPolicy");
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/swagger.json", "Ordering API"));
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ordering API V1");
+            });
             //app.UseHttpsRedirection();
             app.UseAuthentication();
-           
+            app.UseStaticFiles();
             app.UseMvc();
             
-            ConfigureEventBus(app);
+            //ConfigureEventBus(app);
 
         }
         private void ConfigureEventBus(IApplicationBuilder app)

@@ -4,5 +4,12 @@
         <name>Ordering.API</name>
     </assembly>
     <members>
+        <member name="M:Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId(System.Int32)">
+            <summary>
+            Retrieve order detail by order id.
+            </summary>
+            <param name="orderId">The ID of the desired order</param>
+            <returns>An order</returns>
+        </member>
     </members>
 </doc>

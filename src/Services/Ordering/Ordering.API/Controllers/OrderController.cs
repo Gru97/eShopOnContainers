@@ -90,6 +90,11 @@ namespace Ordering.API.Controllers
             return Ok(orders);
         }
 
+        /// <summary>
+        /// Retrieve order detail by order id.
+        /// </summary>
+        /// <param name="orderId">The ID of the desired order</param>
+        /// <returns>An order</returns>
         [HttpGet]
         [Route("details/{orderId}")]
         public async Task<ActionResult> GetOrderDetailsByOrderId(int orderId)
