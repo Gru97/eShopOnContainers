@@ -48,6 +48,17 @@ namespace Ordering.API.Controllers
         }
 
         [HttpGet]
+        [Route("LatestOrderStatus/BuyerId/{buyerId}")]
+        public async Task<ActionResult> GetLatestOrderForUser(string buyerId)
+        {
+            var orders = await mediator.Send(new GetOrdersForBuyerQuery(buyerId));
+            if (orders == null || orders.Count < 1 || orders.First().date.Date!=DateTime.Today.Date)
+                return NoContent();
+
+            return Ok(orders.First().status);
+        }
+
+        [HttpGet]
         [Route("all")]
         public async Task<ActionResult> GetAll([FromQuery] int pageSize = 2, [FromQuery] int pageIndex = 0)
         {
@@ -86,6 +97,7 @@ namespace Ordering.API.Controllers
             var order = await mediator.Send(new GetOrderDetailsQuery(orderId));
                 return Ok(order);
         }
+
 
     }
 }

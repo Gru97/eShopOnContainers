@@ -32,6 +32,8 @@ namespace Ordering.API.Application.Commands
             await repository.UnitOfWork.SaveChangesAsync();
             logger.LogInformation("SaveChanges finished ");
 
+            //raise an integration event so basket would listen to and remove items
+            //But we don't have basket key (Id) for this user. It's not in the events
             return await Task.FromResult(Unit.Value);
         }
     }

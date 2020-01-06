@@ -16,10 +16,13 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
     {
         private DateTime _orderDate;
 
+
         public DateTime OrderDate
         {
-            get; private set;
+            get { return _orderDate; }
+            set { _orderDate = value; }
         }
+
 
         public Address Address { get; private set; }
         private int? _buyerId;

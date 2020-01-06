@@ -49,6 +49,7 @@ namespace Ordering.API.Application.Queries
             var q=from o in context.Orders join b in context.Buyers
                   on o.BuyerId equals b.Id
                   where b.IdentityGuid==buyerId.ToString()
+                  orderby o.OrderDate
                   select new OrderSummeryViewModel
                   {
                       ordernumber=o.Id,

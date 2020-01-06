@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using Basket.API.Model;
 using EventBus.Abstractions;
@@ -47,10 +48,10 @@ namespace Basket.API.Controllers
         }
 
         [HttpDelete]
-        [Route("Delete/Id")]
-        public async Task<bool> DeleteBasketByIdAsync(string CustomerId)
+        [Route("{Id}")]
+        public async Task<bool> DeleteBasketByIdAsync(string Id)
         {
-            return await repository.DeleteBasketAsync(CustomerId);
+            return await repository.DeleteBasketAsync(Id);
         }
 
         [HttpPost]
@@ -72,18 +73,25 @@ namespace Basket.API.Controllers
             //Publish UserCheckoutIntegrationEvent and dispatch it throught eventbus
 
             //var userIdentity = User.FindFirstValue(ClaimTypes.NameIdentifier); // will give the user's userId
+            //basketCheckout.UserId is the key generated on client side and is the key to customer basket
+            // basketCheckout.UserIdentity is the identity ID
             CustomerBasket basket = await repository.GetBasketAsync(basketCheckout.UserId);
             if (basket == null) return BadRequest();
             var message = new UserCheckoutIntegrationEvent(basketCheckout.UserIdentity,
+                basketCheckout.UserId,
                 basketCheckout.UserName,
                 basketCheckout.Street, basketCheckout.Country,
                 basketCheckout.City, basketCheckout.State, basketCheckout.ZipCode,
                 basket);
             message.Id = new Guid();
             eventBus.Publish(message);
+
             //Here I am assuming everything goes fine and the order will be created inside Ordering service, so I empty the basket
             //But it might not be true, so probably I should handle the real scenario later.
-            await repository.DeleteBasketAsync(basketCheckout.UserId);
+            //await repository.DeleteBasketAsync(basketCheckout.UserId);
+
+            //Response.Headers.Add("lookupUrl", "LatestOrder/BuyerId/{buyerId}");
+            Thread.Sleep(5000);
             return Accepted();
         }
 

@@ -9,6 +9,8 @@ namespace Ordering.API.Application.IntegrationEvents.Events
     public class UserCheckoutIntegrationEvent:IntegrationEvent
     {
         public string UserId { get; set; }
+        public string BasketKey { get; set; }
+
         public string UserName { get; set; }
         public string Street { get; set; }
         public string Country { get; set; }
@@ -16,9 +18,8 @@ namespace Ordering.API.Application.IntegrationEvents.Events
         public string State { get; set; }
         public string ZipCode { get; set; }
         public CustomerBasket Basket { get; set; }
-        public string Buyer { get; set; }
-
-        public UserCheckoutIntegrationEvent(string userId, string userName, string street, string country, string city, string state, string zipCode, CustomerBasket basket, string buyer)
+       
+        public UserCheckoutIntegrationEvent(string userId, string basketKey, string userName, string street, string country, string city, string state, string zipCode, CustomerBasket basket, string buyer)
         {
             UserId = userId;
             UserName = userName;
@@ -28,7 +29,7 @@ namespace Ordering.API.Application.IntegrationEvents.Events
             State = state;
             ZipCode = zipCode;
             Basket = basket;
-            Buyer = buyer;
+            BasketKey = basketKey;
         }
     }
     

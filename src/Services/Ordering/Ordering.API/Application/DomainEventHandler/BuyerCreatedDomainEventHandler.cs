@@ -24,7 +24,7 @@ namespace Ordering.API.Application.DomainEventHandler
         public async Task Handle(BuyerCreatedDomainEvent notification, CancellationToken cancellationToken)
         {
             var order = await orderRepository.FindAsycn(notification.orderId);
-            logger.LogInformation($"order retrieved to set its buyer. {@order}");
+            logger.LogInformation("order retrieved to set its buyer {@order}", order);
 
             order.BuyerId = notification.buyerId;
             logger.LogInformation($"buyerId set to {@order.BuyerId}");
@@ -34,7 +34,8 @@ namespace Ordering.API.Application.DomainEventHandler
 
             //This transaction hasn't commited yet (We are before executing the previous SaveChanges())
             //So no need to call SaveChanges again
-            //await orderRepository.UnitOfWork.SaveChangesAsync();
+            //The two above line are wong!
+            await orderRepository.UnitOfWork.SaveChangesAsync();
 
         }
     }

@@ -136,7 +136,11 @@ namespace Ordering.API
                 app.UseHsts();
             }
 
-            loggerFactory.AddFile("Logs/orderingLogs.txt",LogLevel.Information);
+            loggerFactory.AddFile("Logs/orderingLogs.txt",LogLevel.Information, new Dictionary<string, LogLevel>()
+            {
+                { "Microsoft", LogLevel.Error },
+                { "System", LogLevel.Error }
+            });
             app.UseCors("myPolicy");
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/swagger.json", "Ordering API"));
