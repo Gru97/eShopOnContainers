@@ -85,7 +85,7 @@ namespace Catalog.API.Controllers
 
         [HttpPost]
         [Route("items")]
-        public async Task CreateProductAsync(CatalogItem newProduct)
+        public async Task<ActionResult> CreateProductAsync(CatalogItem newProduct)
         {
             CatalogItem catalog = new CatalogItem(newProduct.Name,
                 newProduct.Description, newProduct.Price, newProduct.CatalogType.Id, newProduct.CatalogBrand.Id,
@@ -103,7 +103,7 @@ namespace Catalog.API.Controllers
                 await searchRepository.SaveAsync(product);
                 transaction.Commit();
             }
-
+            return Ok();
         }
 
         [HttpPut]

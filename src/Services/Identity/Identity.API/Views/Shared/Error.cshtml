@@ -6,35 +6,21 @@
     var request_id = Model?.Error?.RequestId;
 }
 
-<div class="error-page">
-    <div class="page-header">
-        <h1>Error</h1>
+<div class="error-page  rtl-direction">
+    <div class="page-header text-center">
+        <h1>خطا</h1>
     </div>
 
-    <div class="row">
+    <div class="row text-center">
+        <div class="col-sm-3"></div>
         <div class="col-sm-6">
-            <div class="alert alert-danger">
-                Sorry, there was an error
-
-                @if (error != null)
-                {
-                    <strong>
-                        <em>
-                            : @error
-                        </em>
-                    </strong>
-
-                    if (errorDescription != null)
-                    {
-                        <div>@errorDescription</div>
-                    }
-                }
+            <div class="alert alert-danger ">
+                خطایی رخ داده است. شما به این صفحه مجوز دسترسی ندارید.
             </div>
 
-            @if (request_id != null)
-            {
-                <div class="request-id">Request Id: @request_id</div>
-            }
+
         </div>
+        <div class="col-sm-3"></div>
+
     </div>
 </div>
