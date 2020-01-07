@@ -99,9 +99,9 @@ namespace Ordering.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ordering API", Version = "v1" });
-                var contentRoot = HostingEnvironment.ContentRootPath;
-                var path = $"{contentRoot}\\Ordering.API.xml";
-                c.IncludeXmlComments(path);
+                //var contentRoot = HostingEnvironment.ContentRootPath;
+                //var path = $"{contentRoot}\\Ordering.API.xml";
+                //c.IncludeXmlComments(path);
             });
 
             services.AddScoped<DoesBuyerExist, DoesBuyerExist>();
@@ -157,7 +157,7 @@ namespace Ordering.API
             app.UseStaticFiles();
             app.UseMvc();
             
-            //ConfigureEventBus(app);
+            ConfigureEventBus(app);
 
         }
         private void ConfigureEventBus(IApplicationBuilder app)

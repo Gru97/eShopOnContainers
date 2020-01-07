@@ -1,564 +1,143 @@
-2020-01-06T15:10:44.4380545+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T15:10:44.4907446+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Quantity: 1, UnitPrice: 1500000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", City: "تهران", State: "تهران", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T15:11:11.3750395+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 15:11:07, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: 01/06/2020 15:11:07, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: 01/06/2020 15:11:07, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T15:11:25.6108592+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T15:11:26.2648969+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 15:11:07, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.0, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0, PictureUri: null, Id: 23, DomainEvents: null }], Id: 23, DomainEvents: [] } (eee39e3d)
-2020-01-06T15:11:26.2730592+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T15:11:26.2775694+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T15:11:26.3945858+00:00  [INF] SaveChanges called on buyer (3505242c)
-2020-01-06T15:11:30.7898794+00:00  [INF] Order SaveChanges finished (85d05615)
-2020-01-06T15:11:43.3742618+00:00  [INF] CreateOrderCommand sent (8a728658)
-2020-01-06T15:13:44.0419947+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T15:13:44.0493166+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Quantity: 1, UnitPrice: 1500000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", City: "تهران", State: "تهران", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T15:13:58.1773155+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 15:13:55, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: 01/06/2020 15:13:55, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: 01/06/2020 15:13:55, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T15:14:09.9737912+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T15:14:10.0995229+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 15:13:55, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.0, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0, PictureUri: null, Id: 24, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 3340000.00, ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Discount: 0.00, PictureUri: null, Id: 25, DomainEvents: null }], Id: 24, DomainEvents: [] } (eee39e3d)
-2020-01-06T15:14:10.1086361+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T15:14:10.1182529+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T15:14:11.4487750+00:00  [ERR] Failed executing DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
-""SET NOCOUNT ON;
-INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (627a98df)
-System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (24).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-ClientConnectionId:7610d4f9-b129-48d7-bc14-8c9c57a462ab
-Error Number:2627,State:1,Class:14
-2020-01-06T15:14:11.6806558+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
-""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (24).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (24).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-2020-01-06T15:14:21.2485423+00:00  [ERR] CreateOrderCommand couldn't be sentAn error occurred while updating the entries. See the inner exception for details. (d244cd0e)
-2020-01-06T15:14:55.8695170+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T15:14:55.8764777+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Quantity: 1, UnitPrice: 1500000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", City: "تهران", State: "تهران", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T15:14:57.7892149+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 15:14:57, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: 01/06/2020 15:14:57, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: 01/06/2020 15:14:57, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "alice", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T15:16:14.9709532+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T15:19:54.0441737+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 15:14:57, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.0, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0, PictureUri: null, Id: 25, DomainEvents: null }], Id: 25, DomainEvents: [] } (eee39e3d)
-2020-01-06T15:19:59.9201551+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T15:20:03.5674764+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T15:20:20.7272111+00:00  [ERR] Failed executing DbCommand ("725"ms) [Parameters=["@p10='?' (DbType = Int32), @p11='?' (DbType = Decimal), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
-""SET NOCOUNT ON;
-INSERT INTO [OrderItems] ([Id], [Discount], [OrderId], [PictureUri], [ProductId], [ProductName], [Quantity], [UnitPrice])
-VALUES (@p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (627a98df)
-System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (25).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-ClientConnectionId:7610d4f9-b129-48d7-bc14-8c9c57a462ab
-Error Number:2627,State:1,Class:14
-2020-01-06T15:20:20.7496833+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
-""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (25).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (25).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ordering.Infrastructure.OrderingContext.SaveChangesAsync() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.Infrastructure\OrderingContext.cs:line 41
-2020-01-06T15:20:30.4228410+00:00  [ERR] CreateOrderCommand couldn't be sentAn error occurred while updating the entries. See the inner exception for details. (d244cd0e)
-2020-01-06T15:48:50.8753813+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T15:48:50.9202530+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Quantity: 1, UnitPrice: 1500000.0, Discount: 0 }, OrderItemDto { ProductId: 5, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A20 SM-A205F/DS دو سیم کارت ظرفیت 32گیگابایت", Quantity: 1, UnitPrice: 2510000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T15:49:02.3405865+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 15:49:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:49:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:49:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T15:49:18.7318009+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T15:49:26.3018327+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 15:49:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.0, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0, PictureUri: null, Id: 24, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 2510000.0, ProductId: 5, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A20 SM-A205F/DS دو سیم کارت ظرفیت 32گیگابایت", Discount: 0, PictureUri: null, Id: 25, DomainEvents: null }], Id: 24, DomainEvents: [] } (eee39e3d)
-2020-01-06T15:49:26.3086997+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T15:49:26.3188063+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T15:49:30.2883390+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T15:49:30.3018329+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 2, Units: 1 }, StockItem { ProductId: 5, Units: 1 }], OrderId: 24, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 15:49:30 } (ff364eea)
-2020-01-06T15:49:30.4455038+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T15:49:30.6134491+00:00  [ERR] Failed executing DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
-""SET NOCOUNT ON;
-INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (627a98df)
-System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (24).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-ClientConnectionId:14688747-46b2-4691-960a-b17fef2b685a
-Error Number:2627,State:1,Class:14
-2020-01-06T15:49:30.6659106+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
-""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (24).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (24).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-2020-01-06T15:49:46.7544968+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 24 }  (5429d522)
-2020-01-06T15:49:48.6438427+00:00  [ERR] CreateOrderCommand couldn't be sentAn error occurred while updating the entries. See the inner exception for details. (d244cd0e)
-2020-01-06T15:49:48.6538897+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T15:49:48.6609389+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Quantity: 1, UnitPrice: 1500000.0, Discount: 0 }, OrderItemDto { ProductId: 5, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A20 SM-A205F/DS دو سیم کارت ظرفیت 32گیگابایت", Quantity: 1, UnitPrice: 2510000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T15:49:50.8505505+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 15:49:50, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:49:50, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:49:50, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T15:49:58.7417258+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T15:50:01.4886454+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 15:49:50, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.0, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0, PictureUri: null, Id: 26, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 2510000.0, ProductId: 5, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A20 SM-A205F/DS دو سیم کارت ظرفیت 32گیگابایت", Discount: 0, PictureUri: null, Id: 27, DomainEvents: null }], Id: 25, DomainEvents: [] } (eee39e3d)
-2020-01-06T15:50:01.5110078+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T15:50:01.5167316+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T15:50:04.3909622+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T15:50:04.4036776+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 2, Units: 1 }, StockItem { ProductId: 5, Units: 1 }], OrderId: 25, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 15:50:04 } (ff364eea)
-2020-01-06T15:50:04.4747152+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T15:50:04.5921443+00:00  [INF] SaveChanges called on buyer (3505242c)
-2020-01-06T15:50:04.6165775+00:00  [INF] Order SaveChanges finished (85d05615)
-2020-01-06T15:50:04.6385885+00:00  [INF] CreateOrderCommand sent (8a728658)
-2020-01-06T15:50:04.7561416+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 15:06:58, Address: Address { Street: "فروغی", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 8, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3340000.00, ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Discount: 0.00, PictureUri: null, Id: 25, DomainEvents: null }], Id: 24, DomainEvents: null } (6f81d885)
-2020-01-06T15:50:04.7687863+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
-2020-01-06T15:50:06.4737360+00:00  [INF] SaveChanges finished  (90950fbb)
-2020-01-06T15:50:06.5026095+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
-2020-01-06T15:50:07.8481390+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 25 }  (5429d522)
-2020-01-06T15:50:09.4088938+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 15:49:50, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: 8, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.00, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0.00, PictureUri: null, Id: 26, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 2510000.00, ProductId: 5, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A20 SM-A205F/DS دو سیم کارت ظرفیت 32گیگابایت", Discount: 0.00, PictureUri: null, Id: 27, DomainEvents: null }], Id: 25, DomainEvents: null } (6f81d885)
-2020-01-06T15:50:09.4216191+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
-2020-01-06T15:50:10.8112263+00:00  [INF] SaveChanges finished  (90950fbb)
-2020-01-06T15:50:10.8262788+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
-2020-01-06T15:53:07.0257670+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T15:53:07.0332465+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Quantity: 1, UnitPrice: 1500000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T15:53:10.4306641+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 15:53:10, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:53:10, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:53:10, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T15:53:14.7718561+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T15:53:14.8028905+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 15:53:10, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.0, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0, PictureUri: null, Id: 28, DomainEvents: null }], Id: 26, DomainEvents: [] } (eee39e3d)
-2020-01-06T15:53:14.8072338+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T15:53:14.8178022+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T15:53:14.8236434+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T15:53:14.8360884+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 2, Units: 1 }], OrderId: 26, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 15:53:14 } (ff364eea)
-2020-01-06T15:53:14.9165100+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T15:53:14.9885248+00:00  [INF] SaveChanges called on buyer (3505242c)
-2020-01-06T15:53:15.0043134+00:00  [INF] Order SaveChanges finished (85d05615)
-2020-01-06T15:53:15.0191972+00:00  [INF] CreateOrderCommand sent (8a728658)
-2020-01-06T15:53:17.8718588+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 26 }  (5429d522)
-2020-01-06T15:53:17.9235127+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 15:53:10, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: 8, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.00, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0.00, PictureUri: null, Id: 28, DomainEvents: null }], Id: 26, DomainEvents: null } (6f81d885)
-2020-01-06T15:53:17.9387029+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
-2020-01-06T15:53:18.0043006+00:00  [INF] SaveChanges finished  (90950fbb)
-2020-01-06T15:53:18.0101604+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
-2020-01-06T15:59:42.2913590+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T15:59:42.3265399+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 14, ProductName: "لپ تاپ 13 اینچی اپل مدل MacBook Pro MV972 2019 همراه با تاچ بار", Quantity: 1, UnitPrice: 26000000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T15:59:42.6293289+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 15:59:42, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:59:42, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 15:59:42, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T15:59:49.0508673+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T15:59:49.2239331+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 15:59:42, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 26000000.0, ProductId: 14, ProductName: "لپ تاپ 13 اینچی اپل مدل MacBook Pro MV972 2019 همراه با تاچ بار", Discount: 0, PictureUri: null, Id: 25, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 1500000.00, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0.00, PictureUri: null, Id: 26, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 2510000.00, ProductId: 5, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A20 SM-A205F/DS دو سیم کارت ظرفیت 32گیگابایت", Discount: 0.00, PictureUri: null, Id: 27, DomainEvents: null }], Id: 25, DomainEvents: [] } (eee39e3d)
-2020-01-06T15:59:49.2314899+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T15:59:49.2366858+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T15:59:49.2543157+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T15:59:49.2634833+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 14, Units: 1 }, StockItem { ProductId: 2, Units: 1 }, StockItem { ProductId: 5, Units: 1 }], OrderId: 25, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 15:59:49 } (ff364eea)
-2020-01-06T15:59:49.3960950+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T15:59:49.5931793+00:00  [ERR] Failed executing DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
-""SET NOCOUNT ON;
-INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (627a98df)
-System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (25).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-ClientConnectionId:0829c05b-b1ad-4290-8288-bc8efe3868c6
-Error Number:2627,State:1,Class:14
-2020-01-06T15:59:49.6872495+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
-""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (25).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (25).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ordering.Infrastructure.OrderingContext.SaveChangesAsync() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.Infrastructure\OrderingContext.cs:line 41
-2020-01-06T15:59:53.0074291+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 25 }  (5429d522)
-2020-01-06T16:00:05.5355136+00:00  [ERR] CreateOrderCommand couldn't be sentAn error occurred while updating the entries. See the inner exception for details. (d244cd0e)
-2020-01-06T16:00:05.8813335+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 15:49:50, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: 8, OrderState: StockConfirmed, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.00, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0.00, PictureUri: null, Id: 26, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 2510000.00, ProductId: 5, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A20 SM-A205F/DS دو سیم کارت ظرفیت 32گیگابایت", Discount: 0.00, PictureUri: null, Id: 27, DomainEvents: null }], Id: 25, DomainEvents: null } (6f81d885)
-2020-01-06T16:00:05.8873978+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
-2020-01-06T16:00:05.8949329+00:00  [INF] SaveChanges finished  (90950fbb)
-2020-01-06T16:00:05.9156409+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
-2020-01-06T16:02:02.7543519+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T16:02:02.7614565+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Quantity: 1, UnitPrice: 100500.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T16:02:02.7889410+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 16:02:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:02:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:02:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T16:02:08.7653020+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T16:02:08.8782498+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 16:02:02, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 100500.0, ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Discount: 0, PictureUri: null, Id: 26, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 1500000.00, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0.00, PictureUri: null, Id: 28, DomainEvents: null }], Id: 26, DomainEvents: [] } (eee39e3d)
-2020-01-06T16:02:08.8832582+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T16:02:08.8917812+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T16:02:08.9004505+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T16:02:08.9233312+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 21, Units: 1 }, StockItem { ProductId: 2, Units: 1 }], OrderId: 26, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 16:02:08 } (ff364eea)
-2020-01-06T16:02:08.9936052+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T16:02:09.0454703+00:00  [ERR] Failed executing DbCommand ("26"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
-""SET NOCOUNT ON;
-INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (627a98df)
-System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (26).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-ClientConnectionId:0829c05b-b1ad-4290-8288-bc8efe3868c6
-Error Number:2627,State:1,Class:14
-2020-01-06T16:02:09.0959297+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
-""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (26).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (26).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ordering.Infrastructure.OrderingContext.SaveChangesAsync() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.Infrastructure\OrderingContext.cs:line 41
-2020-01-06T16:02:10.1161460+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 26 }  (5429d522)
-2020-01-06T16:02:22.7438988+00:00  [ERR] CreateOrderCommand couldn't be sentAn error occurred while updating the entries. See the inner exception for details. (d244cd0e)
-2020-01-06T16:02:22.8153496+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 15:53:10, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: 8, OrderState: StockConfirmed, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.00, ProductId: 2, ProductName: "گوشی موبایل ال جی مدل V30 Plus", Discount: 0.00, PictureUri: null, Id: 28, DomainEvents: null }], Id: 26, DomainEvents: null } (6f81d885)
-2020-01-06T16:02:22.8315523+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
-2020-01-06T16:02:22.8391344+00:00  [INF] SaveChanges finished  (90950fbb)
-2020-01-06T16:02:22.8441072+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
-2020-01-06T16:03:19.8106896+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T16:03:19.8225433+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 4, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A10 SM-A105F/DS دو سیم کارت ظرفیت 32 گیگابایت", Quantity: 1, UnitPrice: 3050000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T16:03:19.8319292+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 16:03:19, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:03:19, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:03:19, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T16:03:19.8684323+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T16:03:19.9860132+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 16:03:19, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3050000.0, ProductId: 4, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A10 SM-A105F/DS دو سیم کارت ظرفیت 32 گیگابایت", Discount: 0, PictureUri: null, Id: 27, DomainEvents: null }], Id: 27, DomainEvents: [] } (eee39e3d)
-2020-01-06T16:03:19.9947193+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T16:03:20.0005111+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T16:03:20.0078954+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T16:03:20.0130939+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 4, Units: 1 }], OrderId: 27, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 16:03:20 } (ff364eea)
-2020-01-06T16:03:20.0651731+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T16:03:20.1200623+00:00  [ERR] Failed executing DbCommand ("6"ms) [Parameters=["@p10='?' (DbType = Int32), @p11='?' (DbType = Decimal), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
-""SET NOCOUNT ON;
-INSERT INTO [OrderItems] ([Id], [Discount], [OrderId], [PictureUri], [ProductId], [ProductName], [Quantity], [UnitPrice])
-VALUES (@p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (627a98df)
-System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (27).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-ClientConnectionId:0829c05b-b1ad-4290-8288-bc8efe3868c6
-Error Number:2627,State:1,Class:14
-2020-01-06T16:03:20.1271986+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 27 }  (5429d522)
-2020-01-06T16:03:20.1829977+00:00  [INF] Order retrieved "(null)" (6f81d885)
-2020-01-06T16:03:23.6203310+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
-""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (27).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (27).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Ordering.Infrastructure.OrderingContext.SaveChangesAsync() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.Infrastructure\OrderingContext.cs:line 41
-2020-01-06T16:03:38.0780313+00:00  [ERR] CreateOrderCommand couldn't be sentAn error occurred while updating the entries. See the inner exception for details. (d244cd0e)
-2020-01-06T16:05:31.0081289+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T16:05:31.0332333+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 4, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A10 SM-A105F/DS دو سیم کارت ظرفیت 32 گیگابایت", Quantity: 1, UnitPrice: 3050000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T16:05:31.0391114+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 16:05:31, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:05:31, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:05:31, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T16:05:31.0697377+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T16:05:31.0878088+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 16:05:31, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3050000.0, ProductId: 4, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A10 SM-A105F/DS دو سیم کارت ظرفیت 32 گیگابایت", Discount: 0, PictureUri: null, Id: 28, DomainEvents: null }], Id: 28, DomainEvents: [] } (eee39e3d)
-2020-01-06T16:05:31.0919018+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T16:05:31.0964253+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T16:05:31.1028721+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T16:05:31.1089253+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 4, Units: 1 }], OrderId: 28, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 16:05:31 } (ff364eea)
-2020-01-06T16:05:31.1616429+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T16:05:31.2008567+00:00  [ERR] Failed executing DbCommand ("3"ms) [Parameters=["@p10='?' (DbType = Int32), @p11='?' (DbType = Decimal), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
-""SET NOCOUNT ON;
-INSERT INTO [OrderItems] ([Id], [Discount], [OrderId], [PictureUri], [ProductId], [ProductName], [Quantity], [UnitPrice])
-VALUES (@p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (627a98df)
-System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (28).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-ClientConnectionId:0829c05b-b1ad-4290-8288-bc8efe3868c6
-Error Number:2627,State:1,Class:14
-2020-01-06T16:05:31.2298614+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 28 }  (5429d522)
-2020-01-06T16:05:31.2668690+00:00  [INF] Order retrieved "(null)" (6f81d885)
-2020-01-06T16:05:33.6477002+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
-""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (28).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (28).
-The statement has been terminated.
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-2020-01-06T16:05:48.0981693+00:00  [ERR] CreateOrderCommand couldn't be sentAn error occurred while updating the entries. See the inner exception for details. (d244cd0e)
-2020-01-06T16:07:27.2877297+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
-2020-01-06T16:07:27.2943461+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 6, ProductName: "هارد اکسترنال ای دیتا مدل HD710 Pro ظرفیت 1 ترابایت", Quantity: 1, UnitPrice: 200000.0, Discount: 0 }], UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", City: "اصفهان", State: "اصفهان", Country: "ایران", Street: "فروغی", ZipCode: "123456" } (3fd9f466)
-2020-01-06T16:07:27.3018516+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 16:07:27, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:07:27, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: 01/06/2020 16:07:27, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "5c353957-2e04-4814-820b-2bfdf5b6c246", UserName: "hamid", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
-2020-01-06T16:07:27.3346085+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
-2020-01-06T16:07:27.3525112+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 16:07:27, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 200000.0, ProductId: 6, ProductName: "هارد اکسترنال ای دیتا مدل HD710 Pro ظرفیت 1 ترابایت", Discount: 0, PictureUri: null, Id: 29, DomainEvents: null }], Id: 29, DomainEvents: [] } (eee39e3d)
-2020-01-06T16:07:27.3575737+00:00  [INF] buyerId set to 8 (50a372ea)
-2020-01-06T16:07:27.3628321+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
-2020-01-06T16:07:27.3693284+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
-2020-01-06T16:07:27.3737039+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 6, Units: 1 }], OrderId: 29, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 16:07:27 } (ff364eea)
-2020-01-06T16:07:27.4348134+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
-2020-01-06T16:07:27.4949229+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 29 }  (5429d522)
-2020-01-06T16:07:27.5328327+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 16:07:27, Address: Address { Street: "فروغی", City: "اصفهان", State: "اصفهان", Country: "ایران", ZipCode: "123456" }, BuyerId: 8, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 200000.00, ProductId: 6, ProductName: "هارد اکسترنال ای دیتا مدل HD710 Pro ظرفیت 1 ترابایت", Discount: 0.00, PictureUri: null, Id: 29, DomainEvents: null }], Id: 29, DomainEvents: null } (6f81d885)
-2020-01-06T16:07:27.5388434+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
-2020-01-06T16:07:27.5563524+00:00  [INF] SaveChanges called on buyer (3505242c)
-2020-01-06T16:07:27.5639264+00:00  [INF] Order SaveChanges finished (85d05615)
-2020-01-06T16:07:27.5698070+00:00  [INF] CreateOrderCommand sent (8a728658)
-2020-01-06T16:07:27.6362708+00:00  [INF] SaveChanges finished  (90950fbb)
-2020-01-06T16:07:27.6966570+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
-2020-01-06T20:00:06.7102797+03:30  [FTL] Unable to start Kestrel. (fc6a528d)
-System.IO.IOException: Failed to bind to address http://localhost:5000. ---> System.AggregateException: One or more errors occurred. (An attempt was made to access a socket in a way forbidden by its access permissions) (An attempt was made to access a socket in a way forbidden by its access permissions) ---> System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions
-   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
-   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
-   --- End of inner exception stack trace ---
-   --- End of inner exception stack trace ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
-2020-01-06T20:00:20.9381818+03:30  [FTL] Unable to start Kestrel. (fc6a528d)
-System.IO.IOException: Failed to bind to address http://localhost:5000. ---> System.AggregateException: One or more errors occurred. (An attempt was made to access a socket in a way forbidden by its access permissions) (An attempt was made to access a socket in a way forbidden by its access permissions) ---> System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions
-   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
-   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
-   --- End of inner exception stack trace ---
-   --- End of inner exception stack trace ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Hosting.Internal.WebHost.StartAsync(CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Hosting.WebHostExtensions.RunAsync(IWebHost host, CancellationToken token, String shutdownMessage)
-2020-01-06T20:00:58.8093207+03:30  [FTL] Unable to start Kestrel. (fc6a528d)
-System.IO.IOException: Failed to bind to address http://localhost:5000. ---> System.AggregateException: One or more errors occurred. (An attempt was made to access a socket in a way forbidden by its access permissions) (An attempt was made to access a socket in a way forbidden by its access permissions) ---> System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions
-   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
-   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
-   --- End of inner exception stack trace ---
-   --- End of inner exception stack trace ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Hosting.Internal.WebHost.StartAsync(CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Hosting.WebHostExtensions.RunAsync(IWebHost host, CancellationToken token, String shutdownMessage)
+2020-01-06T19:31:52.4546609+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:31:52.4997767+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Quantity: 1, UnitPrice: 3340000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:31:52.9601883+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:31:52, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:31:52, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:31:52, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:31:54.6899989+00:00  [INF] buyer didn't exist (869aa029)
+2020-01-06T19:31:54.6975915+00:00  [INF] buyer instantiated (0b3418f2)
+2020-01-06T19:31:54.7452427+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:31:59.9309263+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:31:52, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3340000.0, ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Discount: 0, PictureUri: null, Id: 26, DomainEvents: null }], Id: 26, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:31:59.9402983+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:31:59.9440721+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:31:59.9907870+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:31:59.9992264+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 10, Units: 1 }], OrderId: 26, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:31:59 } (ff364eea)
+2020-01-06T19:32:00.3427189+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:32:00.7515722+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 26 }  (5429d522)
+2020-01-06T19:32:01.8972690+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:32:01.9078793+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:32:01.9279051+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:32:02.0167553+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 19:31:52, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 9, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3340000.00, ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Discount: 0.00, PictureUri: null, Id: 26, DomainEvents: null }], Id: 26, DomainEvents: null } (6f81d885)
+2020-01-06T19:32:02.0206862+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-01-06T19:32:02.0791761+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-01-06T19:32:02.1332592+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-01-06T19:32:57.0548252+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:32:57.0625423+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Quantity: 1, UnitPrice: 3340000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:32:57.0693664+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:32:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:32:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:32:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:32:57.1373527+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:33:00.2061440+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:32:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3340000.0, ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Discount: 0, PictureUri: null, Id: 27, DomainEvents: null }], Id: 27, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:33:00.2108835+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:33:00.2161141+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:33:00.2216611+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:33:00.2266252+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 10, Units: 1 }], OrderId: 27, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:33:00 } (ff364eea)
+2020-01-06T19:33:00.2665748+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:33:00.3480466+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:33:00.3518360+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:33:00.3676520+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:33:00.4146046+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 27 }  (5429d522)
+2020-01-06T19:33:00.4843479+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 19:32:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 9, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3340000.00, ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Discount: 0.00, PictureUri: null, Id: 27, DomainEvents: null }], Id: 27, DomainEvents: null } (6f81d885)
+2020-01-06T19:33:00.4883270+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-01-06T19:33:00.5118365+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-01-06T19:33:00.5192654+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-01-06T19:33:57.1084736+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:33:57.1187634+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Quantity: 2, UnitPrice: 100500.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:33:57.1307317+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:33:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:33:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:33:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:33:57.1896048+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:33:57.2102915+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:33:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 2, UnitPrice: 100500.0, ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Discount: 0, PictureUri: null, Id: 28, DomainEvents: null }], Id: 28, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:33:57.2329325+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:33:57.2376842+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:33:57.2446061+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:33:57.2482605+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 21, Units: 2 }], OrderId: 28, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:33:57 } (ff364eea)
+2020-01-06T19:33:57.2914568+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:33:57.3555190+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:33:57.3655656+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:33:57.3790015+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:33:57.3835284+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 28 }  (5429d522)
+2020-01-06T19:33:57.4089691+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 19:33:57, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 9, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 2, UnitPrice: 100500.00, ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Discount: 0.00, PictureUri: null, Id: 28, DomainEvents: null }], Id: 28, DomainEvents: null } (6f81d885)
+2020-01-06T19:33:57.4126219+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-01-06T19:33:57.4294104+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-01-06T19:33:57.4353743+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-01-06T19:35:48.7432117+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:35:48.7503720+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 14, ProductName: "لپ تاپ 13 اینچی اپل مدل MacBook Pro MV972 2019 همراه با تاچ بار", Quantity: 1, UnitPrice: 26000000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:35:48.7609628+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:35:48, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:35:48, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:35:48, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:35:48.8460590+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:35:48.8691768+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:35:48, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 26000000.0, ProductId: 14, ProductName: "لپ تاپ 13 اینچی اپل مدل MacBook Pro MV972 2019 همراه با تاچ بار", Discount: 0, PictureUri: null, Id: 29, DomainEvents: null }], Id: 29, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:35:48.8742505+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:35:48.8963276+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:35:48.9011027+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:35:48.9065316+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 14, Units: 1 }], OrderId: 29, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:35:48 } (ff364eea)
+2020-01-06T19:35:48.9505981+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:35:49.0003025+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 29 }  (5429d522)
+2020-01-06T19:35:49.0421435+00:00  [INF] Order retrieved "(null)" (6f81d885)
+2020-01-06T19:35:51.3532991+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:35:51.3577438+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:35:51.3623804+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:36:34.0161506+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:36:34.0218572+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 1, ProductName: "لپ تاپ 15 اینچی لنوو مدل Ideapad 330 - F", Quantity: 1, UnitPrice: 5000000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:36:34.0297503+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:36:34, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:36:34, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:36:34, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:36:34.0756676+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:36:34.1500062+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:36:34, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 5000000.0, ProductId: 1, ProductName: "لپ تاپ 15 اینچی لنوو مدل Ideapad 330 - F", Discount: 0, PictureUri: null, Id: 30, DomainEvents: null }], Id: 30, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:36:34.1728621+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:36:34.1775064+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:36:34.2065517+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:36:34.2126714+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 1, Units: 1 }], OrderId: 30, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:36:34 } (ff364eea)
+2020-01-06T19:36:34.2538663+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:36:34.3427183+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 30 }  (5429d522)
+2020-01-06T19:36:34.3513282+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:36:34.3594877+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:36:34.3686293+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:36:34.3913818+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 19:36:34, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 9, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 5000000.00, ProductId: 1, ProductName: "لپ تاپ 15 اینچی لنوو مدل Ideapad 330 - F", Discount: 0.00, PictureUri: null, Id: 30, DomainEvents: null }], Id: 30, DomainEvents: null } (6f81d885)
+2020-01-06T19:36:34.3966922+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-01-06T19:36:34.4161305+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-01-06T19:36:34.4230842+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-01-06T19:38:54.2339926+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:38:54.2480614+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 4, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A10 SM-A105F/DS دو سیم کارت ظرفیت 32 گیگابایت", Quantity: 1, UnitPrice: 3050000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:38:54.2531583+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:38:54, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:38:54, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:38:54, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:38:54.3192947+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:38:54.4305932+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:38:54, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3050000.0, ProductId: 4, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A10 SM-A105F/DS دو سیم کارت ظرفیت 32 گیگابایت", Discount: 0, PictureUri: null, Id: 31, DomainEvents: null }], Id: 31, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:38:54.4354837+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:38:54.4405373+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:38:54.4488885+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:38:54.4711707+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 4, Units: 1 }], OrderId: 31, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:38:54 } (ff364eea)
+2020-01-06T19:38:54.5263422+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:38:54.6040768+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:38:54.6140302+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:38:54.6266276+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:38:54.6495569+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 31 }  (5429d522)
+2020-01-06T19:38:54.6883313+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 19:38:54, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 9, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 3050000.00, ProductId: 4, ProductName: "گوشی موبایل سامسونگ مدل Galaxy A10 SM-A105F/DS دو سیم کارت ظرفیت 32 گیگابایت", Discount: 0.00, PictureUri: null, Id: 31, DomainEvents: null }], Id: 31, DomainEvents: null } (6f81d885)
+2020-01-06T19:38:54.6938059+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-01-06T19:38:54.7157631+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-01-06T19:38:54.7199529+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-01-06T19:41:21.4073255+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:41:21.4209227+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 6, ProductName: "هارد اکسترنال ای دیتا مدل HD710 Pro ظرفیت 1 ترابایت", Quantity: 1, UnitPrice: 200000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:41:21.4363658+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:41:21, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:41:21, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:41:21, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:41:21.4852974+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:41:21.5304325+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:41:21, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 200000.0, ProductId: 6, ProductName: "هارد اکسترنال ای دیتا مدل HD710 Pro ظرفیت 1 ترابایت", Discount: 0, PictureUri: null, Id: 32, DomainEvents: null }], Id: 32, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:41:21.5352514+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:41:21.5399036+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:41:21.5462023+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:41:21.5539049+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 6, Units: 1 }], OrderId: 32, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:41:21 } (ff364eea)
+2020-01-06T19:41:21.5962257+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:41:21.6534604+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:41:21.6606256+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:41:21.6660303+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 32 }  (5429d522)
+2020-01-06T19:41:21.6747498+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:41:21.6974959+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 19:41:21, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 9, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 200000.00, ProductId: 6, ProductName: "هارد اکسترنال ای دیتا مدل HD710 Pro ظرفیت 1 ترابایت", Discount: 0.00, PictureUri: null, Id: 32, DomainEvents: null }], Id: 32, DomainEvents: null } (6f81d885)
+2020-01-06T19:41:21.7018969+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-01-06T19:41:21.7212905+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-01-06T19:41:21.7259057+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-01-06T19:42:26.3679504+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-01-06T19:42:26.3738509+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 8, ProductName: "دوربین تحت شبکه شیائومی مدل MI MJSXJ02CM", Quantity: 1, UnitPrice: 488000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-01-06T19:42:26.3850168+00:00  [INF] Order instantiated Order { OrderDate: 01/06/2020 19:42:26, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:42:26, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 01/06/2020 19:42:26, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null } }] } }] } }] } (2c6718b0)
+2020-01-06T19:42:26.4461491+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-01-06T19:42:26.4838890+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 01/06/2020 19:42:26, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 488000.0, ProductId: 8, ProductName: "دوربین تحت شبکه شیائومی مدل MI MJSXJ02CM", Discount: 0, PictureUri: null, Id: 33, DomainEvents: null }], Id: 33, DomainEvents: [] } (eee39e3d)
+2020-01-06T19:42:26.4903514+00:00  [INF] buyerId set to 9 (46785e94)
+2020-01-06T19:42:26.4991915+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-01-06T19:42:26.5037112+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-01-06T19:42:26.5090303+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 8, Units: 1 }], OrderId: 33, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 01/06/2020 19:42:26 } (ff364eea)
+2020-01-06T19:42:26.5525517+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-01-06T19:42:26.5934246+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-01-06T19:42:26.6243299+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 33 }  (5429d522)
+2020-01-06T19:42:26.6303504+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-01-06T19:42:26.6528683+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-01-06T19:42:26.6734974+00:00  [INF] Order retrieved Order { OrderDate: 01/06/2020 19:42:26, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 9, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 488000.00, ProductId: 8, ProductName: "دوربین تحت شبکه شیائومی مدل MI MJSXJ02CM", Discount: 0.00, PictureUri: null, Id: 33, DomainEvents: null }], Id: 33, DomainEvents: null } (6f81d885)
+2020-01-06T19:42:26.6791275+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-01-06T19:42:26.7223574+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-01-06T19:42:26.7294564+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)

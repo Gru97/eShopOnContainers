@@ -91,7 +91,6 @@ namespace Basket.API.Controllers
             //await repository.DeleteBasketAsync(basketCheckout.UserId);
 
             //Response.Headers.Add("lookupUrl", "LatestOrder/BuyerId/{buyerId}");
-            Thread.Sleep(5000);
             return Accepted();
         }
 

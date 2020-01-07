@@ -51,11 +51,8 @@ namespace Ordering.API.Controllers
         [Route("LatestOrderStatus/BuyerId/{buyerId}")]
         public async Task<ActionResult> GetLatestOrderForUser(string buyerId)
         {
-            var orders = await mediator.Send(new GetOrdersForBuyerQuery(buyerId));
-            if (orders == null || orders.Count < 1 || orders.First().date.Date!=DateTime.Today.Date)
-                return NoContent();
-
-            return Ok(orders.First().status);
+            var orders = await mediator.Send(new GetLatestOrderForBuyerQuery(buyerId));
+            return Ok(orders.status);
         }
 
         [HttpGet]
