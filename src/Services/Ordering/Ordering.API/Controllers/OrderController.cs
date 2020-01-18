@@ -6,17 +6,18 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Ordering.API.Application.Commands;
-using Ordering.API.Application.Queries;
+ using Ordering.Application.Commands;
+ using Ordering.Application.Models;
+ using Ordering.Application.Queries;
 
-namespace Ordering.API.Controllers
+ namespace Ordering.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {
         private IMediator mediator;
-        private ILogger<OrderController> logger;
+        private readonly ILogger<OrderController> logger;
         public OrderController(IMediator mediator, ILogger<OrderController> logger)
         {
             this.mediator = mediator;
@@ -26,7 +27,7 @@ namespace Ordering.API.Controllers
         [HttpPost]
         public async Task<ActionResult> Order()
         {
-            var cmd = new CreateOrderCommand(new List<Application.Models.BasketItem>(),
+            var cmd = new CreateOrderCommand(new List<BasketItem>(),
                 "1","name","city","state","country","street","zipcode");
 
             var result=mediator.Send(cmd);
@@ -50,15 +51,16 @@ namespace Ordering.API.Controllers
         [HttpGet]
         [Route("LatestOrderStatus/BuyerId/{buyerId}")]
         public async Task<ActionResult> GetLatestOrderForUser(string buyerId)
-        {
+         {
             var orders = await mediator.Send(new GetLatestOrderForBuyerQuery(buyerId));
-            return Ok(orders.status);
+            return Ok(orders?.status);
         }
 
         [HttpGet]
         [Route("all")]
         public async Task<ActionResult> GetAll([FromQuery] int pageSize = 2, [FromQuery] int pageIndex = 0)
         {
+
             var orders =await mediator.Send(new GetAllOrdersQuery(pageSize,pageIndex));
             if (orders == null || orders.Count < 1)
                 return NoContent();

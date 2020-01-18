@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using EventStore;
 
 namespace Ordering.Domain.SeedWork
 {
@@ -23,21 +24,21 @@ namespace Ordering.Domain.SeedWork
 
         //Each entity has a list of domain events. These events are added to the list instead of being raised in the entity method.
         //They will be raised later in application layer
-        private List<INotification> domainEvents;
+        private List<DomainEvent> domainEvents;
 
-        public IReadOnlyCollection<INotification> DomainEvents
+        public IReadOnlyCollection<DomainEvent> DomainEvents
         {
             get { return domainEvents; }
             private set { }
         }
 
-        public void AddDomainEvent(INotification eventItem)
+        public void AddDomainEvent(DomainEvent eventItem)
         {
-            domainEvents = domainEvents ?? new List<INotification>();
+            domainEvents = domainEvents ?? new List<DomainEvent>();
             domainEvents.Add(eventItem);
 
         }
-        public void RemoveDomainEvent(INotification eventItem)
+        public void RemoveDomainEvent(DomainEvent eventItem)
         {
             domainEvents.Remove(eventItem);
         }

@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using BuildingBlocks.EventBusRabbitMQ;
 using EventBus.Abstractions;
+using EventStore;
 using IntegrationEventLogEF;
 using IntegrationEventLogEF.Services;
 using MediatR;
@@ -16,16 +17,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Ordering.API.Application.IntegrationEvents;
-using Ordering.API.Application.IntegrationEvents.EventHandling;
-using Ordering.API.Application.IntegrationEvents.Events;
-using Ordering.API.Application.Queries;
+
 using Ordering.Domain.AggregatesModel.BuyerAggregate;
 using Ordering.Domain.AggregatesModel.OrderAggregate;
 using Ordering.Infrastructure;
 using Ordering.Infrastructure.Repositories;
 using Microsoft.OpenApi.Models;
+using Ordering.Application.IntegrationEvents;
+using Ordering.Application.IntegrationEvents.EventHandling;
+using Ordering.Application.IntegrationEvents.Events;
+using Ordering.Application.Validation;
+using Ordering.Domain;
+using Ordering.Infrastructure.Reporting;
+using Ordering.Infrastructure.Reporting.Repositories;
+using Ordering.QueryModel;
+
 namespace Ordering.API
 {
     public class Startup
@@ -43,7 +49,9 @@ namespace Ordering.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 
             //Identity
@@ -60,7 +68,7 @@ namespace Ordering.API
             services.AddScoped<IOrderRepository,OrderRepository>();
             services.AddScoped<IBuyerRepository, BuyerRepository>();
             services.AddTransient<IOrderingIntegrationEventService, OrderingIntegrationEventService>();
-            services.AddScoped<IOrderQueries, OrderQueries>();
+            services.AddScoped<IOrderQueries, MongoRepository>();
             var subscriptionClientName = Configuration["SubscriptionClientName"];
 
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
@@ -79,17 +87,26 @@ namespace Ordering.API
                 sqlOptions => sqlOptions.MigrationsAssembly("Ordering.Infrastructure"));
                 }, ServiceLifetime.Scoped);
 
-
-            RegisterEventBus(services);
+            services.AddDbContext<DomainEventLogContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("OrderingContext"),
+                    sqlOptions => sqlOptions.MigrationsAssembly("Ordering.Infrastructure"));
+            },ServiceLifetime.Scoped);
+            //RegisterEventBus(services);
             services.AddTransient<IIntegrationEventLogService, IntegrationEventLogService>(sp =>
             {
                 return new IntegrationEventLogService(Configuration.GetConnectionString("OrderingContext"));
             });
 
-            
-            services.AddMediatR(System.Reflection.Assembly.GetExecutingAssembly());
+
+            services.AddTransient<IDomainEventLogService, DomainEventLogService>(sp =>
+            {
+                return  new DomainEventLogService(Configuration.GetConnectionString("OrderingContext"));
+            });
+
+            services.AddMediatR(RetrieveAssembelies());
             //services.AddScoped(typeof(IFoo<,>), typeof(Foo<,>));
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(Application.Validation.ValidationBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
 
             //Install - Package Swashbuckle.AspNetCore - Version 5.0.0 - rc4
@@ -114,7 +131,42 @@ namespace Ordering.API
 
                 });
             });
+             services.AddSingleton(sp =>
+             {
+                 var b=Configuration["QueryModelConfiguration:ConnectionString"];
+                 return new QueryModelConfiguration(b);
+             });
+            
         }
+
+        private Assembly[] RetrieveAssembelies()
+        {
+            Assembly[] assemblies = new Assembly[]
+            {
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Commands.CreateOrderCommand)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Commands.CreateOrderCommandHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Commands.SetOrderStatusToStockConfirmedCommand)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Commands.SetOrderStatusToStockConfirmedCommandHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Commands.SetOrderStatusToStockRejectedCommand)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Commands.SetOrderStatusToStockRejectedCommandHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetAllOrdersQuery)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetAllOrdersQueryHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetLatestOrderForBuyerQuery)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetLatestOrderForBuyerQuery)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetLatestOrderForBuyerQueryHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetOrderByIdQuery)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetOrderByIdQueryHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetOrderDetailsQueryHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetOrdersByStatusQuery)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetOrdersForBuyerQuery)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetOrderDetailsQueryHandler)),
+                System.Reflection.Assembly.GetAssembly(typeof(Ordering.Application.Queries.GetOrdersForBuyerQueryHandler)),
+
+
+            };
+            return assemblies;
+        }
+
         private void RegisterEventBus(IServiceCollection services)
         {
             var subscriptionClientName = Configuration["SubscriptionClientName"];

@@ -24,7 +24,7 @@ namespace Ordering.Infrastructure.Migrations
                 .HasAnnotation("Relational:Sequence:.orderseq", "'orderseq', '', '1', '10', '', '', 'Int64', 'False'")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Ordering.Domain.AggregatesModel.BuyerAggregate.Buyer", b =>
+            modelBuilder.Entity("Ordering.Domain.AggregatesModel.BuyerAggregate.BuyerInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,7 +99,7 @@ namespace Ordering.Infrastructure.Migrations
 
             modelBuilder.Entity("Ordering.Domain.AggregatesModel.OrderAggregate.Order", b =>
                 {
-                    b.HasOne("Ordering.Domain.AggregatesModel.BuyerAggregate.Buyer")
+                    b.HasOne("Ordering.Domain.AggregatesModel.BuyerAggregate.BuyerInfo")
                         .WithMany()
                         .HasForeignKey("BuyerId");
 

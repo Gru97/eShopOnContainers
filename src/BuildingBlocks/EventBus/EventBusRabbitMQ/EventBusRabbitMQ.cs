@@ -148,10 +148,6 @@ namespace BuildingBlocks.EventBusRabbitMQ
                 await (Task)y.GetMethod("Handle").Invoke(handler, new object[] { integrationEvent });
 
             }
-
-
-            
-
         }
 
         public void Unsubscribe<TEvent, THandler>()
