@@ -37,10 +37,10 @@ namespace EventStore
         {
             try
             {
-                return JsonConvert.SerializeObject(@event,Formatting.None,
+                return JsonConvert.SerializeObject(@event,Formatting.Indented,
                     new JsonSerializerSettings
                     {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        ReferenceLoopHandling = ReferenceLoopHandling. Ignore
                     });
             }
             catch (Exception ex)

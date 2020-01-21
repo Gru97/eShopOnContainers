@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 using Ordering.Domain.AggregatesModel.BuyerAggregate;
@@ -27,10 +28,12 @@ using Ordering.Application.IntegrationEvents;
 using Ordering.Application.IntegrationEvents.EventHandling;
 using Ordering.Application.IntegrationEvents.Events;
 using Ordering.Application.Validation;
+using Ordering.DocumentProjector;
 using Ordering.Domain;
 using Ordering.Infrastructure.Reporting;
 using Ordering.Infrastructure.Reporting.Repositories;
 using Ordering.QueryModel;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Ordering.API
 {
@@ -68,7 +71,8 @@ namespace Ordering.API
             services.AddScoped<IOrderRepository,OrderRepository>();
             services.AddScoped<IBuyerRepository, BuyerRepository>();
             services.AddTransient<IOrderingIntegrationEventService, OrderingIntegrationEventService>();
-            services.AddScoped<IOrderQueries, MongoRepository>();
+            services.AddTransient<IOrderQueries, MongoRepository>();
+            services.AddHostedService<TaskRunner>();
             var subscriptionClientName = Configuration["SubscriptionClientName"];
 
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
@@ -108,7 +112,11 @@ namespace Ordering.API
             //services.AddScoped(typeof(IFoo<,>), typeof(Foo<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
-
+            services.AddSingleton<IEventProjector, EventProjector>(sp =>
+            {
+                return  new EventProjector(sp);
+            });
+            
             //Install - Package Swashbuckle.AspNetCore - Version 5.0.0 - rc4
             //suppress warning 1591
             //https://exceptionnotfound.net/adding-swagger-to-asp-net-core-web-api-using-xml-documentation/
@@ -209,7 +217,7 @@ namespace Ordering.API
             app.UseStaticFiles();
             app.UseMvc();
             
-            ConfigureEventBus(app);
+            //ConfigureEventBus(app);
 
         }
         private void ConfigureEventBus(IApplicationBuilder app)

@@ -1,0 +1,351 @@
+2020-01-21T15:08:32.0735043+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T15:12:48.6609113+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T15:17:05.8773840+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T16:13:53.9841557+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T16:17:19.3809636+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T16:22:18.5651986+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T16:29:32.4885175+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T16:29:40.5348971+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Value cannot be null.
+Parameter name: provider) ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: provider
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.CreateScope(IServiceProvider provider)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 44
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 28
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.ArgumentNullException: Value cannot be null.
+Parameter name: provider
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.CreateScope(IServiceProvider provider)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 44
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 28
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T16:31:54.1958313+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T16:31:58.5642544+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Value cannot be null.
+Parameter name: provider) ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: provider
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.CreateScope(IServiceProvider provider)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 44
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 30
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.ArgumentNullException: Value cannot be null.
+Parameter name: provider
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.CreateScope(IServiceProvider provider)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 44
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 30
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T16:33:18.2541446+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T16:33:38.5721266+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Value cannot be null.
+Parameter name: provider) ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: provider
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.CreateScope(IServiceProvider provider)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 44
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 30
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.ArgumentNullException: Value cannot be null.
+Parameter name: provider
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.CreateScope(IServiceProvider provider)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 44
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 30
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T17:24:40.2867062+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T17:25:47.3889475+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No connection could be made because the target machine actively refused it.)) ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No connection could be made because the target machine actively refused it.) ---> System.ComponentModel.Win32Exception: No connection could be made because the target machine actively refused it
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at EventStore.DomainEventLogService.GetEventsAsync(Int32 pageIndex, Int32 pageSize, Expression`1 predicate) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\BuildingBlocks\EventStore\Services\DomainEventLogService.cs:line 44
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 53
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No connection could be made because the target machine actively refused it.) ---> System.ComponentModel.Win32Exception (10061): No connection could be made because the target machine actively refused it
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at EventStore.DomainEventLogService.GetEventsAsync(Int32 pageIndex, Int32 pageSize, Expression`1 predicate) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\BuildingBlocks\EventStore\Services\DomainEventLogService.cs:line 44
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 53
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20<---
+
+2020-01-21T17:26:32.0030316+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T17:27:27.1850137+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No connection could be made because the target machine actively refused it.)) ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No connection could be made because the target machine actively refused it.) ---> System.ComponentModel.Win32Exception: No connection could be made because the target machine actively refused it
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at EventStore.DomainEventLogService.GetEventsAsync(Int32 pageIndex, Int32 pageSize, Expression`1 predicate) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\BuildingBlocks\EventStore\Services\DomainEventLogService.cs:line 44
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 55
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No connection could be made because the target machine actively refused it.) ---> System.ComponentModel.Win32Exception (10061): No connection could be made because the target machine actively refused it
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at EventStore.DomainEventLogService.GetEventsAsync(Int32 pageIndex, Int32 pageSize, Expression`1 predicate) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\BuildingBlocks\EventStore\Services\DomainEventLogService.cs:line 44
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 55
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20<---
+
+2020-01-21T17:29:00.8380456+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T17:29:43.8382040+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments) ---> Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T17:30:32.6078003+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T17:31:29.3034794+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments) ---> Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T17:32:59.6422209+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T17:37:56.9706659+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments) ---> Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T18:07:47.2717899+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T18:08:02.4443385+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Value cannot be null.
+Parameter name: conversionType) ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: conversionType
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 64
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.ArgumentNullException: Value cannot be null.
+Parameter name: conversionType
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 64
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T18:09:17.8328973+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T18:09:32.0936888+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Value cannot be null.
+Parameter name: conversionType) ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: conversionType
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.ArgumentNullException: Value cannot be null.
+Parameter name: conversionType
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T18:10:02.6418395+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T18:13:43.8484401+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T18:13:57.7624852+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Object must implement IConvertible.) ---> System.InvalidCastException: Object must implement IConvertible.
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.InvalidCastException: Object must implement IConvertible.
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 63
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T20:50:13.4149238+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T20:50:49.7028891+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments) ---> Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 64
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The best overloaded method match for 'Ordering.DocumentProjector.EventProjector.When(Ordering.Domain.Events.OrderStartedDomainEvent)' has some invalid arguments
+   at CallSite.Target(Closure , CallSite , EventProjector , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 64
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T20:54:57.1033341+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T20:55:11.2969651+03:30  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Cannot convert type 'Newtonsoft.Json.Linq.JObject' to 'Ordering.Domain.Events.OrderStartedDomainEvent') ---> Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'Newtonsoft.Json.Linq.JObject' to 'Ordering.Domain.Events.OrderStartedDomainEvent'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 64
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'Newtonsoft.Json.Linq.JObject' to 'Ordering.Domain.Events.OrderStartedDomainEvent'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 64
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-01-21T20:56:24.8806034+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:13:08.5902335+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:23:45.6179025+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:25:22.1383183+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:30:20.4087446+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:32:44.3569423+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:52:50.2572772+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:56:41.1300897+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T21:58:09.2796110+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:02:56.6768548+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:10:50.9105171+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:18:12.2264568+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:19:06.1576622+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:20:18.5201264+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:21:56.2859553+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:22:33.0798207+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:24:35.4097622+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:32:30.8389117+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:33:42.3606867+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:35:46.1450680+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:38:40.9599185+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:44:11.9115164+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:49:13.0889952+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T22:52:44.6223124+03:30  [INF] Timed Hosted Service running. (e41a204c)
+2020-01-21T23:01:20.4244736+03:30  [INF] Timed Hosted Service running. (e41a204c)

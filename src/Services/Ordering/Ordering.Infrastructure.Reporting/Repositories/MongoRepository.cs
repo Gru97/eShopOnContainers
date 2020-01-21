@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventStore;
 using Microsoft.Extensions.Logging;
 using Ordering.Domain;
 using Ordering.QueryModel;
@@ -74,6 +75,7 @@ namespace Ordering.Infrastructure.Reporting.Repositories
         }
 
 
+      
         public async Task<OrderViewModel> GetOrderDetails(int orderId)
         {
             try
@@ -176,5 +178,22 @@ namespace Ordering.Infrastructure.Reporting.Repositories
             };
         }
 
+        public async Task<OrderDocument> GetOrderDocument(int orderId)
+        {
+            try
+            {
+                var documents = await collection?.Find(e => e.OrderId == orderId)?.FirstOrDefaultAsync();
+
+                if (documents != null)
+                    return documents;
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                logger.LogError("$Method:GetOrderAsync - Error while querying doc from Mongo " + ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

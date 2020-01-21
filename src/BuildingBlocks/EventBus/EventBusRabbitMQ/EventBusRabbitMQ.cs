@@ -159,7 +159,7 @@ namespace BuildingBlocks.EventBusRabbitMQ
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         }
 
 
-        public Address Address { get; private set; }
+        public Address Address { get;  set; }
         private int? _buyerId;
 
         public int? BuyerId

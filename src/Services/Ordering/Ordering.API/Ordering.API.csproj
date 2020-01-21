@@ -32,6 +32,7 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\EventStore\EventStore.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\IntegrationEventLogEF\IntegrationEventLogEF.csproj" />
     <ProjectReference Include="..\Ordering.Application\Ordering.Application.csproj" />
+    <ProjectReference Include="..\Ordering.DocumentProjector\Ordering.DocumentProjector.csproj" />
     <ProjectReference Include="..\Ordering.Domain\Ordering.Domain.csproj" />
     <ProjectReference Include="..\Ordering.Infrastructure\Ordering.Infrastructure.csproj" />
   </ItemGroup>

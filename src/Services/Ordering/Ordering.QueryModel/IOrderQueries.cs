@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using EventStore;
 using Ordering.QueryModel.ViewModels;
 
 namespace Ordering.QueryModel
@@ -18,5 +20,6 @@ namespace Ordering.QueryModel
         Task<List<OrderSummeryViewModel>> GetOrdersForBuyer(string buyerId);
         Task<PagedResult<OrderSummeryViewModel>> GetOrdersByStatus(int pageSize, int pageIndex, int status);
         Task<OrderViewModel> GetOrderDetails(int orderId);
+        Task<OrderDocument> GetOrderDocument(int orderId);
     }
 }

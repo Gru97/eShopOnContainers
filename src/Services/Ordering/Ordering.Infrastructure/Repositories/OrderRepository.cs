@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventStore;
 
 namespace Ordering.Infrastructure.Repositories
 {
@@ -58,6 +59,7 @@ namespace Ordering.Infrastructure.Repositories
 
 
         }
+
 
         public void Update(Order order)
         {

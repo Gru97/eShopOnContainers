@@ -20,4 +20,5 @@ namespace Ordering.QueryModel
         public Buyer BuyerInfo { get; set; }
         public List<OrderItem> OrderItems { get; set; }
     }
+    
 }
