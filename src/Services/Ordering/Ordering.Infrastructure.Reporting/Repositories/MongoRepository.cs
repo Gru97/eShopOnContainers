@@ -4,6 +4,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using EventStore;
@@ -112,21 +113,19 @@ namespace Ordering.Infrastructure.Reporting.Repositories
 
         public async Task<PagedResult<OrderSummeryViewModel>> GetOrders(int pageSize, int pageIndex)
         {
-            var filter = new BsonDocument();
-            return await GetPagedResultAsync(filter, pageSize, pageIndex);
+            return await GetPagedResultAsync(s=>true, pageSize, pageIndex);
         }
 
         public async Task<PagedResult<OrderSummeryViewModel>> GetOrdersByStatus(int pageSize, int pageIndex, int status)
         {
-            var filter = new BsonDocument("status",status);
-            return await GetPagedResultAsync(filter, pageSize,pageIndex);
+            return await GetPagedResultAsync(s=>s.Status==status, pageSize,pageIndex);
         }
 
-        private async Task<PagedResult<OrderSummeryViewModel>> GetPagedResultAsync(BsonDocument filter, int pageSize, int pageIndex)
+        private async Task<PagedResult<OrderSummeryViewModel>> GetPagedResultAsync(Expression<Func<OrderDocument,bool>> predicate, int pageSize, int pageIndex)
         {
             try
             {
-                var resultDocs = await collection?.Find(filter)?.ToListAsync();
+                var resultDocs = await collection?.Find(predicate)?.ToListAsync();
                 var count = resultDocs.Count();
                 var paged = resultDocs.Skip(pageSize * pageIndex).Take(pageSize).ToList();
                 var items = ToOrderSummeryViewModel(paged);
@@ -144,7 +143,7 @@ namespace Ordering.Infrastructure.Reporting.Repositories
         {
             try
             {
-                var result = await collection?.Find(e => e.BuyerInfo.BuyerId == buyerId)?.ToListAsync();
+                var result = await collection?.Find(e => e.BuyerInfo.BuyerGuid == buyerId)?.ToListAsync();
                 return ToOrderSummeryViewModel(result);
             }
             catch (Exception ex)

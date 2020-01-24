@@ -5,6 +5,9 @@ services:
   rabbitmq:
     image: rabbitmq
 
+  mongo:
+    image: mongo
+
   redis:
     image: redis
 
@@ -50,6 +53,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - rabbitmq
+      - mongo
 
 
   identity.api:

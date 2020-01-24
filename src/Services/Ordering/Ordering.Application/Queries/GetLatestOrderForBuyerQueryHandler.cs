@@ -24,7 +24,7 @@ namespace Ordering.Application.Queries
             {
                 var latest = orders.First();
                 var diff = DateTime.Now.Subtract(latest.date).Seconds;
-                //if (diff < 50)
+                if (diff < 60)
                     return latest;
 
             }

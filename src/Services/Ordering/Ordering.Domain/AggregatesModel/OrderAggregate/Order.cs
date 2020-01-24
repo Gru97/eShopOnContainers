@@ -109,9 +109,10 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         {
             if(OrderState==OrderState.AwaitingValidation)
             {
-                //AddDomainEvent(new OrderStateChangedToStockConfirmedDomainEvent(Id));
                 OrderState = OrderState.StockConfirmed;
                 _description = "همه اقلام در انبار موجودند. خرید شما با موفقیت انجام شد.";
+                AddDomainEvent(new OrderStateChangedToStockConfirmedDomainEvent(Id, _description));
+
             }
         }
         public void SetPaidStatus()
@@ -141,7 +142,9 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
                  OrderState = OrderState.Cancelled;
                 _description = "بعضی اقلام در انبار موجود نیست. خرید شما لغو شد.";
             }
+            AddDomainEvent(new OrderStateChangedToStockRejectedDomainEvent(Id, _description));
+
         }
-        
+
     }
 }

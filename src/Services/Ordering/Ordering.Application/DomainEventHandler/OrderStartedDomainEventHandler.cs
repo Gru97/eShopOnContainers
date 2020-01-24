@@ -43,7 +43,7 @@ namespace Ordering.Application.DomainEventHandler
 
 
             //Probably the wrong way
-            buyer.AddDomainEvent(new BuyerCreatedDomainEvent(@event.Order.Id, buyer.Id,buyer.Name));
+            buyer.AddDomainEvent(new BuyerCreatedDomainEvent(@event.Order.Id, buyer.Id,buyer.Name,buyer.IdentityGuid));
             logger.LogInformation("BuyerCreatedDomainEvent added to list of buyer events");
 
             await buyerRepository.UnitOfWork.SaveChangesAsync();

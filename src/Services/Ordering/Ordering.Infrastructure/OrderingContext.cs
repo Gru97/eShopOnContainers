@@ -128,7 +128,7 @@ namespace Ordering.Infrastructure
                 .SelectMany(x => x.Entity.DomainEvents)
                 .ToList();
 
-            domainEvents.OrderByDescending(e => e.CreationDate)
+            domainEvents.OrderBy(e => e.CreationDate)
                 .ToList()
                 .ForEach(entity => eventStore.SaveEventAsync(entity).Wait());
 

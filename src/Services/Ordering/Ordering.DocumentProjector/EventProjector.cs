@@ -48,7 +48,7 @@ namespace Ordering.DocumentProjector
                     {
                         dynamic content = Newtonsoft.Json.JsonConvert.DeserializeObject(@event.Content, type);
                         await When(content);
-                        //await eventStore.MarkEventAsRead(@event.EventId);
+                        await eventStore.MarkEventAsRead(@event.EventId);
 
                     }
                     catch (Exception e)
@@ -58,9 +58,6 @@ namespace Ordering.DocumentProjector
                    
                 }
             }
-
-            
-
         }
 
         public async Task When(OrderStartedDomainEvent @event)
@@ -81,7 +78,8 @@ namespace Ordering.DocumentProjector
             //if (doc == null)
 
             doc.BuyerInfo.BuyerId = @event.buyerId.ToString();
-            //doc.BuyerInfo.BuyerName = @event.buyerId.ToString();  ??
+            doc.BuyerInfo.BuyerName = @event.buyerName;
+            doc.BuyerInfo.BuyerGuid = @event.buyerIdentityGuid;
             await queryStore.Upsert(doc);
 
 
@@ -92,8 +90,9 @@ namespace Ordering.DocumentProjector
             var doc = await queryStore.GetOrderDocument(@event.OrderId);
             if (doc == null)
                 throw new Exception("Error while retrieving document");
-            //doc.BuyerInfo.BuyerId = @event.ToString();
+
             doc.Status = (short)OrderState.StockConfirmed;
+            doc.Description = @event.Description;
             await queryStore.Upsert(doc);
 
 
@@ -103,25 +102,24 @@ namespace Ordering.DocumentProjector
         {
             var doc = await queryStore.GetOrderDocument(@event.OrderId);
             if (doc == null)
-                throw new Exception("Error while retrieving document");
-            //doc.BuyerInfo.BuyerId = @event.ToString();
+                throw new Exception("Error while retrieving document inside When method of OrderStatusChangedToAwaitingValidationDomainEvent");
+
             doc.Status = (short)OrderState.AwaitingValidation;
             await queryStore.Upsert(doc);
 
 
 
         }
-        //public async Task When(OrderStateChangedToStockRejectedDomainEvent @event)
-        //{
-        //    var doc = await queryStore.GetOrderDocument(@event.OrderId);
-        //    if (doc == null)
-        //        throw new Exception("Error while retrieving document");
-        //    doc.BuyerInfo.BuyerId = @event.ToString();
-        //    doc.Status = (short)OrderState.AwaitingValidation;
-        //    await queryStore.Upsert(doc);
+        public async Task When(OrderStateChangedToStockRejectedDomainEvent @event)
+        {
+            var doc = await queryStore.GetOrderDocument(@event.OrderId);
+            if (doc == null)
+                throw new Exception("Error while retrieving document");
+            
+            doc.Status = (short)OrderState.Cancelled;
+            doc.Description = @event.Description;
 
-
-
-        //}
+            await queryStore.Upsert(doc);
+        }
     }
 }

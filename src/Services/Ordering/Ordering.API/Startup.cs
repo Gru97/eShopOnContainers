@@ -96,7 +96,7 @@ namespace Ordering.API
                 options.UseSqlServer(Configuration.GetConnectionString("OrderingContext"),
                     sqlOptions => sqlOptions.MigrationsAssembly("Ordering.Infrastructure"));
             },ServiceLifetime.Scoped);
-            //RegisterEventBus(services);
+            RegisterEventBus(services);
             services.AddTransient<IIntegrationEventLogService, IntegrationEventLogService>(sp =>
             {
                 return new IntegrationEventLogService(Configuration.GetConnectionString("OrderingContext"));
@@ -217,7 +217,7 @@ namespace Ordering.API
             app.UseStaticFiles();
             app.UseMvc();
             
-            //ConfigureEventBus(app);
+            ConfigureEventBus(app);
 
         }
         private void ConfigureEventBus(IApplicationBuilder app)
