@@ -31,8 +31,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGw-Base", "ApiGw-Base", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApiGw", "src\ApiGateways\ApiGw-Base\OcelotApiGw\OcelotApiGw.csproj", "{8B2C37AC-8420-47E3-9441-B102F9DD6DDA}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{242B8EE0-F993-4CB2-91F9-2A8FC3BB3C8B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "src\Services\Ordering\Ordering.API\Ordering.API.csproj", "{32DBAD95-4E94-4634-8B76-B2A962243BE9}"
@@ -55,9 +53,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Application", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.QueryModel", "src\Services\Ordering\Ordering.QueryModel\Ordering.QueryModel.csproj", "{E37BB055-01CA-4E67-8ADB-3EB69D1322BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStore", "src\BuildingBlocks\EventStore\EventStore.csproj", "{1E5E99F9-6A84-445F-B11A-392EE8772A77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventStore", "src\BuildingBlocks\EventStore\EventStore.csproj", "{1E5E99F9-6A84-445F-B11A-392EE8772A77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.DocumentProjector", "src\Services\Ordering\Ordering.DocumentProjector\Ordering.DocumentProjector.csproj", "{C68BB6E8-F616-4EE5-8D60-B9A42EE32888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.DocumentProjector", "src\Services\Ordering\Ordering.DocumentProjector\Ordering.DocumentProjector.csproj", "{C68BB6E8-F616-4EE5-8D60-B9A42EE32888}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,10 +89,6 @@ Global
 		{8B2C37AC-8420-47E3-9441-B102F9DD6DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B2C37AC-8420-47E3-9441-B102F9DD6DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B2C37AC-8420-47E3-9441-B102F9DD6DDA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32DBAD95-4E94-4634-8B76-B2A962243BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32DBAD95-4E94-4634-8B76-B2A962243BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32DBAD95-4E94-4634-8B76-B2A962243BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -133,6 +129,10 @@ Global
 		{C68BB6E8-F616-4EE5-8D60-B9A42EE32888}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C68BB6E8-F616-4EE5-8D60-B9A42EE32888}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C68BB6E8-F616-4EE5-8D60-B9A42EE32888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7096DB-BD7C-4DFD-8994-72F87637C6AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

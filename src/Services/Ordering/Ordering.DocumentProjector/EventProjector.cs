@@ -20,24 +20,10 @@ namespace Ordering.DocumentProjector
     {
         //private Dictionary<string, Type> eventMapper;
         private readonly IServiceProvider serviceProvider;
-
-        //private static string OrderStarted = "Ordering.Domain.Events.OrderStartedDomainEvent";
-        //private static string BuyerCreated = "Ordering.Domain.AggregatesModel.BuyerAggregate.BuyerCreatedDomainEvent";
-        //private static string OrderStatusAwaitingValidation = "Ordering.Domain.Events.OrderStatusChangedToAwaitingValidationDomainEvent";
-        //private static string OrderStateStockConfirmed = "Ordering.Domain.Events.OrderStateChangedToStockConfirmedDomainEvent";
-        //private static string OrderStateRejected = "Ordering.Domain.Events.OrderStateChangedToStockRejectedDomainEvent";
         public IOrderQueries queryStore { get; set; }
         public IDomainEventLogService eventStore { get; set; }
 
-        //public EventProjector(IOrderQueries queryStore, IDomainEventLogService eventStore )
-        //{
-        //    this.queryStore = queryStore; 
-        //    //this.eventStore = eventStore;
-        //    //eventMapper.Add(OrderStarted, typeof(Order));
-        //    //eventMapper.Add(BuyerCreated, typeof(Order));
-        //    //eventMapper.Add(OrderStatusAwaitingValidation, typeof(Buyer));
-        //}
-
+        
         public EventProjector(IServiceProvider serviceProvider)
         {
             this.serviceProvider = serviceProvider;
@@ -61,9 +47,7 @@ namespace Ordering.DocumentProjector
                     try
                     {
                         dynamic content = Newtonsoft.Json.JsonConvert.DeserializeObject(@event.Content, type);
-                        //var x = Convert.ChangeType(content, eventType);
                         await When(content);
-                        //mongoRepository.GetOrderAsync();
                         //await eventStore.MarkEventAsRead(@event.EventId);
 
                     }
@@ -81,11 +65,8 @@ namespace Ordering.DocumentProjector
 
         public async Task When(OrderStartedDomainEvent @event)
         {
-            //var doc = await queryStore.GetOrderDocument(@event.Order.Id);
-            //var doc = await queryStore.GetOrderDocument(@event.Order.Id);
-            //if(doc==null)
+           
             var doc = new OrderDocument();
-            //doc.BuyerInfo=@event.Order.
             doc.Address = @event.Order.Address.ToAddressDocument();
             doc.OrderItems = @event.Order.OrderItems.ToOrderItemDocumenList();
             doc.OrderId = @event.Order.Id;

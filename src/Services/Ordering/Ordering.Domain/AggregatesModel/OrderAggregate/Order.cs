@@ -23,7 +23,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
             set { _orderDate = value; }
         }
 
-
+        //Can't have address as private set. Newtonsoft serializer won't set it while deseriallizings
         public Address Address { get;  set; }
         private int? _buyerId;
 

@@ -4,5 +4,6 @@
     {
         public string BuyerId { get; set; }
         public string BuyerName { get; set; }
+        
     }
 }

@@ -13,11 +13,16 @@ namespace Ordering.Domain.Events
         public string UserName { get; set; }
         public Order Order { get; set; }
 
-        public OrderStartedDomainEvent( Order order,string userId, string userName) : base(new Guid(), DateTime.UtcNow)
+        public OrderStartedDomainEvent( Order order,string userId, string userName) : base(Guid.NewGuid(), DateTime.UtcNow)
         {
             UserId = userId;
             UserName = userName;
             Order = order;
+        }
+
+        public OrderStartedDomainEvent()
+        {
+
         }
     }
 }

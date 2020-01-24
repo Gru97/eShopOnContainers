@@ -19,6 +19,12 @@ namespace Ordering.QueryModel
         
         public Buyer BuyerInfo { get; set; }
         public List<OrderItem> OrderItems { get; set; }
+
+        public OrderDocument()
+        {
+            BuyerInfo=new Buyer();
+            Address=new Address();
+        }
     }
     
 }

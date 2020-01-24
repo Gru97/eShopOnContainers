@@ -31,15 +31,14 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         public decimal UnitPrice
         {
             get { return _unitPrice; }
-            private set { }
+            set { _unitPrice = value; }
 
         }
 
         private int _productId;
         public int ProductId
         {
-            get { return _productId; }
-            private set { }
+            get { return _productId; } set { }
 
         }
 
@@ -47,7 +46,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         public string ProductName
         {
             get { return _productName; }
-            private set { }
+            set { _productName=value; }
 
         }
 
@@ -70,7 +69,7 @@ namespace Ordering.Domain.AggregatesModel.OrderAggregate
         public string PictureUri
         {
             get { return _pictureUri; }
-            private set { }
+            set { }
         }
 
 
