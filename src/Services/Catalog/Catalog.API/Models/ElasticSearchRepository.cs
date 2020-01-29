@@ -85,7 +85,11 @@ namespace Catalog.API.Models
                         .Terms(model.TypeId)) && q
                         .Match(c => c
                         .Field(e => e.Name)
-                        .Query(model.Name))));
+                        .Query(model.Name)) && q
+                                        .TermRange(k=>k.Field(e=>e.Price)
+                                        .LessThanOrEquals(model.PriceTo.ToString())) && q
+                                        .TermRange(k => k.Field(l=>l.Price)
+                                        .GreaterThanOrEquals(model.PriceFrom.ToString()))));
 
             return response.Documents;
             

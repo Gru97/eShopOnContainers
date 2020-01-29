@@ -34,7 +34,7 @@ namespace Ordering.DocumentProjector
         {
             using (var scope = serviceProvider.CreateScope())
             {
-                var eventStore = scope.ServiceProvider.GetRequiredService<IDomainEventLogService>();
+                eventStore = scope.ServiceProvider.GetRequiredService<IDomainEventLogService>();
                 queryStore = serviceProvider.GetRequiredService<IOrderQueries>();
 
                 var unreadEvent = await eventStore
