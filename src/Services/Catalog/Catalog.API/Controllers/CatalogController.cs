@@ -167,7 +167,7 @@ namespace Catalog.API.Controllers
         [HttpGet]
         [Route("items/type/{typeId}/brand/{brandId?}")]
         public async Task<IEnumerable<CatalogItem>> GetProductByTypeAndBrandId(int typeId, int? brandId)
-        {
+         {
             var catalogs = _catalogContext.CatalogItems.Where(e => e.CatalogType.Id == typeId);
             if (brandId != null && brandId > 0)
                 catalogs = catalogs.Where(e => e.CatalogBrand.Id == brandId);

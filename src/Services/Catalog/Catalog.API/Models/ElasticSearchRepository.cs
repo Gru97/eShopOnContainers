@@ -84,7 +84,8 @@ namespace Catalog.API.Models
                         .Field(d=>d.CatalogTypeId)
                         .Terms(model.TypeId)) && q
                         .Match(c => c
-                        .Field(e => e.Name).Query(model.Name))));
+                        .Field(e => e.Name)
+                        .Query(model.Name))));
 
             return response.Documents;
             

@@ -27,8 +27,7 @@ namespace Ordering.DocumentProjector
         public EventProjector(IServiceProvider serviceProvider)
         {
             this.serviceProvider = serviceProvider;
-            //queryStore = serviceProvider.GetRequiredService<IOrderQueries>();
-            //eventStore = serviceProvider.GetRequiredService<IDomainEventLogService>();
+
         }
 
         public async Task Project()
@@ -68,7 +67,7 @@ namespace Ordering.DocumentProjector
             doc.OrderItems = @event.Order.OrderItems.ToOrderItemDocumenList();
             doc.OrderId = @event.Order.Id;
             doc.OrderDate = @event.Order.OrderDate;
-            doc.Status =(short) @event.Order.OrderState;
+            doc.Status =@event.Order.OrderState.ToString();
             await queryStore.Upsert(doc);
 
         }
@@ -91,7 +90,7 @@ namespace Ordering.DocumentProjector
             if (doc == null)
                 throw new Exception("Error while retrieving document");
 
-            doc.Status = (short)OrderState.StockConfirmed;
+            doc.Status = OrderState.StockConfirmed.ToString();
             doc.Description = @event.Description;
             await queryStore.Upsert(doc);
 
@@ -104,7 +103,7 @@ namespace Ordering.DocumentProjector
             if (doc == null)
                 throw new Exception("Error while retrieving document inside When method of OrderStatusChangedToAwaitingValidationDomainEvent");
 
-            doc.Status = (short)OrderState.AwaitingValidation;
+            doc.Status = OrderState.AwaitingValidation.ToString();
             await queryStore.Upsert(doc);
 
 
@@ -116,7 +115,7 @@ namespace Ordering.DocumentProjector
             if (doc == null)
                 throw new Exception("Error while retrieving document");
             
-            doc.Status = (short)OrderState.Cancelled;
+            doc.Status =OrderState.Cancelled.ToString();
             doc.Description = @event.Description;
 
             await queryStore.Upsert(doc);

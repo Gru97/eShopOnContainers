@@ -17,7 +17,7 @@ namespace Ordering.DocumentProjector
                 OrderDate = o.OrderDate,
                 OrderId = o.Id,
                 Address = o.Address.ToAddressDocument(),
-                Status = (short)o.OrderState,
+                Status = o.OrderState.ToString(),
                 OrderItems = o.OrderItems.ToOrderItemDocumenList(),
             
                 

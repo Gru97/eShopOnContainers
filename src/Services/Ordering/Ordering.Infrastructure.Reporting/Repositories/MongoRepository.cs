@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 using EventStore;
 using Microsoft.Extensions.Logging;
 using Ordering.Domain;
+using Ordering.Domain.AggregatesModel.OrderAggregate;
 using Ordering.QueryModel;
 using Ordering.QueryModel.ViewModels;
+using OrderItem = Ordering.QueryModel.OrderItem;
 
 namespace Ordering.Infrastructure.Reporting.Repositories
 {
@@ -118,7 +120,7 @@ namespace Ordering.Infrastructure.Reporting.Repositories
 
         public async Task<PagedResult<OrderSummeryViewModel>> GetOrdersByStatus(int pageSize, int pageIndex, int status)
         {
-            return await GetPagedResultAsync(s=>s.Status==status, pageSize,pageIndex);
+            return await GetPagedResultAsync(s=>s.Status==((OrderState)status).ToString(), pageSize,pageIndex);
         }
 
         private async Task<PagedResult<OrderSummeryViewModel>> GetPagedResultAsync(Expression<Func<OrderDocument,bool>> predicate, int pageSize, int pageIndex)
@@ -140,10 +142,13 @@ namespace Ordering.Infrastructure.Reporting.Repositories
         }
 
         public async Task<List<OrderSummeryViewModel>> GetOrdersForBuyer(string buyerId)
+        
         {
             try
             {
-                var result = await collection?.Find(e => e.BuyerInfo.BuyerGuid == buyerId)?.ToListAsync();
+                var result = await collection?.Find(e => e.BuyerInfo.BuyerGuid == buyerId)?
+                    .ToListAsync();
+                result=result.OrderByDescending(e => e.OrderDate).ToList();
                 return ToOrderSummeryViewModel(result);
             }
             catch (Exception ex)
@@ -164,7 +169,7 @@ namespace Ordering.Infrastructure.Reporting.Repositories
                 ordernumber = o.OrderId,
                 total = o.OrderItems.Sum(e => e.UnitPrice * e.Quantity),
                 date = o.OrderDate,
-                status = o.Status.ToString()
+                status = o.Status
             };
         }
         private OrderItemViewModel ToOrderItemViewModel(OrderItem e)
