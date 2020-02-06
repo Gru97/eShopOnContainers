@@ -40,7 +40,7 @@ namespace EventStore
 
         public async Task<List<DomainEventLogEntry>> GetEventsAsync(int pageIndex, int pageSize,Expression<Func<DomainEventLogEntry,bool>> predicate)
         {
-            var q=_eventLogContext.DomainEventLogs.Where(predicate).AsQueryable();
+            var q=_eventLogContext.DomainEventLogs.Where(predicate).AsQueryable().OrderBy(e=>e.CreationTime);
             return await q.Skip(pageSize * pageIndex).Take(pageSize).ToListAsync();
         }
     }

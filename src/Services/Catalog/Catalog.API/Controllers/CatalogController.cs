@@ -48,7 +48,7 @@ namespace Catalog.API.Controllers
             //var items = _catalogContext.CatalogItems.Include(e=>e.CatalogType).Include(e=>e.CatalogBrand).ToList();
             //searchRepository.SaveManyAsync(items);
 
-            var items = _catalogContext.CatalogItems.ToList();
+            var items = _catalogContext.CatalogItems.OrderByDescending(e=>e.Id).ToList();
             items.ForEach(e => e.PictureUri = "https://localhost:44321/Pics/" + e.PictureName);
             return items;
         }
@@ -59,7 +59,7 @@ namespace Catalog.API.Controllers
             int count = 0;
             var query = _catalogContext.CatalogItems.AsQueryable();
             count = query.Count();
-            query = query.OrderBy(e => e.Id)
+            query = query.OrderByDescending(e => e.Id)
                 .Skip(pageSize * pageIndex)
                 .Take(pageSize);
             query = query.Include(e => e.CatalogBrand)
@@ -134,6 +134,12 @@ namespace Catalog.API.Controllers
 
                 _eventBus.Publish(evt);
                 await _integrationEventLogService.MarkEventAsPublished(evt.Id);
+            }
+            else
+            {
+                _catalogContext.CatalogItems.Update(productToUpdate);
+                _catalogContext.SaveChanges();
+
             }
 
         }
