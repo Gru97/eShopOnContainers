@@ -56,6 +56,7 @@ namespace Catalog.API.IntegrationEvents.EventHandling
 
             }
             //TODO: save event to eventLog
+            //Thread.Sleep(2000);
             _eventBus.Publish(resultEvent);
 
 

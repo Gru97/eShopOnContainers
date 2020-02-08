@@ -203,7 +203,7 @@ namespace Ordering.API
 
             loggerFactory.AddFile("Logs/orderingLogs.txt", LogLevel.Information, new Dictionary<string, LogLevel>()
             {
-                { "Microsoft", LogLevel.Error },
+                { "Microsoft", LogLevel.Information },
                 { "System", LogLevel.Error }
             });
             app.UseCors("myPolicy");

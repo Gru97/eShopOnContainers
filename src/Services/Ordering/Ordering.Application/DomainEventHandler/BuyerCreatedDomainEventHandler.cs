@@ -23,6 +23,7 @@ namespace Ordering.Application.DomainEventHandler
         {
             var order = await orderRepository.FindAsycn(notification.orderId);
             logger.LogInformation("order retrieved to set its buyer {@order}", order);
+            logger.LogInformation("orderId is {orderId}", order.Id);
 
             order.BuyerId = notification.buyerId;
             logger.LogInformation($"buyerId set to {@order.BuyerId}");

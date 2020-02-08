@@ -19,14 +19,21 @@ namespace Ordering.Application.Queries
 
         public async Task<OrderSummeryViewModel> Handle(GetLatestOrderForBuyerQuery request, CancellationToken cancellationToken)
         {
-            var orders = await OrderQueries.GetOrdersForBuyer(request.BuyerId);
-            if (orders != null && orders.Count > 0)
+            try
             {
-                var latest = orders.First();
-                var diff = DateTime.Now.Subtract(latest.date).Seconds;
-                if (diff < 60)
-                    return latest;
+                var orders = await OrderQueries.GetOrdersForBuyer(request.BuyerId);
+                if (orders != null && orders.Count > 0)
+                {
+                    var latest = orders.First();
+                    var diff = DateTime.Now.Subtract(latest.date).Seconds;
+                    if (diff < 60)
+                        return latest;
 
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
             return null;
 

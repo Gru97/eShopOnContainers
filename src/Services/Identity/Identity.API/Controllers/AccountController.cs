@@ -64,13 +64,15 @@ namespace IdentityServer4.Quickstart.UI
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
+            returnUrl = "http://localhost:5000/account/login?returnUrl=http://localhost:4200";
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
                 {
                     UserName = model.Email,
-                    Email = model.Email,                
+                    Email = model.Email,   
+                    Name = model.Name
                    
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -180,20 +182,8 @@ namespace IdentityServer4.Quickstart.UI
                         return Redirect(model.ReturnUrl);
                     }
 
-                    // request for a local page
-                    if (Url.IsLocalUrl(model.ReturnUrl))
-                    {
-                        return Redirect(model.ReturnUrl);
-                    }
-                    else if (string.IsNullOrEmpty(model.ReturnUrl))
-                    {
-                        return Redirect("~/");
-                    }
-                    else
-                    {
-                        // user might have clicked on a malicious link - should be logged
-                        throw new Exception("invalid return URL");
-                    }
+                    return Redirect(model.ReturnUrl);
+                   
                 }
 
                 await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, "invalid credentials", clientId:context?.ClientId));

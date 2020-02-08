@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using EventStore;
 using IntegrationEventLogEF.Services;
@@ -24,6 +25,7 @@ namespace Ordering.Infrastructure
         public static string DEFAULT_SCHEMA { get; internal set; }
         private readonly IMediator mediator;
         private readonly IDomainEventLogService eventStore;
+
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
@@ -48,74 +50,20 @@ namespace Ordering.Infrastructure
         }
         public async Task<int> SaveChangesAsync()
         {
-            //dispatch domain events before pesisting data
-            await DispatchDomainEventsAsync(this, mediator);
-            using (var transaction = base.Database.BeginTransaction())
+            try
             {
-                //SaveChangesOnQueryModel(this);
+                await DispatchDomainEventsAsync(this, mediator);
                 await base.SaveChangesAsync();
-                transaction.Commit();
             }
-
+            catch (Exception e)
+            {
+                
+            }
             return 0;
 
 
 
         }
-
-        //private void SaveChangesOnQueryModel(OrderingContext ctx)
-        //{
-        //    var order = ctx.ChangeTracker.Entries<Order>()?.FirstOrDefault()?.Entity;
-        //    var buyer = ctx.ChangeTracker.Entries<Buyer>()?.FirstOrDefault()?.Entity;
-        //    var items = new List<QueryModel.OrderItem>();
-        //    if (order!=null)
-        //    {
-        //        foreach (var x in order.OrderItems)
-        //        {
-        //            items.Add(new QueryModel.OrderItem()
-        //            {
-        //                Discount = x.Discount,
-        //                ProductId = x.ProductId,
-        //                ProductName = x.ProductName,
-        //                Quantity = x.Quantity,
-        //                UnitPrice = x.UnitPrice
-        //            });
-        //        }
-              
-
-        //        var doc = new OrderDocument()
-        //        {
-                    
-        //            OrderDate = order.OrderDate,
-        //            OrderId = order.Id,
-        //            Status = (short)order.OrderState,
-        //            Address = new QueryModel.Address()
-        //            {
-        //                City = order.Address.City,
-        //                Country = order.Address.Country,
-        //                State = order.Address.State,
-        //                Street = order.Address.Street,
-        //                ZipCode = order.Address.ZipCode
-        //            },
-        //            OrderItems = items
-
-
-        //        };
-        //        if (buyer != null)
-        //            doc.BuyerInfo = new QueryModel.Buyer() {BuyerName = buyer.Name, BuyerId = buyer.IdentityGuid};
-        //        else
-        //        {
-        //            var untrackedBuyer= ctx.Buyers.First(e => e.Id == order.BuyerId);
-                    
-        //            doc.BuyerInfo = new QueryModel.Buyer() { BuyerName = untrackedBuyer.Name, BuyerId = untrackedBuyer.IdentityGuid };
-
-                    
-        //        }
-        //        orderQueries.Upsert(doc);
-        //    }
-           
-
-        //}
 
         public async Task DispatchDomainEventsAsync(OrderingContext ctx,IMediator mediator)
         {

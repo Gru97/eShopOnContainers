@@ -31,6 +31,7 @@ namespace Ordering.Application.DomainEventHandler
         public async Task Handle(OrderStatusChangedToAwaitingValidationDomainEvent notification, CancellationToken cancellationToken)
         {
             logger.LogInformation("OrderStatusChangedToAwaitingValidationDomainEvent handler called");
+            logger.LogInformation("OrderId is {orderId}", notification.OrderId);
             var list = new List<StockItem>();
             foreach (var item in notification.OrderItems)
             {

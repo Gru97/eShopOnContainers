@@ -1,0 +1,474 @@
+2020-02-08T04:27:07.0700893+00:00  [FTL] An error occurred starting the application (dd5d7f26)
+System.AggregateException: One or more errors occurred. (Object reference not set to an instance of an object.) ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at EventStore.DomainEventLogService.GetEventsAsync(Int32 pageIndex, Int32 pageSize, Expression`1 predicate) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\BuildingBlocks\EventStore\Services\DomainEventLogService.cs:line 44
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 40
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.StartAsync(CancellationToken token)
+---> (Inner Exception #0) System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at EventStore.DomainEventLogService.GetEventsAsync(Int32 pageIndex, Int32 pageSize, Expression`1 predicate) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\BuildingBlocks\EventStore\Services\DomainEventLogService.cs:line 44
+   at Ordering.DocumentProjector.EventProjector.Project() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\EventProjector.cs:line 40
+   at Ordering.DocumentProjector.TaskRunner.StartAsync(CancellationToken stoppingToken) in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.DocumentProjector\TaskRunner.cs:line 31
+   at Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor.ExecuteAsync(Func`2 callback)<---
+
+2020-02-08T04:28:45.2820467+00:00 0HLTBVOTC3V1I:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/all?pageSize=5&pageIndex=0   (ca22a1cb)
+2020-02-08T04:28:45.3100531+00:00 0HLTBVOTC3V1I:00000001 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:28:45.3180252+00:00 0HLTBVOTC3V1I:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:28:45.3242210+00:00 0HLTBVOTC3V1I:00000001 [INF] Request finished in 44.9985ms 204  (791a596a)
+2020-02-08T04:28:45.4598645+00:00 0HLTBVOTC3V1I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/all?pageSize=5&pageIndex=0 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T04:28:45.4832552+00:00 0HLTBVOTC3V1I:00000002 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:28:45.4943671+00:00 0HLTBVOTC3V1I:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:28:45.5097255+00:00 0HLTBVOTC3V1I:00000002 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (500cc934)
+2020-02-08T04:28:45.5279389+00:00 0HLTBVOTC3V1I:00000002 [INF] Route matched with "{action = \"GetAll\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAll(Int32, Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T04:28:45.5436033+00:00 0HLTBVOTC3V1I:00000002 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T04:28:45.6882566+00:00 0HLTBVOTC3V1I:00000002 [INF] GetAll action inside Order Controller (ed7fa128)
+2020-02-08T04:28:45.6998088+00:00 0HLTBVOTC3V1I:00000002 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 149.1808ms. (50a9e262)
+2020-02-08T04:28:45.7086467+00:00 0HLTBVOTC3V1I:00000002 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.PagedResult`1[[Ordering.QueryModel.ViewModels.OrderSummeryViewModel, Ordering.QueryModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-02-08T04:28:45.7262627+00:00 0HLTBVOTC3V1I:00000002 [INF] Executed action "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" in 181.1662ms (afa2e885)
+2020-02-08T04:28:45.7305448+00:00 0HLTBVOTC3V1I:00000002 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (99874f2b)
+2020-02-08T04:28:45.7369869+00:00 0HLTBVOTC3V1I:00000002 [INF] Request finished in 304.3783ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T04:38:12.2214038+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-02-08T04:38:12.2307534+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Quantity: 1, UnitPrice: 100500.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-02-08T04:38:12.2382040+00:00  [INF] Order instantiated Order { OrderDate: 02/08/2020 04:38:12, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 02/08/2020 04:38:12, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 02/08/2020 04:38:12, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null }, Id: 4d890ec7-c55f-4094-9c3b-cc65b9682856, CreationDate: 02/08/2020 04:38:12 }] }, Id: 4d890ec7-c55f-4094-9c3b-cc65b9682856, CreationDate: 02/08/2020 04:38:12 }] }, Id: 4d890ec7-c55f-4094-9c3b-cc65b9682856, CreationDate: 02/08/2020 04:38:12 }] } (2c6718b0)
+2020-02-08T04:38:12.2439386+00:00  [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"OrderingContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-02-08T04:38:12.4429818+00:00  [INF] Executed DbCommand ("27"ms) [Parameters=["@__buyerIdentityGuid_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [e].[Id], [e].[IdentityGuid], [e].[Name]
+FROM [Buyers] AS [e]
+WHERE [e].[IdentityGuid] = @__buyerIdentityGuid_0" (0723d8ff)
+2020-02-08T04:38:12.4502315+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-02-08T04:38:13.1359565+00:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[Discount], [e].[OrderId], [e].[PictureUri], [e].[ProductId], [e].[ProductName], [e].[Quantity], [e].[UnitPrice]
+FROM [OrderItems] AS [e]
+WHERE [e].[OrderId] = @__get_Item_0" (0723d8ff)
+2020-02-08T04:38:13.1779299+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 02/08/2020 04:38:12, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 100500.0, ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Discount: 0, PictureUri: null, Id: 12, DomainEvents: null }], Id: 10, DomainEvents: [] } (eee39e3d)
+2020-02-08T04:38:13.1847140+00:00  [INF] orderId is 10 (6360224c)
+2020-02-08T04:38:13.1912580+00:00  [INF] buyerId set to 1 (b0efb381)
+2020-02-08T04:38:13.1983350+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-02-08T04:38:13.2135996+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-02-08T04:38:13.2210985+00:00  [INF] OrderId is 10 (9c7ce781)
+2020-02-08T04:38:13.2289166+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 21, Units: 1 }], OrderId: 10, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 02/08/2020 04:38:13 } (ff364eea)
+2020-02-08T04:38:13.2798917+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-02-08T04:38:13.3064985+00:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2020-02-08T04:38:13.3304757+00:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@p10='?' (DbType = Int32), @p11='?' (DbType = Decimal), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([Id], [Discount], [OrderId], [PictureUri], [ProductId], [ProductName], [Quantity], [UnitPrice])
+VALUES (@p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2020-02-08T04:38:13.3543309+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-02-08T04:38:13.3840099+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-02-08T04:38:13.3972108+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-02-08T04:38:13.4327649+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 10 }  (5429d522)
+2020-02-08T04:38:13.4562305+00:00  [INF] Order will be retrieved with Id= 10 (535d6bce)
+2020-02-08T04:38:13.4672606+00:00  [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"OrderingContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-02-08T04:38:13.5236004+00:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[BuyerId], [e].[OrderDate], [e].[OrderState], [e].[Description], [e].[Id], [e].[Address_City], [e].[Address_Country], [e].[Address_State], [e].[Address_Street], [e].[Address_ZipCode]
+FROM [Orders] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2020-02-08T04:38:13.5604238+00:00  [INF] Executed DbCommand ("25"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[Discount], [e].[OrderId], [e].[PictureUri], [e].[ProductId], [e].[ProductName], [e].[Quantity], [e].[UnitPrice]
+FROM [OrderItems] AS [e]
+WHERE [e].[OrderId] = @__get_Item_0" (0723d8ff)
+2020-02-08T04:38:13.6082098+00:00  [INF] Order retrieved Order { OrderDate: 02/08/2020 04:38:12, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: 1, OrderState: AwaitingValidation, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 100500.00, ProductId: 21, ProductName: "فلش مموری سیلیکون پاور مدل Touch T01 ظرفیت 32 گیگابایت", Discount: 0.00, PictureUri: null, Id: 12, DomainEvents: null }], Id: 10, DomainEvents: null } (6f81d885)
+2020-02-08T04:38:13.6146031+00:00  [INF] SetStockConfirmedStatus called on order object (37636d94)
+2020-02-08T04:38:13.6725729+00:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p2='?' (DbType = Int32), @p0='?' (DbType = Int16), @p1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Orders] SET [OrderState] = @p0, [Description] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2020-02-08T04:38:13.6803104+00:00  [INF] SaveChanges finished  (90950fbb)
+2020-02-08T04:38:13.6839888+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-02-08T04:38:24.0882087+00:00 0HLTBVOTC3V1J:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/LatestOrderStatus/BuyerId/16265bdc-0e49-44df-b6e5-e77094ee6d0c   (ca22a1cb)
+2020-02-08T04:38:24.1175670+00:00 0HLTBVOTC3V1J:00000001 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:38:24.1234362+00:00 0HLTBVOTC3V1J:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:38:24.1316465+00:00 0HLTBVOTC3V1J:00000001 [INF] Request finished in 41.78ms 204  (791a596a)
+2020-02-08T04:38:24.1483489+00:00 0HLTBVOTC3V1J:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/LatestOrderStatus/BuyerId/16265bdc-0e49-44df-b6e5-e77094ee6d0c application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T04:38:24.1559592+00:00 0HLTBVOTC3V1J:00000002 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:38:24.1606597+00:00 0HLTBVOTC3V1J:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:38:24.1680973+00:00 0HLTBVOTC3V1J:00000002 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)"' (500cc934)
+2020-02-08T04:38:24.1751671+00:00 0HLTBVOTC3V1J:00000002 [INF] Route matched with "{action = \"GetLatestOrderForUser\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetLatestOrderForUser(System.String)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T04:38:24.1800538+00:00 0HLTBVOTC3V1J:00000002 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T04:38:24.4395054+00:00 0HLTBVOTC3V1J:00000002 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 231.7763ms. (50a9e262)
+2020-02-08T04:38:24.4465835+00:00 0HLTBVOTC3V1J:00000002 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-02-08T04:38:24.4558762+00:00 0HLTBVOTC3V1J:00000002 [INF] Executed action "Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)" in 272.3987ms (afa2e885)
+2020-02-08T04:38:24.4638575+00:00 0HLTBVOTC3V1J:00000002 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)"' (99874f2b)
+2020-02-08T04:38:24.4711702+00:00 0HLTBVOTC3V1J:00000002 [INF] Request finished in 323.6704ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T04:48:44.4071849+00:00 0HLTBVOTC3V1K:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/all?pageSize=5&pageIndex=0   (ca22a1cb)
+2020-02-08T04:48:44.4242598+00:00 0HLTBVOTC3V1K:00000001 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:48:44.4308721+00:00 0HLTBVOTC3V1K:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:48:44.4420828+00:00 0HLTBVOTC3V1K:00000001 [INF] Request finished in 30.5807ms 204  (791a596a)
+2020-02-08T04:48:44.4595652+00:00 0HLTBVOTC3V1K:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/all?pageSize=5&pageIndex=0 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T04:48:44.4761312+00:00 0HLTBVOTC3V1K:00000002 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:48:44.4815165+00:00 0HLTBVOTC3V1K:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:48:44.5040792+00:00 0HLTBVOTC3V1K:00000002 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (500cc934)
+2020-02-08T04:48:44.5103745+00:00 0HLTBVOTC3V1K:00000002 [INF] Route matched with "{action = \"GetAll\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAll(Int32, Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T04:48:44.5157295+00:00 0HLTBVOTC3V1K:00000002 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T04:48:44.7205719+00:00 0HLTBVOTC3V1K:00000002 [INF] GetAll action inside Order Controller (ed7fa128)
+2020-02-08T04:48:44.7302011+00:00 0HLTBVOTC3V1K:00000002 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 204.907ms. (50a9e262)
+2020-02-08T04:48:44.7416128+00:00 0HLTBVOTC3V1K:00000002 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.PagedResult`1[[Ordering.QueryModel.ViewModels.OrderSummeryViewModel, Ordering.QueryModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-02-08T04:48:44.7740178+00:00 0HLTBVOTC3V1K:00000002 [INF] Executed action "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" in 231.4712ms (afa2e885)
+2020-02-08T04:48:44.7796537+00:00 0HLTBVOTC3V1K:00000002 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (99874f2b)
+2020-02-08T04:48:44.7911105+00:00 0HLTBVOTC3V1K:00000002 [INF] Request finished in 332.8618ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T04:59:07.6379439+00:00 0HLTBVOTC3V1L:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/all?pageSize=5&pageIndex=0   (ca22a1cb)
+2020-02-08T04:59:07.6491939+00:00 0HLTBVOTC3V1L:00000001 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:59:07.6553789+00:00 0HLTBVOTC3V1L:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:59:07.6609352+00:00 0HLTBVOTC3V1L:00000001 [INF] Request finished in 23.8182ms 204  (791a596a)
+2020-02-08T04:59:07.6800979+00:00 0HLTBVOTC3V1L:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/all?pageSize=5&pageIndex=0 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T04:59:07.7012992+00:00 0HLTBVOTC3V1L:00000002 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T04:59:07.7112603+00:00 0HLTBVOTC3V1L:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T04:59:07.7250972+00:00 0HLTBVOTC3V1L:00000002 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (500cc934)
+2020-02-08T04:59:07.7406047+00:00 0HLTBVOTC3V1L:00000002 [INF] Route matched with "{action = \"GetAll\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAll(Int32, Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T04:59:07.7498033+00:00 0HLTBVOTC3V1L:00000002 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T04:59:07.8275229+00:00 0HLTBVOTC3V1L:00000002 [INF] GetAll action inside Order Controller (ed7fa128)
+2020-02-08T04:59:07.8330078+00:00 0HLTBVOTC3V1L:00000002 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 77.8318ms. (50a9e262)
+2020-02-08T04:59:07.8379335+00:00 0HLTBVOTC3V1L:00000002 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.PagedResult`1[[Ordering.QueryModel.ViewModels.OrderSummeryViewModel, Ordering.QueryModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-02-08T04:59:07.8466464+00:00 0HLTBVOTC3V1L:00000002 [INF] Executed action "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" in 97.5775ms (afa2e885)
+2020-02-08T04:59:07.8524891+00:00 0HLTBVOTC3V1L:00000002 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (99874f2b)
+2020-02-08T04:59:07.8574844+00:00 0HLTBVOTC3V1L:00000002 [INF] Request finished in 185.6723ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T05:02:47.8795338+00:00 0HLTBVOTC3V1L:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/details/7   (ca22a1cb)
+2020-02-08T05:02:47.8882843+00:00 0HLTBVOTC3V1L:00000003 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T05:02:47.8968854+00:00 0HLTBVOTC3V1L:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T05:02:47.9007811+00:00 0HLTBVOTC3V1L:00000003 [INF] Request finished in 22.3134ms 204  (791a596a)
+2020-02-08T05:02:47.9136611+00:00 0HLTBVOTC3V1L:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/details/7 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T05:02:47.9273837+00:00 0HLTBVOTC3V1L:00000004 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T05:02:47.9514801+00:00 0HLTBVOTC3V1L:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T05:02:47.9687295+00:00 0HLTBVOTC3V1L:00000004 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)"' (500cc934)
+2020-02-08T05:02:48.0229865+00:00 0HLTBVOTC3V1L:00000004 [INF] Route matched with "{action = \"GetOrderDetailsByOrderId\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetOrderDetailsByOrderId(Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T05:02:48.0304243+00:00 0HLTBVOTC3V1L:00000004 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T05:02:48.2075220+00:00 0HLTBVOTC3V1L:00000004 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 162.808ms. (50a9e262)
+2020-02-08T05:02:48.2194070+00:00 0HLTBVOTC3V1L:00000004 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.OrderViewModel"'. (8a1b66c8)
+2020-02-08T05:02:48.2600168+00:00 0HLTBVOTC3V1L:00000004 [INF] Executed action "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)" in 227.898ms (afa2e885)
+2020-02-08T05:02:48.2646588+00:00 0HLTBVOTC3V1L:00000004 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)"' (99874f2b)
+2020-02-08T05:02:48.2740372+00:00 0HLTBVOTC3V1L:00000004 [INF] Request finished in 361.7384ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T05:02:49.4693705+00:00 0HLTBVOTC3V1L:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/details/7 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T05:02:49.4755452+00:00 0HLTBVOTC3V1L:00000005 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T05:02:49.4812811+00:00 0HLTBVOTC3V1L:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T05:02:49.4891700+00:00 0HLTBVOTC3V1L:00000005 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)"' (500cc934)
+2020-02-08T05:02:49.4947217+00:00 0HLTBVOTC3V1L:00000005 [INF] Route matched with "{action = \"GetOrderDetailsByOrderId\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetOrderDetailsByOrderId(Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T05:02:49.5007381+00:00 0HLTBVOTC3V1L:00000005 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T05:02:49.5908277+00:00 0HLTBVOTC3V1L:00000005 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 85.3283ms. (50a9e262)
+2020-02-08T05:02:49.5962268+00:00 0HLTBVOTC3V1L:00000005 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.OrderViewModel"'. (8a1b66c8)
+2020-02-08T05:02:49.6041699+00:00 0HLTBVOTC3V1L:00000005 [INF] Executed action "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)" in 101.7074ms (afa2e885)
+2020-02-08T05:02:49.6098935+00:00 0HLTBVOTC3V1L:00000005 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)"' (99874f2b)
+2020-02-08T05:02:49.6241006+00:00 0HLTBVOTC3V1L:00000005 [INF] Request finished in 147.2458ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T06:00:38.6269531+00:00  [INF] Inside UserCheckoutIntegrationEvent handler (3529aed2)
+2020-02-08T06:00:38.6329395+00:00  [INF] CreateOrderCommand created CreateOrderCommand { OrderItems: [OrderItemDto { ProductId: 3, ProductName: "گوشی موبایل هوآوی مدل Y3 2018 CAG-L22 دو سیم کارت ظرفیت 8 گیگابایت", Quantity: 1, UnitPrice: 1500000.0, Discount: 0 }, OrderItemDto { ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Quantity: 1, UnitPrice: 3340000.0, Discount: 0 }], UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", City: "تهران", State: "تهران", Country: "ایران", Street: "آذربایجان", ZipCode: "123456" } (3fd9f466)
+2020-02-08T06:00:38.6426749+00:00  [INF] Order instantiated Order { OrderDate: 02/08/2020 06:00:38, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 02/08/2020 06:00:38, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: 02/08/2020 06:00:38, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [], Id: 0, DomainEvents: [OrderStartedDomainEvent { UserId: "16265bdc-0e49-44df-b6e5-e77094ee6d0c", UserName: "masoud", Order: Order { OrderDate: null, Address: null, BuyerId: null, OrderState: null, OrderItems: null, Id: null, DomainEvents: null }, Id: f0f898cd-1ae1-47b8-802b-b55edc8b0506, CreationDate: 02/08/2020 06:00:38 }] }, Id: f0f898cd-1ae1-47b8-802b-b55edc8b0506, CreationDate: 02/08/2020 06:00:38 }] }, Id: f0f898cd-1ae1-47b8-802b-b55edc8b0506, CreationDate: 02/08/2020 06:00:38 }] } (2c6718b0)
+2020-02-08T06:00:38.6516425+00:00  [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"OrderingContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-02-08T06:00:38.7138995+00:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT NEXT VALUE FOR [orderitemseq]" (0723d8ff)
+2020-02-08T06:00:38.7751487+00:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__buyerIdentityGuid_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [e].[Id], [e].[IdentityGuid], [e].[Name]
+FROM [Buyers] AS [e]
+WHERE [e].[IdentityGuid] = @__buyerIdentityGuid_0" (0723d8ff)
+2020-02-08T06:00:38.7942625+00:00  [INF] BuyerCreatedDomainEvent added to list of buyer events (70d1b556)
+2020-02-08T06:00:40.4604008+00:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[Discount], [e].[OrderId], [e].[PictureUri], [e].[ProductId], [e].[ProductName], [e].[Quantity], [e].[UnitPrice]
+FROM [OrderItems] AS [e]
+WHERE [e].[OrderId] = @__get_Item_0" (0723d8ff)
+2020-02-08T06:00:40.4703154+00:00  [INF] order retrieved to set its buyer Order { OrderDate: 02/08/2020 06:00:38, Address: Address { Street: "آذربایجان", City: "تهران", State: "تهران", Country: "ایران", ZipCode: "123456" }, BuyerId: null, OrderState: Submitted, OrderItems: [OrderItem { Quantity: 1, UnitPrice: 1500000.0, ProductId: 3, ProductName: "گوشی موبایل هوآوی مدل Y3 2018 CAG-L22 دو سیم کارت ظرفیت 8 گیگابایت", Discount: 0, PictureUri: null, Id: 4, DomainEvents: null }, OrderItem { Quantity: 1, UnitPrice: 3340000.0, ProductId: 10, ProductName: "دوربین دیجیتال کانن مدل EOS 4000D", Discount: 0, PictureUri: null, Id: 5, DomainEvents: null }], Id: 11, DomainEvents: [] } (eee39e3d)
+2020-02-08T06:00:40.4780617+00:00  [INF] orderId is 11 (6360224c)
+2020-02-08T06:00:40.4886588+00:00  [INF] buyerId set to 1 (b0efb381)
+2020-02-08T06:00:40.4948796+00:00  [INF] OrderStatus is set to SetAwaitingValidationStatus  (8d340758)
+2020-02-08T06:00:40.5448466+00:00  [INF] OrderStatusChangedToAwaitingValidationDomainEvent handler called (622cbd86)
+2020-02-08T06:00:40.5513643+00:00  [INF] OrderId is 11 (9c7ce781)
+2020-02-08T06:00:40.5576633+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is created OrderStatusChangedToAwaitingValidationIntegrationEvent { StockItems: [StockItem { ProductId: 3, Units: 1 }, StockItem { ProductId: 10, Units: 1 }], OrderId: 11, Id: 00000000-0000-0000-0000-000000000000, CreationDate: 02/08/2020 06:00:40 } (ff364eea)
+2020-02-08T06:00:40.6131984+00:00  [INF] OrderStatusChangedToAwaitingValidationIntegrationEvent is published (5de65a50)
+2020-02-08T06:00:40.6313435+00:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2020-02-08T06:00:40.6427404+00:00  [ERR] Failed executing DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([Id], [Discount], [OrderId], [PictureUri], [ProductId], [ProductName], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8c332026-6753-4e95-a0a0-bf883b3a235b
+Error Number:2627,State:1,Class:14
+2020-02-08T06:00:40.6602515+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ordering.Infrastructure.OrderingContext.SaveChangesAsync() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.Infrastructure\OrderingContext.cs:line 56
+2020-02-08T06:00:41.6462234+00:00  [INF] SetOrderStatusToStockConfirmedCommand created:SetOrderStatusToStockConfirmedCommand { orderId: 11 }  (5429d522)
+2020-02-08T06:00:41.6521520+00:00  [INF] Order will be retrieved with Id= 11 (535d6bce)
+2020-02-08T06:00:41.6591780+00:00  [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"OrderingContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-02-08T06:00:41.6698680+00:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2020-02-08T06:00:41.7195448+00:00  [ERR] Failed executing DbCommand ("39"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([Id], [Discount], [OrderId], [PictureUri], [ProductId], [ProductName], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8c332026-6753-4e95-a0a0-bf883b3a235b
+Error Number:2627,State:1,Class:14
+2020-02-08T06:00:41.7700924+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ordering.Infrastructure.OrderingContext.SaveChangesAsync() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.Infrastructure\OrderingContext.cs:line 56
+2020-02-08T06:00:42.6506025+00:00  [INF] SaveChanges called on buyer (3505242c)
+2020-02-08T06:00:42.6807367+00:00  [INF] Executed DbCommand ("9"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[BuyerId], [e].[OrderDate], [e].[OrderState], [e].[Description], [e].[Id], [e].[Address_City], [e].[Address_Country], [e].[Address_State], [e].[Address_Street], [e].[Address_ZipCode]
+FROM [Orders] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2020-02-08T06:00:42.6917768+00:00  [INF] retry for 0 (fe099784)
+2020-02-08T06:00:42.8224975+00:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int16), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [BuyerId], [OrderDate], [OrderState], [Description], [Address_City], [Address_Country], [Address_State], [Address_Street], [Address_ZipCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (0723d8ff)
+2020-02-08T06:00:42.8360786+00:00  [ERR] Failed executing DbCommand ("9"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([Id], [Discount], [OrderId], [PictureUri], [ProductId], [ProductName], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8c332026-6753-4e95-a0a0-bf883b3a235b
+Error Number:2627,State:1,Class:14
+2020-02-08T06:00:42.8661604+00:00  [ERR] An exception occurred in the database while saving changes for context type '"Ordering.Infrastructure.OrderingContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_OrderItems'. Cannot insert duplicate key in object 'dbo.OrderItems'. The duplicate key value is (4).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Ordering.Infrastructure.OrderingContext.SaveChangesAsync() in E:\InHand\Desktop\Microservices\Final Project\eShop\src\Services\Ordering\Ordering.Infrastructure\OrderingContext.cs:line 56
+2020-02-08T06:00:43.5147437+00:00  [INF] Order SaveChanges finished (85d05615)
+2020-02-08T06:00:43.5201708+00:00  [INF] CreateOrderCommand sent (8a728658)
+2020-02-08T06:00:43.7200789+00:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[BuyerId], [e].[OrderDate], [e].[OrderState], [e].[Description], [e].[Id], [e].[Address_City], [e].[Address_Country], [e].[Address_State], [e].[Address_Street], [e].[Address_ZipCode]
+FROM [Orders] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2020-02-08T06:00:43.7333121+00:00  [INF] retry for 1 (fe099784)
+2020-02-08T06:00:44.7521118+00:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[BuyerId], [e].[OrderDate], [e].[OrderState], [e].[Description], [e].[Id], [e].[Address_City], [e].[Address_Country], [e].[Address_State], [e].[Address_Street], [e].[Address_ZipCode]
+FROM [Orders] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2020-02-08T06:00:44.7817479+00:00  [INF] retry for 2 (fe099784)
+2020-02-08T06:00:45.8119425+00:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[BuyerId], [e].[OrderDate], [e].[OrderState], [e].[Description], [e].[Id], [e].[Address_City], [e].[Address_Country], [e].[Address_State], [e].[Address_Street], [e].[Address_ZipCode]
+FROM [Orders] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2020-02-08T06:00:45.8184977+00:00  [INF] retry for 3 (fe099784)
+2020-02-08T06:00:46.8658271+00:00  [INF] Executed DbCommand ("29"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[BuyerId], [e].[OrderDate], [e].[OrderState], [e].[Description], [e].[Id], [e].[Address_City], [e].[Address_Country], [e].[Address_State], [e].[Address_Street], [e].[Address_ZipCode]
+FROM [Orders] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2020-02-08T06:00:46.8751379+00:00  [INF] retry for 4 (fe099784)
+2020-02-08T06:00:47.8922907+00:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[BuyerId], [e].[OrderDate], [e].[OrderState], [e].[Description], [e].[Id], [e].[Address_City], [e].[Address_Country], [e].[Address_State], [e].[Address_Street], [e].[Address_ZipCode]
+FROM [Orders] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2020-02-08T06:00:47.9235248+00:00  [INF] Order retrieved "(null)" (6f81d885)
+2020-02-08T06:00:47.9291419+00:00  [INF] SetOrderStatusToStockConfirmedCommand sent  (74dba639)
+2020-02-08T06:00:49.9714715+00:00 0HLTBVOTC3V1M:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/LatestOrderStatus/BuyerId/16265bdc-0e49-44df-b6e5-e77094ee6d0c   (ca22a1cb)
+2020-02-08T06:00:49.9782280+00:00 0HLTBVOTC3V1M:00000001 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:00:49.9837632+00:00 0HLTBVOTC3V1M:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:00:49.9987408+00:00 0HLTBVOTC3V1M:00000001 [INF] Request finished in 24.5454ms 204  (791a596a)
+2020-02-08T06:00:50.0120255+00:00 0HLTBVOTC3V1M:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/LatestOrderStatus/BuyerId/16265bdc-0e49-44df-b6e5-e77094ee6d0c application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T06:00:50.0174715+00:00 0HLTBVOTC3V1M:00000002 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:00:50.0256316+00:00 0HLTBVOTC3V1M:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:00:50.0329917+00:00 0HLTBVOTC3V1M:00000002 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)"' (500cc934)
+2020-02-08T06:00:50.0386710+00:00 0HLTBVOTC3V1M:00000002 [INF] Route matched with "{action = \"GetLatestOrderForUser\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetLatestOrderForUser(System.String)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T06:00:50.0445044+00:00 0HLTBVOTC3V1M:00000002 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T06:00:50.0821543+00:00 0HLTBVOTC3V1M:00000002 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 31.4943ms. (50a9e262)
+2020-02-08T06:00:50.0881740+00:00 0HLTBVOTC3V1M:00000002 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-02-08T06:00:50.0958659+00:00 0HLTBVOTC3V1M:00000002 [INF] Executed action "Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)" in 49.6801ms (afa2e885)
+2020-02-08T06:00:50.1029878+00:00 0HLTBVOTC3V1M:00000002 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetLatestOrderForUser (Ordering.API)"' (99874f2b)
+2020-02-08T06:00:50.1165870+00:00 0HLTBVOTC3V1M:00000002 [INF] Request finished in 104.1828ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T06:04:04.9983472+00:00 0HLTBVOTC3V1M:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/all?pageSize=5&pageIndex=0   (ca22a1cb)
+2020-02-08T06:04:05.0110194+00:00 0HLTBVOTC3V1M:00000003 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:04:05.0168552+00:00 0HLTBVOTC3V1M:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:04:05.0394422+00:00 0HLTBVOTC3V1M:00000003 [INF] Request finished in 26.1504ms 204  (791a596a)
+2020-02-08T06:04:05.0547225+00:00 0HLTBVOTC3V1M:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/all?pageSize=5&pageIndex=0 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T06:04:05.0612957+00:00 0HLTBVOTC3V1M:00000004 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:04:05.0683490+00:00 0HLTBVOTC3V1M:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:04:05.0892430+00:00 0HLTBVOTC3V1M:00000004 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (500cc934)
+2020-02-08T06:04:05.1054476+00:00 0HLTBVOTC3V1M:00000004 [INF] Route matched with "{action = \"GetAll\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAll(Int32, Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T06:04:05.1122815+00:00 0HLTBVOTC3V1M:00000004 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T06:04:05.1680781+00:00 0HLTBVOTC3V1M:00000004 [INF] GetAll action inside Order Controller (ed7fa128)
+2020-02-08T06:04:05.1750352+00:00 0HLTBVOTC3V1M:00000004 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 55.6909ms. (50a9e262)
+2020-02-08T06:04:05.1810966+00:00 0HLTBVOTC3V1M:00000004 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.PagedResult`1[[Ordering.QueryModel.ViewModels.OrderSummeryViewModel, Ordering.QueryModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-02-08T06:04:05.1969778+00:00 0HLTBVOTC3V1M:00000004 [INF] Executed action "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" in 77.271ms (afa2e885)
+2020-02-08T06:04:05.2031162+00:00 0HLTBVOTC3V1M:00000004 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (99874f2b)
+2020-02-08T06:04:05.2120960+00:00 0HLTBVOTC3V1M:00000004 [INF] Request finished in 153.4655ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T06:04:08.7358446+00:00 0HLTBVOTC3V1M:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/details/7   (ca22a1cb)
+2020-02-08T06:04:08.7416849+00:00 0HLTBVOTC3V1M:00000005 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:04:08.7498065+00:00 0HLTBVOTC3V1M:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:04:08.7619310+00:00 0HLTBVOTC3V1M:00000005 [INF] Request finished in 20.2628ms 204  (791a596a)
+2020-02-08T06:04:08.7714764+00:00 0HLTBVOTC3V1M:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/details/7 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T06:04:08.7788376+00:00 0HLTBVOTC3V1M:00000006 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:04:08.7934754+00:00 0HLTBVOTC3V1M:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:04:08.8078048+00:00 0HLTBVOTC3V1M:00000006 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)"' (500cc934)
+2020-02-08T06:04:08.8129789+00:00 0HLTBVOTC3V1M:00000006 [INF] Route matched with "{action = \"GetOrderDetailsByOrderId\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetOrderDetailsByOrderId(Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T06:04:08.8353290+00:00 0HLTBVOTC3V1M:00000006 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T06:04:08.8634669+00:00 0HLTBVOTC3V1M:00000006 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 21.1877ms. (50a9e262)
+2020-02-08T06:04:08.8753076+00:00 0HLTBVOTC3V1M:00000006 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.OrderViewModel"'. (8a1b66c8)
+2020-02-08T06:04:08.9051506+00:00 0HLTBVOTC3V1M:00000006 [INF] Executed action "Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)" in 85.6274ms (afa2e885)
+2020-02-08T06:04:08.9121773+00:00 0HLTBVOTC3V1M:00000006 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetOrderDetailsByOrderId (Ordering.API)"' (99874f2b)
+2020-02-08T06:04:08.9252461+00:00 0HLTBVOTC3V1M:00000006 [INF] Request finished in 157.4011ms 200 application/json; charset=utf-8 (791a596a)
+2020-02-08T06:57:22.1530832+00:00 0HLTBVOTC3V1N:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:9416/api/order/all?pageSize=5&pageIndex=0   (ca22a1cb)
+2020-02-08T06:57:22.1575985+00:00 0HLTBVOTC3V1N:00000001 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:57:22.1661620+00:00 0HLTBVOTC3V1N:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:57:22.1796198+00:00 0HLTBVOTC3V1N:00000001 [INF] Request finished in 21.795ms 204  (791a596a)
+2020-02-08T06:57:22.3509994+00:00 0HLTBVOTC3V1N:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:9416/api/order/all?pageSize=5&pageIndex=0 application/json; charset=utf-8  (ca22a1cb)
+2020-02-08T06:57:22.3568414+00:00 0HLTBVOTC3V1N:00000002 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported. (6e5ffae2)
+2020-02-08T06:57:22.3666656+00:00 0HLTBVOTC3V1N:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-02-08T06:57:22.3752889+00:00 0HLTBVOTC3V1N:00000002 [INF] Executing endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (500cc934)
+2020-02-08T06:57:22.3818786+00:00 0HLTBVOTC3V1N:00000002 [INF] Route matched with "{action = \"GetAll\", controller = \"Order\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAll(Int32, Int32)" on controller "Ordering.API.Controllers.OrderController" ("Ordering.API"). (122b2fdf)
+2020-02-08T06:57:22.3883566+00:00 0HLTBVOTC3V1N:00000002 [INF] Executing action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" - Validation state: Valid (dad538d7)
+2020-02-08T06:57:22.5114405+00:00 0HLTBVOTC3V1N:00000002 [INF] GetAll action inside Order Controller (ed7fa128)
+2020-02-08T06:57:22.5269990+00:00 0HLTBVOTC3V1N:00000002 [INF] Executed action method "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 123.1326ms. (50a9e262)
+2020-02-08T06:57:22.5334354+00:00 0HLTBVOTC3V1N:00000002 [INF] Executing ObjectResult, writing value of type '"Ordering.QueryModel.ViewModels.PagedResult`1[[Ordering.QueryModel.ViewModels.OrderSummeryViewModel, Ordering.QueryModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-02-08T06:57:22.5483860+00:00 0HLTBVOTC3V1N:00000002 [INF] Executed action "Ordering.API.Controllers.OrderController.GetAll (Ordering.API)" in 159.2618ms (afa2e885)
+2020-02-08T06:57:22.5621733+00:00 0HLTBVOTC3V1N:00000002 [INF] Executed endpoint '"Ordering.API.Controllers.OrderController.GetAll (Ordering.API)"' (99874f2b)
+2020-02-08T06:57:22.5687197+00:00 0HLTBVOTC3V1N:00000002 [INF] Request finished in 216.2936ms 200 application/json; charset=utf-8 (791a596a)

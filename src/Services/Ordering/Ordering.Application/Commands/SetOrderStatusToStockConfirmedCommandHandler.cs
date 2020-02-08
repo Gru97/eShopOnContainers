@@ -20,7 +20,9 @@ namespace Ordering.Application.Commands
 
         public async Task<Unit> Handle(SetOrderStatusToStockConfirmedCommand request, CancellationToken cancellationToken)
         {
-            var orderToBeUpdated = repository.Get(request.orderId);
+            logger.LogInformation("Order will be retrieved with Id= {orderId}", request.orderId);
+            var orderToBeUpdated = await repository.FindAsycn(request.orderId);
+          
             logger.LogInformation("Order retrieved {@orderToBeUpdated}", orderToBeUpdated);
 
             if (orderToBeUpdated != null)

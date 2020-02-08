@@ -69,23 +69,23 @@ namespace Identity.API.Services
             {
                 new Claim(JwtClaimTypes.Subject,user.Id),
                 new Claim(JwtClaimTypes.PreferredUserName,user.UserName),
-                new Claim(JwtRegisteredClaimNames.UniqueName,user.Name),
+            
                 new Claim(JwtClaimTypes.Audience,"basket"),
 
             };
             if (!string.IsNullOrWhiteSpace(user.Name))
                 claims.Add(new Claim("name",user.Name));
-            if (!string.IsNullOrWhiteSpace(user.Name))
+            if (!string.IsNullOrWhiteSpace(user.LastName))
                 claims.Add(new Claim("last_name", user.LastName));
-            if (!string.IsNullOrWhiteSpace(user.Name))
+            if (!string.IsNullOrWhiteSpace(user.City))
                 claims.Add(new Claim("address_city", user.City));
-            if (!string.IsNullOrWhiteSpace(user.Name))
+            if (!string.IsNullOrWhiteSpace(user.Country))
                 claims.Add(new Claim("address_country", user.Country));
-            if (!string.IsNullOrWhiteSpace(user.Name))
+            if (!string.IsNullOrWhiteSpace(user.State))
                 claims.Add(new Claim("address_state", user.State));
-            if (!string.IsNullOrWhiteSpace(user.Name))
+            if (!string.IsNullOrWhiteSpace(user.Street))
                 claims.Add(new Claim("address_street", user.Street));
-            if (!string.IsNullOrWhiteSpace(user.Name))
+            if (!string.IsNullOrWhiteSpace(user.ZipCode))
                 claims.Add(new Claim("address_zipcode", user.ZipCode));
 
             if(userManager.SupportsUserEmail)
@@ -96,13 +96,7 @@ namespace Identity.API.Services
                 });
             }
 
-            if (userManager.SupportsUserPhoneNumber)
-            {
-                claims.AddRange(new[] {
-                    new Claim(JwtClaimTypes.PhoneNumber,user.PhoneNumber),
-                    new Claim(JwtClaimTypes.PhoneNumberVerified,user.PhoneNumberConfirmed ? "true":"false",ClaimValueTypes.Boolean)
-                });
-            }
+            
 
             return claims;
         }

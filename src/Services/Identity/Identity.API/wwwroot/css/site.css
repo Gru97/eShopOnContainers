@@ -2,11 +2,11 @@
     direction:rtl !important;
 }
 label{
-    margin:20px 15px;
+    margin:15px 15px;
     display:block !important;
    
 }
-h2{
+h2,h3{
     color:darkred ;
     padding-top:20px;
 

@@ -25,6 +25,9 @@ namespace Identity.API.ViewModels.Account
         [Compare("Password", ErrorMessage = "رمز عبور با تکرار رمز مغایرت دارد")]
         public string ConfirmPassword { get; set; }
 
+        [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
         public ApplicationUser User { get; set; }
     }
 }
